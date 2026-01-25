@@ -1,12 +1,12 @@
 import { useState } from "react";
+import { HiBookOpen, HiCalendar, HiChevronRight, HiHeart, HiUsers } from "react-icons/hi2";
 import { Link } from "react-router-dom";
-import { ChevronRight, Calendar, BookOpen, Users, Heart } from "lucide-react";
 import Hero from "../../components/UI/Hero";
 import Section from "../../components/UI/Section";
-import EventCard from "../Calendar/EventCard";
-import ArticleCard from "../Articles/ArticleCard";
-import { events } from "../../data/eventsData";
 import { articles } from "../../data/articlesData";
+import { events } from "../../data/eventsData";
+import ArticleCard from "../Articles/ArticleCard";
+import EventCard from "../Calendar/EventCard";
 
 const HomePage = () => {
   // Get upcoming events (first 3)
@@ -21,7 +21,7 @@ const HomePage = () => {
   return (
     <>
       <Hero
-        title="Animal Liberation Now"
+        title="Animal Liberation Now!"
         subtitle="We envision a world where every animal lives free from cages, cruelty, and commodification. No creature should suffer for food, fashion, entertainment, or experiments.
 Our fight is not for reform — it’s for revolution.
 Join us, stand on the side of justice, and be the voice for those who are silenced."
@@ -32,14 +32,14 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
 
       {/* What is ALN */}
       <Section
-        title="What is Animal Liberation Now?"
+        title="What is Animal Liberation Now!?"
         subtitle="ALN is dedicated to ending animal exploitation through activism, education, and direct action."
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
           <div className="flex flex-col justify-center">
             <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
             <p className="mb-6">
-              Animal Liberation Now (ALN) works to end the exploitation of
+              Animal Liberation Now! (ALN) works to end the exploitation of
               animals through direct action, public education, and legislative
               advocacy. We believe that animals exist for their own purposes and
               should not be used as resources for human ends.
@@ -55,7 +55,7 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
               className="flex items-center font-medium text-accent hover:underline"
             >
               Learn more about our work
-              <ChevronRight className="ml-1 h-4 w-4" />
+              <HiChevronRight className="ml-1 h-4 w-4" />
             </Link>
           </div>
           <div className="relative rounded-lg overflow-hidden shadow-xl h-[400px]">
@@ -89,14 +89,13 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
             <h3 className="text-2xl font-bold mb-4">Our Core Beliefs</h3>
             <ul className="space-y-4">
               <li
-                className={`flex items-start transition-all duration-500 ${
-                  isVisible
-                    ? "opacity-100 translate-x-0"
-                    : "opacity-0 translate-x-10"
-                }`}
+                className={`flex items-start transition-all duration-500 ${isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-10"
+                  }`}
                 style={{ transitionDelay: "0.1s" }}
               >
-                <Heart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-bold mb-1">Animal Sentience</h4>
                   <p>
@@ -106,14 +105,13 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
                 </div>
               </li>
               <li
-                className={`flex items-start transition-all duration-500 ${
-                  isVisible
-                    ? "opacity-100 translate-x-0"
-                    : "opacity-0 translate-x-10"
-                }`}
+                className={`flex items-start transition-all duration-500 ${isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-10"
+                  }`}
                 style={{ transitionDelay: "0.2s" }}
               >
-                <Heart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-bold mb-1">Inherent Value</h4>
                   <p>
@@ -123,14 +121,13 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
                 </div>
               </li>
               <li
-                className={`flex items-start transition-all duration-500 ${
-                  isVisible
-                    ? "opacity-100 translate-x-0"
-                    : "opacity-0 translate-x-10"
-                }`}
+                className={`flex items-start transition-all duration-500 ${isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-10"
+                  }`}
                 style={{ transitionDelay: "0.3s" }}
               >
-                <Heart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-bold mb-1">Equal Consideration</h4>
                   <p>
@@ -140,14 +137,13 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
                 </div>
               </li>
               <li
-                className={`flex items-start transition-all duration-500 ${
-                  isVisible
-                    ? "opacity-100 translate-x-0"
-                    : "opacity-0 translate-x-10"
-                }`}
+                className={`flex items-start transition-all duration-500 ${isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-10"
+                  }`}
                 style={{ transitionDelay: "0.4s" }}
               >
-                <Heart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-bold mb-1">Right to Liberation</h4>
                   <p>
@@ -173,7 +169,7 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
         </div>
         <div className="mt-10 text-center">
           <Link to="/calendar" className="btn btn-primary">
-            <Calendar className="mr-2 h-5 w-5" />
+            <HiCalendar className="mr-2 h-5 w-5" />
             View All Events
           </Link>
         </div>
@@ -192,7 +188,7 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
         </div>
         <div className="mt-10 text-center">
           <Link to="/articles" className="btn btn-primary">
-            <BookOpen className="mr-2 h-5 w-5" />
+            <HiBookOpen className="mr-2 h-5 w-5" />
             Read All Articles
           </Link>
         </div>
@@ -210,14 +206,14 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link to="/support" className="btn btn-primary">
-              <Heart className="mr-2 h-5 w-5" />
+              <HiHeart className="mr-2 h-5 w-5" />
               Support Our Work
             </Link>
             <Link
               to="/about"
               className="btn btn-outline border-white text-white hover:bg-white hover:text-primary"
             >
-              <Users className="mr-2 h-5 w-5" />
+              <HiUsers className="mr-2 h-5 w-5" />
               Learn More
             </Link>
           </div>

@@ -1,6 +1,6 @@
+import { HiBars3, HiXMark } from "react-icons/hi2";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X, Heart } from "lucide-react";
 
 interface HeaderProps {
   scrolled: boolean;
@@ -64,7 +64,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <HiXMark size={24} /> : <HiBars3 size={24} />}
         </button>
       </div>
 
@@ -75,8 +75,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `font-medium py-2 hover:text-accent transition-colors ${
-                  isActive ? "text-accent" : ""
+                `font-medium py-2 hover:text-accent transition-colors ${isActive ? "text-accent" : ""
                 }`
               }
               onClick={closeMenu}
@@ -86,8 +85,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `font-medium py-2 hover:text-accent transition-colors ${
-                  isActive ? "text-accent" : ""
+                `font-medium py-2 hover:text-accent transition-colors ${isActive ? "text-accent" : ""
                 }`
               }
               onClick={closeMenu}
@@ -97,8 +95,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
             <NavLink
               to="/calendar"
               className={({ isActive }) =>
-                `font-medium py-2 hover:text-accent transition-colors ${
-                  isActive ? "text-accent" : ""
+                `font-medium py-2 hover:text-accent transition-colors ${isActive ? "text-accent" : ""
                 }`
               }
               onClick={closeMenu}
@@ -108,8 +105,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
             <NavLink
               to="/articles"
               className={({ isActive }) =>
-                `font-medium py-2 hover:text-accent transition-colors ${
-                  isActive ? "text-accent" : ""
+                `font-medium py-2 hover:text-accent transition-colors ${isActive ? "text-accent" : ""
                 }`
               }
               onClick={closeMenu}

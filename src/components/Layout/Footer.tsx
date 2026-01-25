@@ -1,14 +1,6 @@
+import { HiEnvelope, HiHeart, HiMapPin, HiPhone } from "react-icons/hi2";
+import { SiFacebook, SiInstagram, SiX, SiYoutube } from "react-icons/si";
 import { Link } from "react-router-dom";
-import {
-  Heart,
-  Mail,
-  MapPin,
-  Phone,
-  Facebook,
-  Twitter,
-  Instagram,
-  Youtube,
-} from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,31 +11,31 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <Heart className="h-8 w-8 text-accent" />
+              <HiHeart className="h-8 w-8 text-accent" />
               <span className="text-xl font-bold">ALN</span>
             </Link>
             <p className="mb-6">
-              Animal Liberation Now is dedicated to ending animal exploitation
+              Animal Liberation Now! is dedicated to ending animal exploitation
               through activism, education, and direct action.
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/animalliberationnowofficial/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
                 className="text-secondary hover:text-accent transition-colors"
               >
-                <Facebook size={20} />
+                <SiFacebook size={20} />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/alnofficial"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Twitter"
+                aria-label="X (formerly Twitter)"
                 className="text-secondary hover:text-accent transition-colors"
               >
-                <Twitter size={20} />
+                <SiX size={20} />
               </a>
               <a
                 href="https://www.instagram.com/alnchennai?igsh=Zmp0cDE2Mzlqdmt2"
@@ -52,7 +44,7 @@ const Footer = () => {
                 aria-label="Instagram"
                 className="text-secondary hover:text-accent transition-colors"
               >
-                <Instagram size={20} />
+                <SiInstagram size={20} />
               </a>
               <a
                 href="https://youtube.com"
@@ -61,7 +53,7 @@ const Footer = () => {
                 aria-label="YouTube"
                 className="text-secondary hover:text-accent transition-colors"
               >
-                <Youtube size={20} />
+                <SiYoutube size={20} />
               </a>
             </div>
           </div>
@@ -127,11 +119,11 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-6">Contact Us</h3>
             <address className="not-italic">
               <div className="flex items-start mb-4">
-                <MapPin className="mr-2 h-5 w-5 mt-0.5 flex-shrink-0" />
-                <span>Animal Liberation Now, Chennai</span>
+                <HiMapPin className="mr-2 h-5 w-5 mt-0.5 flex-shrink-0" />
+                <span>Animal Liberation Now!, Chennai</span>
               </div>
               <div className="flex items-center mb-4">
-                <Phone className="mr-2 h-5 w-5 flex-shrink-0" />
+                <HiPhone className="mr-2 h-5 w-5 flex-shrink-0" />
                 <a
                   href="tel:+123456789"
                   className="hover:text-accent transition-colors"
@@ -140,12 +132,12 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-center">
-                <Mail className="mr-2 h-5 w-5 flex-shrink-0" />
+                <HiEnvelope className="mr-2 h-5 w-5 flex-shrink-0" />
                 <a
                   href="mailto:info@animalliberationnow.org"
                   className="hover:text-accent transition-colors"
                 >
-                  info@animalliberationnow.com
+                  contact@animalliberationnow.org
                 </a>
               </div>
             </address>
@@ -154,7 +146,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row md:justify-end items-center text-center md:text-right w-full">
           <p>
-            &copy; {currentYear} Animal Liberation Now. All rights reserved.
+            &copy; {currentYear} Animal Liberation Now!. All rights reserved.
           </p>
         </div>
       </div>

@@ -1,0 +1,30 @@
+{
+  "recommendations": [
+    // Essential
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+
+    // TypeScript/JavaScript
+    "usernamehw.errorlens",
+    "streetsidesoftware.code-spell-checker",
+
+    // React
+    "dsznajder.es7-react-js-snippets",
+
+    // Tailwind CSS
+    "bradlc.vscode-tailwindcss",
+
+    // Git
+    "eamodio.gitlens",
+
+    // Utilities
+    "christian-kohler.path-intellisense",
+    "visualstudioexptteam.vscodeintellicode",
+    "gruntfuggly.todo-tree",
+
+    // Optional but useful
+    "ritwickdey.liveserver",
+    "formulahendry.auto-rename-tag",
+    "naumovs.color-highlight"
+  ]
+}

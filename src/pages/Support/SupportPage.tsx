@@ -1,14 +1,9 @@
-import { useState } from "react";
 import {
-  Heart,
-  DollarSign,
-  Users,
-  Calendar,
-  Mail,
-  Gift,
-  Briefcase,
-  CreditCard,
-} from "lucide-react";
+  HiCalendar,
+  HiEnvelope,
+  HiUsers
+} from "react-icons/hi2";
+import { useState } from "react";
 import Hero from "../../components/UI/Hero";
 import Section from "../../components/UI/Section";
 
@@ -37,7 +32,7 @@ const SupportPage = () => {
       <Hero
         title="Support Our Work"
         subtitle="Your contribution helps us continue our vital work for animal liberation. Together, we can create a more compassionate world."
-        backgroundImage="https://images.pexels.com/photos/6647119/pexels-photo-6647119.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        backgroundImage="/images/heroes/support-articles-hero.jpg"
       />
 
       {/* Volunteer Form */}
@@ -180,7 +175,7 @@ const SupportPage = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           <div className="bg-primary-light p-8 rounded-lg">
-            <Users className="h-12 w-12 text-accent mb-6" />
+            <HiUsers className="h-12 w-12 text-accent mb-6" />
             <h3 className="text-xl font-bold mb-3">Volunteer</h3>
             <p className="mb-6">
               Join our volunteer program and contribute your time and skills to
@@ -193,7 +188,7 @@ const SupportPage = () => {
           </div>
 
           <div className="bg-primary-light p-8 rounded-lg">
-            <Calendar className="h-12 w-12 text-accent mb-6" />
+            <HiCalendar className="h-12 w-12 text-accent mb-6" />
             <h3 className="text-xl font-bold mb-3">Attend Events</h3>
             <p className="mb-6">
               Participate in protests, workshops, and fundraising events. Your
@@ -205,7 +200,7 @@ const SupportPage = () => {
           </div>
 
           <div className="bg-primary-light p-8 rounded-lg">
-            <Mail className="h-12 w-12 text-accent mb-6" />
+            <HiEnvelope className="h-12 w-12 text-accent mb-6" />
             <h3 className="text-xl font-bold mb-3">Spread the Word</h3>
             <p className="mb-6">
               Share our content on social media, subscribe to our newsletter,

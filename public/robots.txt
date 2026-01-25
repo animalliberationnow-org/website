@@ -1,0 +1,13 @@
+# robots.txt for Animal Liberation Now Website
+# https://animalliberationnow.org
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://animalliberationnow.org/sitemap.xml
+
+# Crawl-delay (optional - prevents overloading server)
+# Not needed for static sites on CDN, but included for reference
+# Crawl-delay: 1

@@ -1,4 +1,4 @@
-import { Heart, Users, Award, Globe, Calendar, BookOpen } from "lucide-react";
+import { HiBookOpen, HiCalendar, HiGlobeAlt, HiHeart, HiTrophy, HiUsers } from "react-icons/hi2";
 import Hero from "../../components/UI/Hero";
 import Section from "../../components/UI/Section";
 
@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <>
       <Hero
-        title="About Animal Liberation Now"
+        title="About Animal Liberation Now!"
         subtitle="Learn about our mission, values, and the dedicated team working to end animal exploitation."
         backgroundImage="/website-section/section2.jpg"
       />
@@ -19,7 +19,7 @@ const AboutPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
           <div>
             <p className="mb-6">
-              Animal Liberation Now was a small group of dedicated animal rights
+              Animal Liberation Now! was a small group of dedicated animal rights
               activists who recognized the need for a bold, uncompromising voice
               for animals. What began as local protests and has grown into a
               nationwide movement with many supporters.
@@ -55,7 +55,7 @@ const AboutPage = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 mt-12">
           <div className="bg-primary-light p-8 rounded-lg">
-            <Heart className="h-12 w-12 text-accent mb-4" />
+            <HiHeart className="h-12 w-12 text-accent mb-4" />
             <h3 className="text-2xl font-bold mb-3">Mission</h3>
             <p>
               To end the exploitation of animals by challenging speciesism
@@ -66,7 +66,7 @@ const AboutPage = () => {
           </div>
 
           <div className="bg-primary-light p-8 rounded-lg">
-            <Users className="h-12 w-12 text-accent mb-4" />
+            <HiUsers className="h-12 w-12 text-accent mb-4" />
             <h3 className="text-2xl font-bold mb-3">Vision</h3>
             <p>
               A world where animals are no longer exploited for food, clothing,
@@ -77,7 +77,7 @@ const AboutPage = () => {
           </div>
 
           <div className="bg-primary-light p-8 rounded-lg">
-            <Award className="h-12 w-12 text-accent mb-4" />
+            <HiTrophy className="h-12 w-12 text-accent mb-4" />
             <h3 className="text-2xl font-bold mb-3">Values</h3>
             <ul className="space-y-2">
               <li>
@@ -104,7 +104,7 @@ const AboutPage = () => {
           </div>
 
           <div className="bg-primary-light p-8 rounded-lg">
-            <Globe className="h-12 w-12 text-accent mb-4" />
+            <HiGlobeAlt className="h-12 w-12 text-accent mb-4" />
             <h3 className="text-2xl font-bold mb-3">Approach</h3>
             <ul className="space-y-2">
               <li>
@@ -285,7 +285,7 @@ const AboutPage = () => {
             <h3 className="text-2xl font-bold mb-4">ALN Collective Impact</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <Heart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-bold mb-1">Many Local Outreaches</h4>
                   <p>
@@ -296,7 +296,7 @@ const AboutPage = () => {
                 </div>
               </li>
               <li className="flex items-start">
-                <Heart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-bold mb-1">
                     Rejecting All Animal-Derived Products
@@ -309,7 +309,7 @@ const AboutPage = () => {
                 </div>
               </li>
               <li className="flex items-start">
-                <Heart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-bold mb-1">
                     Disrupting Cruelty in Our Surroundings
@@ -321,7 +321,7 @@ const AboutPage = () => {
                 </div>
               </li>
               <li className="flex items-start">
-                <Heart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-bold mb-1">Inspiring Ethical Shifts</h4>
                   <p>
@@ -347,7 +347,7 @@ const AboutPage = () => {
       <Section>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-primary text-secondary p-8 rounded-lg text-center">
-            <Calendar className="h-12 w-12 mx-auto mb-4 text-accent" />
+            <HiCalendar className="h-12 w-12 mx-auto mb-4 text-accent" />
             <h3 className="text-xl font-bold mb-4">Join an Event</h3>
             <p className="mb-6">
               Attend protests, workshops, and educational events to connect with
@@ -359,7 +359,7 @@ const AboutPage = () => {
           </div>
 
           <div className="bg-primary text-secondary p-8 rounded-lg text-center">
-            <Heart className="h-12 w-12 mx-auto mb-4 text-accent" />
+            <HiHeart className="h-12 w-12 mx-auto mb-4 text-accent" />
             <h3 className="text-xl font-bold mb-4">Support Our Work</h3>
             <p className="mb-6">
               Donations provide the resources needed to continue our help to
@@ -371,7 +371,7 @@ const AboutPage = () => {
           </div>
 
           <div className="bg-primary text-secondary p-8 rounded-lg text-center">
-            <BookOpen className="h-12 w-12 mx-auto mb-4 text-accent" />
+            <HiBookOpen className="h-12 w-12 mx-auto mb-4 text-accent" />
             <h3 className="text-xl font-bold mb-4">Learn More</h3>
             <p className="mb-6">
               Explore our articles and resources to deepen your understanding of

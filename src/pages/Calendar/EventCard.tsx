@@ -1,5 +1,5 @@
 import { format, parseISO } from "date-fns";
-import { Calendar, Clock, MapPin, Share2 } from "lucide-react";
+import { HiCalendar, HiClock, HiMapPin, HiShare } from "react-icons/hi2";
 import { EventType } from "../../data/eventsData";
 
 interface EventCardProps {
@@ -46,15 +46,15 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
       <div className="p-6">
         <h3 className="text-xl font-bold mb-2">{title}</h3>
         <div className="flex items-center mb-2 text-gray-600">
-          <Calendar className="h-4 w-4 mr-2" />
+          <HiCalendar className="h-4 w-4 mr-2" />
           <span>{formattedDate}</span>
         </div>
         <div className="flex items-center mb-2 text-gray-600">
-          <Clock className="h-4 w-4 mr-2" />
+          <HiClock className="h-4 w-4 mr-2" />
           <span>{time}</span>
         </div>
         <div className="flex items-center mb-4 text-gray-600">
-          <MapPin className="h-4 w-4 mr-2" />
+          <HiMapPin className="h-4 w-4 mr-2" />
           <span>{location}</span>
         </div>
         <p className="mb-6 text-gray-700 line-clamp-3">{description}</p>
@@ -70,7 +70,7 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
             className="p-2 rounded-full hover:bg-gray-100"
             aria-label="Share event"
           >
-            <Share2 className="h-5 w-5" />
+            <HiShare className="h-5 w-5" />
           </button>
         </div>
       </div>

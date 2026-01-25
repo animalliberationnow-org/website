@@ -1,5 +1,5 @@
 import { format, parseISO } from "date-fns";
-import { Clock, User, Tag } from "lucide-react";
+import { HiClock, HiTag, HiUser } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { ArticleType } from "../../data/articlesData";
 
@@ -28,11 +28,11 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
         </Link>
         <div className="flex items-center mb-4 text-sm text-gray-600">
           <div className="flex items-center mr-4">
-            <User className="h-4 w-4 mr-1" />
+            <HiUser className="h-4 w-4 mr-1" />
             <span>{author}</span>
           </div>
           <div className="flex items-center">
-            <Clock className="h-4 w-4 mr-1" />
+            <HiClock className="h-4 w-4 mr-1" />
             <span>{formattedDate}</span>
           </div>
         </div>
@@ -44,7 +44,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
                 key={tag}
                 className="flex items-center text-xs bg-gray-100 px-2 py-1 rounded"
               >
-                <Tag className="h-3 w-3 mr-1" />
+                <HiTag className="h-3 w-3 mr-1" />
                 {tag}
               </div>
             ))}

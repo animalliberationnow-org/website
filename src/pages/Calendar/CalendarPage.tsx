@@ -1,24 +1,24 @@
-import { useState, useEffect } from "react";
 import {
+  addMonths,
+  endOfMonth,
   format,
-  parseISO,
   isAfter,
   isBefore,
+  parseISO,
   startOfMonth,
-  endOfMonth,
-  addMonths,
   subMonths,
 } from "date-fns";
 import {
-  Calendar as CalendarIcon,
-  ChevronLeft,
-  ChevronRight,
-  Filter,
-} from "lucide-react";
+  HiCalendar as CalendarIcon,
+  HiChevronLeft,
+  HiChevronRight,
+  HiFunnel,
+} from "react-icons/hi2";
+import { useEffect, useState } from "react";
 import Hero from "../../components/UI/Hero";
 import Section from "../../components/UI/Section";
-import EventCard from "./EventCard";
 import { events, EventType } from "../../data/eventsData";
+import EventCard from "./EventCard";
 
 type EventFilter = "all" | "protest" | "workshop" | "fundraiser" | "conference";
 
@@ -72,20 +72,20 @@ const CalendarPage = () => {
               className="ml-4 p-2 rounded-full hover:bg-gray-200"
               aria-label="Previous month"
             >
-              <ChevronLeft className="h-5 w-5" />
+              <HiChevronLeft className="h-5 w-5" />
             </button>
             <button
               onClick={nextMonth}
               className="p-2 rounded-full hover:bg-gray-200"
               aria-label="Next month"
             >
-              <ChevronRight className="h-5 w-5" />
+              <HiChevronRight className="h-5 w-5" />
             </button>
           </div>
 
           <div className="relative inline-block">
             <div className="flex items-center">
-              <Filter className="h-5 w-5 mr-2" />
+              <HiFunnel className="h-5 w-5 mr-2" />
               <select
                 value={filter}
                 onChange={(e) => setFilter(e.target.value as EventFilter)}

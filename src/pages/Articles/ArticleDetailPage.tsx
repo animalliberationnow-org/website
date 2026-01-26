@@ -1,6 +1,6 @@
 import { format, parseISO } from 'date-fns';
-import { HiChevronLeft, HiClock, HiShare, HiTag, HiUser } from 'react-icons/hi2';
 import { useEffect } from 'react';
+import { HiChevronLeft, HiClock, HiShare, HiTag, HiUser } from 'react-icons/hi2';
 import { Link, useParams } from 'react-router-dom';
 import Section from '../../components/UI/Section';
 import { articles } from '../../data/articlesData';
@@ -23,7 +23,7 @@ const ArticleDetailPage = () => {
           <h2 className="text-2xl font-bold mb-4">Article Not Found</h2>
           <p className="mb-6">The article you're looking for doesn't exist or has been removed.</p>
           <Link to="/articles" className="btn btn-primary">
-            Back to Articles
+            Back to FAQs
           </Link>
         </div>
       </Section>
@@ -72,7 +72,7 @@ const ArticleDetailPage = () => {
         <div className="container-custom relative z-20 py-16">
           <Link to="/articles" className="inline-flex items-center text-secondary hover:text-accent transition-colors mb-8">
             <HiChevronLeft className="mr-1 h-4 w-4" />
-            Back to Articles
+            Back to FAQs
           </Link>
 
           <div className="max-w-3xl">

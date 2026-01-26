@@ -1,5 +1,5 @@
-import { HiFunnel, HiMagnifyingGlass } from 'react-icons/hi2';
 import { useState } from 'react';
+import { HiFunnel, HiMagnifyingGlass } from 'react-icons/hi2';
 import Hero from '../../components/UI/Hero';
 import Section from '../../components/UI/Section';
 import { articles } from '../../data/articlesData';
@@ -33,8 +33,8 @@ const ArticlesPage = () => {
   return (
     <>
       <Hero
-        title="Articles & Resources"
-        subtitle="Stay informed with our latest articles, news, and resources on animal liberation."
+        title="FAQs"
+        subtitle="Frequently asked questions about ethics and animal rights."
         backgroundImage="/images/heroes/support-articles-hero.jpg"
       />
 
@@ -97,30 +97,6 @@ const ArticlesPage = () => {
             </button>
           </div>
         )}
-      </Section>
-
-      <Section
-        title="Subscribe to Our Newsletter"
-        subtitle="Get the latest articles and updates delivered to your inbox."
-        dark={true}
-        className="py-12"
-      >
-        <div className="max-w-xl mx-auto">
-          <form className="flex flex-col md:flex-row gap-4">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex-grow px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-accent text-primary"
-              required
-            />
-            <button type="submit" className="btn btn-primary whitespace-nowrap">
-              Subscribe
-            </button>
-          </form>
-          <p className="mt-4 text-sm opacity-80">
-            We respect your privacy. Unsubscribe at any time.
-          </p>
-        </div>
       </Section>
     </>
   );

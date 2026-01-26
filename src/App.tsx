@@ -27,8 +27,8 @@ function App() {
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/calendar" element={<CalendarPage />} />
+          {/* <Route path="/about" element={<AboutPage />} />
+          <Route path="/calendar" element={<CalendarPage />} /> */}
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/articles/:id" element={<ArticleDetailPage />} />
           <Route path="/support" element={<SupportPage />} />

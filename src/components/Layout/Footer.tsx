@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex items-center gap-2 mb-6">
               <HiHeart className="h-8 w-8 text-accent" />
-              <span className="text-xl font-bold">ALN</span>
+              <span className="text-xl font-bold">ALN!</span>
             </Link>
             <p className="mb-6">
               Animal Liberation Now! is dedicated to ending animal exploitation
@@ -68,34 +68,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/about"
-                  className="hover:text-accent transition-colors"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/calendar"
-                  className="hover:text-accent transition-colors"
-                >
-                  Events
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/articles"
                   className="hover:text-accent transition-colors"
                 >
-                  Articles
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/support"
-                  className="hover:text-accent transition-colors"
-                >
-                  Support Us
+                  FAQs
                 </Link>
               </li>
             </ul>
@@ -109,7 +85,7 @@ const Footer = () => {
                   to="/support"
                   className="hover:text-accent transition-colors"
                 >
-                  Volunteer
+                  Join us!
                 </Link>
               </li>
             </ul>

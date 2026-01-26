@@ -1,5 +1,5 @@
-import { HiBars3, HiXMark } from "react-icons/hi2";
 import { useState } from "react";
+import { HiBars3, HiXMark } from "react-icons/hi2";
 import { Link, NavLink } from "react-router-dom";
 
 interface HeaderProps {
@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           >
             Home
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/about"
             className={({ isActive }) =>
               `font-medium ${isActive ? "text-accent" : "text-white"}`
@@ -44,17 +44,17 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
             }
           >
             Calendar
-          </NavLink>
+          </NavLink> */}
           <NavLink
             to="/articles"
             className={({ isActive }) =>
               `font-medium ${isActive ? "text-accent" : "text-white"}`
             }
           >
-            Articles
+            FAQs
           </NavLink>
           <NavLink to="/support" className="btn btn-primary">
-            Support Us
+            Join Us!
           </NavLink>
         </nav>
 
@@ -82,7 +82,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
             >
               Home
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/about"
               className={({ isActive }) =>
                 `font-medium py-2 hover:text-accent transition-colors ${isActive ? "text-accent" : ""
@@ -101,7 +101,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
               onClick={closeMenu}
             >
               Calendar
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to="/articles"
               className={({ isActive }) =>
@@ -110,14 +110,14 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
               }
               onClick={closeMenu}
             >
-              Articles
+              FAQs
             </NavLink>
             <NavLink
               to="/support"
               className="btn btn-primary w-full text-center"
               onClick={closeMenu}
             >
-              Support Us
+              Join Us!
             </NavLink>
           </nav>
         </div>

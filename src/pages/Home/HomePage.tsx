@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { HiBookOpen, HiCalendar, HiChevronRight, HiHeart, HiUsers } from "react-icons/hi2";
+import { HiBookOpen, HiHeart } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import Hero from "../../components/UI/Hero";
 import Section from "../../components/UI/Section";
 import { articles } from "../../data/articlesData";
 import { events } from "../../data/eventsData";
 import ArticleCard from "../Articles/ArticleCard";
-import EventCard from "../Calendar/EventCard";
 
 const HomePage = () => {
   // Get upcoming events (first 3)
@@ -25,38 +24,38 @@ const HomePage = () => {
         subtitle="We envision a world where every animal lives free from cages, cruelty, and commodification. No creature should suffer for food, fashion, entertainment, or experiments.
 Our fight is not for reform — it’s for revolution.
 Join us, stand on the side of justice, and be the voice for those who are silenced."
-        buttonText="Join Our Movement"
+        // buttonText="Join Our Movement"
         backgroundImage="/website-section/section1.jpg"
         centered={true}
       />
 
       {/* What is ALN */}
       <Section
-        title="What is Animal Liberation Now!?"
-        subtitle="ALN is dedicated to ending animal exploitation through activism, education, and direct action."
+      // title="What is Animal Liberation Now! ?"
+      // subtitle="ALN! is dedicated to ending animal exploitation through activism, education, and direct action."
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
           <div className="flex flex-col justify-center">
             <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
             <p className="mb-6">
-              Animal Liberation Now! (ALN) works to end the exploitation of
+              Animal Liberation Now! (ALN!) works to end the exploitation of
               animals through direct action, public education, and legislative
               advocacy. We believe that animals exist for their own purposes and
               should not be used as resources for human ends.
             </p>
             <p className="mb-6">
-              ALN has grown into a powerful voice for animals, with a lot of
+              ALN! has grown into a powerful voice for animals, with a lot of
               dedicated supporters and volunteers across the country. Our
               campaigns have led to significant awareness about animal
               exploitation.
             </p>
-            <Link
+            {/* <Link
               to="/about"
               className="flex items-center font-medium text-accent hover:underline"
             >
               Learn more about our work
               <HiChevronRight className="ml-1 h-4 w-4" />
-            </Link>
+            </Link> */}
           </div>
           <div className="relative rounded-lg overflow-hidden shadow-xl h-[400px]">
             <img
@@ -158,7 +157,7 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
       </Section>
 
       {/* Upcoming Events */}
-      <Section
+      {/* <Section
         title="Upcoming Events"
         subtitle="Join us at our upcoming events to support animal liberation and connect with like-minded advocates."
       >
@@ -173,12 +172,12 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
             View All Events
           </Link>
         </div>
-      </Section>
+      </Section> */}
 
-      {/* Latest Articles */}
+      {/* FAQs */}
       <Section
-        title="Latest Articles"
-        subtitle="Stay informed about animal rights issues with our latest articles and news updates."
+        title="FAQs"
+        subtitle="Frequently asked questions about ethics and animal rights."
         dark={true}
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -189,7 +188,7 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
         <div className="mt-10 text-center">
           <Link to="/articles" className="btn btn-primary">
             <HiBookOpen className="mr-2 h-5 w-5" />
-            Read All Articles
+            Read All FAQs
           </Link>
         </div>
       </Section>
@@ -198,24 +197,23 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
       <Section>
         <div className="bg-primary text-secondary rounded-lg p-8 md:p-12 text-center max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Make a Difference?
+            Join the activism!
           </h2>
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            Whether you want to volunteer, support, or simply learn more about
-            animal liberation, we have a place for you in our movement.
+            Whether you want to volunteer, support, or simply learn more about animal liberation, we have a place for you in our movement.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link to="/support" className="btn btn-primary">
               <HiHeart className="mr-2 h-5 w-5" />
-              Support Our Work
+              Join us!
             </Link>
-            <Link
+            {/* <Link
               to="/about"
               className="btn btn-outline border-white text-white hover:bg-white hover:text-primary"
             >
               <HiUsers className="mr-2 h-5 w-5" />
               Learn More
-            </Link>
+            </Link> */}
           </div>
         </div>
       </Section>

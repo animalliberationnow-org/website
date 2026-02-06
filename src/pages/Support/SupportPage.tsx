@@ -13,23 +13,24 @@ const SupportPage = () => {
       />
 
       {/* Volunteer Form */}
-      <Section>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-center">
-            Volunteer Application
-          </h2>
-          <div className="w-full min-h-screen">
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSefVf3C94DnroEZcT-duGqLYl77p0d0i9P_spc60p3WhwnLjA/viewform?embedded=true"
-              width="100%"
-              className="border-0 w-full h-full min-h-screen"
-              title="Volunteer Application Form"
-            >
-              Loading form...
-            </iframe>
-          </div>
-        </div>
-      </Section>
+<Section className="bg-gray-300">
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-3xl font-bold mb-8 text-center text-black">
+      Volunteer Application
+    </h2>
+    <div className="w-full h-[1400px] bg-white rounded-xl shadow-lg overflow-hidden">
+      <iframe
+        src="https://docs.google.com/forms/d/1H8E2YbSypgE06IaA4JPFzEDN8hc_F4pMG7WOlHKyDCM/viewform?embedded=true"
+        width="100%"
+        height="1800" 
+        className="border-0 w-full h-full"
+        title="Volunteer Application Form"
+      >
+        Loading form...
+      </iframe>
+    </div>
+  </div>
+</Section>
 
       {/* Other Ways to Support */}
       {/* <Section

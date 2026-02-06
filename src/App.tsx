@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, JSX } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 
@@ -10,7 +10,7 @@ const ArticlesPage = lazy(() => import('./pages/Articles/ArticlesPage'));
 const ArticleDetailPage = lazy(() => import('./pages/Articles/ArticleDetailPage'));
 const SupportPage = lazy(() => import('./pages/Support/SupportPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFound/NotFoundPage'));
-
+  
 // Loading fallback component
 const PageLoader = () => (
   <div className="flex items-center justify-center min-h-[60vh]">
@@ -29,8 +29,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           {/* <Route path="/about" element={<AboutPage />} />
           <Route path="/calendar" element={<CalendarPage />} /> */}
-          <Route path="/articles" element={<ArticlesPage />} />
-          <Route path="/articles/:id" element={<ArticleDetailPage />} />
+          <Route path="/faqs" element={<ArticlesPage />} />
+          <Route path="/faqs/:id" element={<ArticleDetailPage />} />
           <Route path="/support" element={<SupportPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

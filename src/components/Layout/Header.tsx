@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
             Calendar
           </NavLink> */}
           <NavLink
-            to="/articles"
+            to="/faqs"
             className={({ isActive }) =>
               `font-medium ${isActive ? "text-accent" : "text-white"}`
             }
@@ -103,7 +103,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
               Calendar
             </NavLink> */}
             <NavLink
-              to="/articles"
+              to="/faqs"
               className={({ isActive }) =>
                 `font-medium py-2 hover:text-accent transition-colors ${isActive ? "text-accent" : ""
                 }`

@@ -174,11 +174,11 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
         </div>
       </Section> */}
 
-      {/* FAQs */}
+      {/* FAQs Section*/}
       <Section
         title="FAQs"
         subtitle="Frequently asked questions about ethics and animal rights."
-        dark={true}
+        className="bg-gray-300 text-black" 
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {latestArticles.map((article) => (
@@ -186,7 +186,7 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
           ))}
         </div>
         <div className="mt-10 text-center">
-          <Link to="/articles" className="btn btn-primary">
+          <Link to="/faqs" className="btn btn-primary">
             <HiBookOpen className="mr-2 h-5 w-5" />
             Read All FAQs
           </Link>

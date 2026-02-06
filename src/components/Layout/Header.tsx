@@ -60,7 +60,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-primary p-2"
+          className="md:hidden text-white p-2"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >

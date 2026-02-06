@@ -21,9 +21,9 @@ export const articles: ArticleType[] = [
       physically overridden. This satisfies the same moral criteria that define sexual violence in humans.</p>
       <p>Calling this by a different name does not change the structure of the act.</p>
     `,
-    date: '2025-04-24',
+    date: '2026-01-24',
     category: 'ethics',
-    tags: ['rape', 'molestation', 'sexual violence', 'animal-rights'],
+    tags: ['rape', 'molestation', 'sexual-violence', 'animal-rights'],
     relatedArticles: ['11', '12']
   },
   {
@@ -37,7 +37,7 @@ export const articles: ArticleType[] = [
         or tradition overrides their most basic interest.</p
         <p>Species membership does not negate that interest.</p>
       `,
-    date: "2025-04-25",
+    date: "2026-01-25",
     category: "ethics",
     tags: ["murder", "killing", "animal-rights"],
     relatedArticles: ["13", "16"]
@@ -54,17 +54,17 @@ export const articles: ArticleType[] = [
       behaviours, and long-term trauma.</p>
       <p>The moral structure of the act is identical. Only the victims differ.</p>
       `,
-    date: "2025-04-25",
+    date: "2026-01-25",
     category: "ethics",
     tags: ["infanticide", "family-separation", "animal-rights", "ethical living"],
     relatedArticles: ["13", "14"]
-   },
+  },
 
-   {
-     id: "4",
-     title: "How does this relate to slavery?",
-     excerpt: "Animals are bred, confined, traded, controlled, and killed as property.",
-     content: `
+  {
+    id: "4",
+    title: "How does this relate to slavery?",
+    excerpt: "Animals are bred, confined, traded, controlled, and killed as property.",
+    content: `
            <p>Slavery is the legal ownership of sentient beings and the systematic extraction of value from their
            bodies and labour.</p>
            <p>Animals are bred, confined, traded, controlled, and killed as property. Their reproduction,
@@ -72,16 +72,16 @@ export const articles: ArticleType[] = [
            <p>This is slavery by definition. Changing the species of the enslaved does not change the moral
            reality.</p>
          `,
-     date: "2025-04-25",
-     category: "ethics",
-     tags: ["slavery", "animal-rights", "confinement", "trade"],
-     relatedArticles: ["19", "21"]
-   },
-   {
-     id: "5",
-     title: "What are animal rights?",
-     excerpt: "Animal rights refer to the recognition that nonhuman animals possess moral standing and must not be treated as property.",
-     content: `
+    date: "2026-01-25",
+    category: "ethics",
+    tags: ["slavery", "animal-rights", "confinement", "trade"],
+    relatedArticles: ["19", "21"]
+  },
+  {
+    id: "5",
+    title: "What are animal rights?",
+    excerpt: "Animal rights refer to the recognition that nonhuman animals possess moral standing and must not be treated as property.",
+    content: `
        <p>Animal rights refer to the recognition that nonhuman animals possess moral standing and therefore
        must not be treated as property or as means to human ends.</p>
        <p>Human rights themselves are not a fixed or natural category. They are historically contingent legal
@@ -91,16 +91,16 @@ export const articles: ArticleType[] = [
        <p>Animal rights are not separate from human rights. They are an extension of the same ethical
        framework applied consistently once morally relevant traits are acknowledged.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["animal-rights", "human-rights", "moral-standing", "justice"],
-     relatedArticles: ["6", "8"]
-   },
-   {
-     id: "6",
-     title: "On what basis do humans have rights in the first place?",
-     excerpt: "Human rights are grounded in sentience, vulnerability, and the possession of interests, not intelligence.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["animal-rights", "human-rights", "moral-standing", "justice"],
+    relatedArticles: ["6", "8"]
+  },
+  {
+    id: "6",
+    title: "On what basis do humans have rights in the first place?",
+    excerpt: "Human rights are grounded in sentience, vulnerability, and the possession of interests, not intelligence.",
+    content: `
        <p>Human rights are not grounded in intelligence, language, productivity, or moral reasoning. Those
        criteria fail immediately because infants, cognitively disabled individuals, and unconscious patients
        would lose protection.</p>
@@ -109,16 +109,16 @@ export const articles: ArticleType[] = [
        protection leads to systematic exploitation.</p>
        <p>This grounding does not stop at species boundaries.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["human-rights", "sentience", "vulnerability", "moral-philosophy"],
-     relatedArticles: ["5", "30"]
-   },
-   {
-     id: "7",
-     title: "What is sentience, scientifically defined?",
-     excerpt: "Sentience is the capacity to have subjective experiences, including pain, distress, and pleasure.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["human-rights", "sentience", "vulnerability", "moral-philosophy"],
+    relatedArticles: ["5", "30"]
+  },
+  {
+    id: "7",
+    title: "What is sentience, scientifically defined?",
+    excerpt: "Sentience is the capacity to have subjective experiences, including pain, distress, and pleasure.",
+    content: `
        <p>Sentience is the capacity to have subjective experiences. This includes the ability to feel pain,
        distress, fear, pleasure, comfort, and to have an experiential point of view.</p>
        <p>Neuroscience and behavioural science establish sentience through:</p>
@@ -134,16 +134,16 @@ export const articles: ArticleType[] = [
        <p>Sentience is the minimum condition for moral relevance. Without it, harm has no subject. With it,
        harm becomes ethically meaningful.</p>
      `,
-     date: "2025-04-26",
-     category: "research",
-     tags: ["sentience", "neuroscience", "biology", "pain"],
-     relatedArticles: ["28", "29"]
-   },
-   {
-     id: "8",
-     title: "Why does sentience generate moral rights?",
-     excerpt: "Because sentience creates interests. A sentient being has an interest in not being harmed.",
-     content: `
+    date: "2026-01-26",
+    category: "research",
+    tags: ["sentience", "neuroscience", "biology", "pain"],
+    relatedArticles: ["28", "29"]
+  },
+  {
+    id: "8",
+    title: "Why does sentience generate moral rights?",
+    excerpt: "Because sentience creates interests. A sentient being has an interest in not being harmed.",
+    content: `
        <p>Because sentience creates interests.</p>
        <p>A sentient being has an interest in not being harmed, not being violated, not being killed, and not
        being separated from their offspring. These interests exist independently of human recognition.</p>
@@ -151,16 +151,16 @@ export const articles: ArticleType[] = [
        likely. Animals are maximally vulnerable within human-controlled systems. Without rights, their
        interests are systematically overridden.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["sentience", "moral-rights", "interests", "protection"],
-     relatedArticles: ["7", "5"]
-   },
-   {
-     id: "9",
-     title: "Animals kill other animals. Why should humans not do the same?",
-     excerpt: "This argument confuses descriptive facts with moral reasoning. Justice exists because natural behaviour is not a moral guide.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["sentience", "moral-rights", "interests", "protection"],
+    relatedArticles: ["7", "5"]
+  },
+  {
+    id: "9",
+    title: "Animals kill other animals. Why should humans not do the same?",
+    excerpt: "This argument confuses descriptive facts with moral reasoning. Justice exists because natural behaviour is not a moral guide.",
+    content: `
        <p>This argument confuses descriptive facts with moral reasoning.</p>
        <p>Nonhuman animals act without moral agency and without social institutions capable of ethical
        restraint. A majority of humans do possess moral agency, alternatives, and systems of
@@ -168,32 +168,32 @@ export const articles: ArticleType[] = [
        <p>Justice exists precisely because natural behaviour is not a moral guide. The presence of violence in
        nature does not justify organised, intentional violence where alternatives exist.</p>
      `,
-     date: "2025-04-26",
-     category: "myths",
-     tags: ["nature-fallacy", "moral-agency", "ethics", "predation"],
-     relatedArticles: ["2", "5"]
-   },
-   {
-     id: "10",
-     title: "What does Animal Liberation Now! advocate for?",
-     excerpt: "We advocate for the complete abolition of animal exploitation, not its regulation.",
-     content: `
+    date: "2026-01-26",
+    category: "myths",
+    tags: ["nature-fallacy", "moral-agency", "ethics", "predation"],
+    relatedArticles: ["2", "5"]
+  },
+  {
+    id: "10",
+    title: "What does Animal Liberation Now! advocate for?",
+    excerpt: "We advocate for the complete abolition of animal exploitation, not its regulation.",
+    content: `
        <p>We advocate for the complete abolition of animal exploitation, not its regulation.</p>
        <p>This means rejecting the use of sentient beings as resources. It means recognising animals as
        individuals with morally significant interests. It means extending the same ethical principles that
        underpin human rights to all sentient beings, without arbitrary exclusions.</p>
        <p>Justice should not be species-specific.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["abolition", "animal-liberation", "justice", "activism"],
-     relatedArticles: ["5", "19"]
-   },
-   {
-     id: "11",
-     title: "Why is the dairy industry fundamentally based on rape?",
-     excerpt: "Milk production requires pregnancy. Pregnancy is produced through rape.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["abolition", "animal-liberation", "justice", "activism"],
+    relatedArticles: ["5", "19"]
+  },
+  {
+    id: "11",
+    title: "Why is the dairy industry fundamentally based on rape?",
+    excerpt: "Milk production requires pregnancy. Pregnancy is produced through rape.",
+    content: `
        <p>Milk production requires pregnancy. Pregnancy is produced through rape.</p>
        <p>Female cows and buffaloes are forcibly impregnated through artificial insemination. They are
        restrained, penetrated, and made pregnant without consent. Resistance is physically overridden.</p>
@@ -201,16 +201,16 @@ export const articles: ArticleType[] = [
        <p>In humans, forced penetration to cause pregnancy is recognised as sexual violence regardless of the
        method used. The victim’s species does not change the moral structure of the act.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["dairy", "rape", "sexual-violence", "insemination"],
-     relatedArticles: ["1", "12"]
-   },
-   {
-     id: "12",
-     title: "How are male animals sexually violated in the dairy industry?",
-     excerpt: "Male bulls are subjected to electroejaculation, a process in which they are restrained and forced to ejaculate.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["dairy", "rape", "sexual-violence", "insemination"],
+    relatedArticles: ["1", "12"]
+  },
+  {
+    id: "12",
+    title: "How are male animals sexually violated in the dairy industry?",
+    excerpt: "Male bulls are subjected to electroejaculation, a process in which they are restrained and forced to ejaculate.",
+    content: `
        <p>Male bulls are subjected to electroejaculation, a process in which they are restrained and forced to
        ejaculate so their semen can be extracted for breeding.</p>
        <p>This is sexual assault. The animal does not consent. Their sexual function is commandeered for
@@ -218,16 +218,16 @@ export const articles: ArticleType[] = [
        <p>If a human were restrained and forced to ejaculate for another’s use, it would be called rape or
        sexual assault. Calling it “semen collection” does not alter what is being done to the victim.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["dairy", "sexual-assault", "electroejaculation", "bulls"],
-     relatedArticles: ["1", "11"]
-   },
-   {
-     id: "13",
-     title: "Why are calf separation and killing acts of direct exploitation, not byproducts?",
-     excerpt: "After rape and forced pregnancy, calves are removed so the milk can be sold. This causes acute distress.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["dairy", "sexual-assault", "electroejaculation", "bulls"],
+    relatedArticles: ["1", "11"]
+  },
+  {
+    id: "13",
+    title: "Why are calf separation and killing acts of direct exploitation, not byproducts?",
+    excerpt: "After rape and forced pregnancy, calves are removed so the milk can be sold. This causes acute distress.",
+    content: `
        <p>After rape and forced pregnancy, calves are removed from their mothers so the milk can be sold.
        This causes acute distress to both mother and child, documented through behavioural and
        physiological stress responses.</p>
@@ -236,16 +236,16 @@ export const articles: ArticleType[] = [
        <p>In human ethics, forced family separation and the killing of children are recognised as grave crimes.
        The same moral reasoning applies here.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["dairy", "separation", "infanticide", "family"],
-     relatedArticles: ["3", "11"]
-   },
-   {
-     id: "14",
-     title: "What is khal bachcha, and why is it a particularly severe form of infanticide?",
-     excerpt: "Khal bachcha involves killing a newborn calf, stuffing their skin, and using it to deceive the grieving mother.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["dairy", "separation", "infanticide", "family"],
+    relatedArticles: ["3", "11"]
+  },
+  {
+    id: "14",
+    title: "What is khal bachcha, and why is it a particularly severe form of infanticide?",
+    excerpt: "Khal bachcha involves killing a newborn calf, stuffing their skin, and using it to deceive the grieving mother.",
+    content: `
        <p>Khal bachcha is a practice in parts of the Indian dairy industry where a newborn calf is killed, their
        skin is removed and stuffed with hay or other material, and the stuffed body is then placed near
        the mother.</p>
@@ -261,16 +261,16 @@ export const articles: ArticleType[] = [
        from a grieving mother would be recognised as extreme abuse. The moral structure does not change
        because the victims are nonhuman.</p>
      `,
-     date: "2025-04-26",
-     category: "culture",
-     tags: ["khal-bachcha", "dairy", "infanticide", "psychological-abuse"],
-     relatedArticles: ["3", "13"]
-   },
-   {
-     id: "15",
-     title: "How is the egg industry connected to rape and sexual exploitation?",
-     excerpt: "The egg industry is reproductive exploitation. Hens’ reproductive systems are manipulated for production.",
-     content: `
+    date: "2026-01-26",
+    category: "culture",
+    tags: ["khal-bachcha", "dairy", "infanticide", "psychological-abuse"],
+    relatedArticles: ["3", "13"]
+  },
+  {
+    id: "15",
+    title: "How is the egg industry connected to rape and sexual exploitation?",
+    excerpt: "The egg industry is reproductive exploitation. Hens’ reproductive systems are manipulated for production.",
+    content: `
        <p>The egg industry is reproductive exploitation, even when no forced impregnation occurs on-site.</p>
        <p>Hens’ reproductive systems are manipulated through selective breeding, confinement, and control of
        their bodies to extract eggs at industrial rates. Their reproductive labour is not voluntary. Their
@@ -278,16 +278,16 @@ export const articles: ArticleType[] = [
        <p>Sexual exploitation is not only about forced sex. It is also about forced reproductive function and
        bodily use for someone else’s gain.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["eggs", "reproductive-exploitation", "layer-hens", "farming"],
-     relatedArticles: ["16", "17"]
-   },
-   {
-     id: "16",
-     title: "What happens to male chicks, and why is that murder and infanticide?",
-     excerpt: "Male chicks cannot lay eggs. They are killed shortly after hatching as a routine part of the model.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["eggs", "reproductive-exploitation", "layer-hens", "farming"],
+    relatedArticles: ["16", "17"]
+  },
+  {
+    id: "16",
+    title: "What happens to male chicks, and why is that murder and infanticide?",
+    excerpt: "Male chicks cannot lay eggs. They are killed shortly after hatching as a routine part of the model.",
+    content: `
        <p>Male chicks cannot lay eggs. They are killed shortly after hatching as a routine part of the model.</p>
        <p>This is infanticide because the victims are newborns. It is also murder in the moral sense because
        the killing is intentional, unnecessary for survival, and done for economic efficiency.</p>
@@ -295,16 +295,16 @@ export const articles: ArticleType[] = [
        obvious. Male chicks are either ground up alive in giant macerators, suffocated to death in bags,
        drowned alive, or ripped apart.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["chick-culling", "infanticide", "maceration", "eggs"],
-     relatedArticles: ["2", "3"]
-   },
-   {
-     id: "17",
-     title: "What happens to female chicks in the egg industry?",
-     excerpt: "Within days of hatching, many female chicks are subjected to debeaking, which is the partial amputation of the beak.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["chick-culling", "infanticide", "maceration", "eggs"],
+    relatedArticles: ["2", "3"]
+  },
+  {
+    id: "17",
+    title: "What happens to female chicks in the egg industry?",
+    excerpt: "Within days of hatching, many female chicks are subjected to debeaking, which is the partial amputation of the beak.",
+    content: `
        <p>Female chicks are kept alive only because their bodies can be used for egg production.</p>
        <p>Within days of hatching, many female chicks are subjected to debeaking, which is the partial
        amputation of the beak. A beak is not a nail or an inert structure. It is a living, highly innervated
@@ -316,16 +316,16 @@ export const articles: ArticleType[] = [
        <p>In moral terms, this is assault and mutilation. Non-consensual removal of a sensitive body part to
        facilitate control and exploitation would be recognised as severe violence if done to humans.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["debeaking", "mutilation", "eggs", "confinement"],
-     relatedArticles: ["15", "16"]
-   },
-   {
-     id: "18",
-     title: "How is the honey industry exploitation, and when does it involve killing?",
-     excerpt: "The honey industry treats insect societies as extractive machines. Queens are manipulated and colonies controlled.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["debeaking", "mutilation", "eggs", "confinement"],
+    relatedArticles: ["15", "16"]
+  },
+  {
+    id: "18",
+    title: "How is the honey industry exploitation, and when does it involve killing?",
+    excerpt: "The honey industry treats insect societies as extractive machines. Queens are manipulated and colonies controlled.",
+    content: `
        <p>The honey industry treats insect societies as extractive machines.</p>
        <p>Queens are manipulated, colonies are controlled, and hives are culled when inconvenient or no
        longer profitable. Food is taken and replaced with substitutes to keep production going. Even if one
@@ -333,16 +333,16 @@ export const articles: ArticleType[] = [
        while controlling their lives.</p>
        <p>Abolitionist ethics rejects ownership and extraction from vulnerable beings.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["honey", "insects", "exploitation", "extraction"],
-     relatedArticles: ["4", "7"]
-   },
-   {
-     id: "19",
-     title: "Why call all of this slavery?",
-     excerpt: "Slavery is ownership plus control, backed by law and violence. Animals are legally property.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["honey", "insects", "exploitation", "extraction"],
+    relatedArticles: ["4", "7"]
+  },
+  {
+    id: "19",
+    title: "Why call all of this slavery?",
+    excerpt: "Slavery is ownership plus control, backed by law and violence. Animals are legally property.",
+    content: `
        <p>Slavery is ownership plus control, backed by law and violence.</p>
        <p>Animals in these industries are legally property. Their movement is constrained. Their reproduction
        is controlled through rape and forced pregnancy. Their labour and bodily outputs are extracted.
@@ -350,16 +350,16 @@ export const articles: ArticleType[] = [
        <p>That is slavery in structure and function. “Livestock” is just a socially acceptable label for enslaved
        individuals.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["slavery", "property", "ownership", "livestock"],
-     relatedArticles: ["4", "10"]
-   },
-   {
-     id: "20",
-     title: "Isn’t it offensive to compare animal rape and murder to human rape and murder?",
-     excerpt: "The goal is not to rank victims but to classify actions accurately based on violation of autonomy.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["slavery", "property", "ownership", "livestock"],
+    relatedArticles: ["4", "10"]
+  },
+  {
+    id: "20",
+    title: "Isn’t it offensive to compare animal rape and murder to human rape and murder?",
+    excerpt: "The goal is not to rank victims but to classify actions accurately based on violation of autonomy.",
+    content: `
        <p>The goal is not to rank victims. The goal is to classify actions accurately.</p>
        <p>Rape is wrong because it violates bodily autonomy and consent. Murder is wrong because it
        destroys a sentient life that values its own existence. Slavery is wrong because it turns individuals
@@ -368,16 +368,16 @@ export const articles: ArticleType[] = [
        discomfort people feel is often not about the comparison being inaccurate. It is about recognising
        that what is normalised is, in fact, atrocity.</p>
      `,
-     date: "2025-04-26",
-     category: "myths",
-     tags: ["comparison", "moral-consistency", "speciesism", "definitions"],
-     relatedArticles: ["1", "2"]
-   },
-   {
-     id: "21",
-     title: "What is wrong with zoos?",
-     excerpt: "Zoos are systems of slavery and lifelong imprisonment where lives are reduced to exhibit value.",
-     content: `
+    date: "2026-01-26",
+    category: "myths",
+    tags: ["comparison", "moral-consistency", "speciesism", "definitions"],
+    relatedArticles: ["1", "2"]
+  },
+  {
+    id: "21",
+    title: "What is wrong with zoos?",
+    excerpt: "Zoos are systems of slavery and lifelong imprisonment where lives are reduced to exhibit value.",
+    content: `
        <p>Zoos are systems of slavery and lifelong imprisonment.</p>
        <p>Animals are captured or bred into confinement, removed from their natural social structures, and
        displayed for human entertainment. Their movement, reproduction, and daily activity are entirely
@@ -386,16 +386,16 @@ export const articles: ArticleType[] = [
        them for public viewing would be recognised as slavery and incarceration without crime. The
        ethical category does not change because the prisoners are nonhuman.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["zoos", "captivity", "entertainment", "confinement"],
-     relatedArticles: ["22", "25"]
-   },
-   {
-     id: "22",
-     title: "What is wrong with places like SeaWorld and marine parks?",
-     excerpt: "Marine parks are a form of extreme captivity where animals are held in spaces fractions of their natural range.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["zoos", "captivity", "entertainment", "confinement"],
+    relatedArticles: ["22", "25"]
+  },
+  {
+    id: "22",
+    title: "What is wrong with places like SeaWorld and marine parks?",
+    excerpt: "Marine parks are a form of extreme captivity where animals are held in spaces fractions of their natural range.",
+    content: `
        <p>Marine parks are a form of extreme captivity and coercive confinement.</p>
        <p>Marine animals are held in spaces that are orders of magnitude smaller than their natural ranges.
        They are forced to perform behaviours for food, subjected to reproductive control, and separated
@@ -405,16 +405,16 @@ export const articles: ArticleType[] = [
        reproduction for profit meets the moral definition of slavery. Entertainment does not neutralise
        coercion.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["marine-parks", "seaworld", "captivity", "entertainment"],
-     relatedArticles: ["21", "25"]
-   },
-   {
-     id: "23",
-     title: "What is wrong with animal rides, such as elephants, horses, or camels?",
-     excerpt: "Animal rides rely on physical domination and learned helplessness. Animals are broken through fear.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["marine-parks", "seaworld", "captivity", "entertainment"],
+    relatedArticles: ["21", "25"]
+  },
+  {
+    id: "23",
+    title: "What is wrong with animal rides, such as elephants, horses, or camels?",
+    excerpt: "Animal rides rely on physical domination and learned helplessness. Animals are broken through fear.",
+    content: `
        <p>Animal rides rely on physical domination and learned helplessness.</p>
        <p>Animals are broken through pain, fear, and restraint so they submit to carrying humans. Tools and
        methods are used to suppress resistance and enforce compliance. The animal’s body is treated as
@@ -423,16 +423,16 @@ export const articles: ArticleType[] = [
        enslavement and forced labour. The animal’s inability to consent makes the act inherently
        exploitative.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["animal-rides", "tourism", "exploitation", "domination"],
-     relatedArticles: ["24", "25"]
-   },
-   {
-     id: "24",
-     title: "What is wrong with using animals as beasts of burden?",
-     excerpt: "Beasts of burden are subjected to forced labour under ownership. Productivity overrides welfare.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["animal-rides", "tourism", "exploitation", "domination"],
+    relatedArticles: ["24", "25"]
+  },
+  {
+    id: "24",
+    title: "What is wrong with using animals as beasts of burden?",
+    excerpt: "Beasts of burden are subjected to forced labour under ownership. Productivity overrides welfare.",
+    content: `
        <p>Beasts of burden are subjected to forced labour under ownership.</p>
        <p>Animals are made to carry loads, pull vehicles, or perform exhausting work without choice, fair
        rest, or autonomy. Injury, overwork, and premature death are common because productivity
@@ -440,16 +440,16 @@ export const articles: ArticleType[] = [
        <p>This is slavery in structure. Ownership, compulsory labour, disposability, and lack of consent define
        the system. Calling it work does not change the fact that it is coerced.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["working-animals", "forced-labour", "slavery", "exploitation"],
-     relatedArticles: ["23", "19"]
-   },
-   {
-     id: "25",
-     title: "What is wrong with circuses that use animals?",
-     excerpt: "Circuses rely on coercion, confinement, and psychological control. Compliance is enforced, not chosen.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["working-animals", "forced-labour", "slavery", "exploitation"],
+    relatedArticles: ["23", "19"]
+  },
+  {
+    id: "25",
+    title: "What is wrong with circuses that use animals?",
+    excerpt: "Circuses rely on coercion, confinement, and psychological control. Compliance is enforced, not chosen.",
+    content: `
        <p>Circuses rely on coercion, confinement, and psychological control.</p>
        <p>Animals are trained through deprivation and punishment to perform unnatural behaviours. They are
        transported constantly, kept in cramped enclosures, and denied stable social environments.
@@ -458,16 +458,16 @@ export const articles: ArticleType[] = [
        display, is exploitation by definition. In human contexts, this would be recognised as abuse and
        enslavement.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["circus", "entertainment", "abuse", "training"],
-     relatedArticles: ["21", "22"]
-   },
-   {
-     id: "26",
-     title: "What is wrong with breeding animals for pets?",
-     excerpt: "Pet breeding involves reproductive exploitation and commodification. Mothers and babies are treated as inventory.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["circus", "entertainment", "abuse", "training"],
+    relatedArticles: ["21", "22"]
+  },
+  {
+    id: "26",
+    title: "What is wrong with breeding animals for pets?",
+    excerpt: "Pet breeding involves reproductive exploitation and commodification. Mothers and babies are treated as inventory.",
+    content: `
        <p>Pet breeding involves reproductive exploitation and commodification.</p>
        <p>Animals are selectively bred, forcibly mated, or otherwise manipulated to produce offspring for
        sale. Their reproductive systems are controlled for profit. Mothers and babies are treated as
@@ -475,16 +475,16 @@ export const articles: ArticleType[] = [
        <p>Non-consensual control of reproduction for commercial gain is sexual exploitation. Turning sentient
        beings into products begins with treating their bodies as tools, not as their own.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["pets", "breeding", "commodification", "adoption"],
-     relatedArticles: ["4", "19"]
-   },
-   {
-     id: "27",
-     title: "Wouldn’t “farmed animals” go extinct if they were not bred into existence?",
-     excerpt: "If animals are not bred into existence, none of them can be exploited. Non-existence has no victim.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["pets", "breeding", "commodification", "adoption"],
+    relatedArticles: ["4", "19"]
+  },
+  {
+    id: "27",
+    title: "Wouldn’t “farmed animals” go extinct if they were not bred into existence?",
+    excerpt: "If animals are not bred into existence, none of them can be exploited. Non-existence has no victim.",
+    content: `
        <p>If animals are not bred into existence, none of them can be exploited.</p>
        <p>Exploitation requires a subject. Exploitation, rape, confinement, forced labour, and killing harm
        existing sentient individuals who have interests, experiences, and a will to live. Non-existence has
@@ -497,16 +497,16 @@ export const articles: ArticleType[] = [
        relevant is whether sentient individuals are being deliberately brought into existence for the purpose
        of having their bodies used and their interests overridden.</p>
      `,
-     date: "2025-04-26",
-     category: "myths",
-     tags: ["extinction", "breeding", "ethics", "population-control"],
-     relatedArticles: ["10", "19"]
-   },
-   {
-     id: "28",
-     title: "What about killing plants or other life forms? Isn’t killing still killing?",
-     excerpt: "Killing only has moral significance when there is a subject to harm. Plants lack sentience.",
-     content: `
+    date: "2026-01-26",
+    category: "myths",
+    tags: ["extinction", "breeding", "ethics", "population-control"],
+    relatedArticles: ["10", "19"]
+  },
+  {
+    id: "28",
+    title: "What about killing plants or other life forms? Isn’t killing still killing?",
+    excerpt: "Killing only has moral significance when there is a subject to harm. Plants lack sentience.",
+    content: `
        <p>No. Killing only has moral significance when there is someone who can be exploited or
        intentionally harmed.</p>
        <p>Ethics is concerned with being unjust to subjects. A subject exists only if there is sentience,
@@ -519,16 +519,16 @@ export const articles: ArticleType[] = [
        Animals are different. The animal kingdom is the only kingdom for which there is strong empirical evidence of sentience.</p>
        <p>Animal liberation is therefore not about life in the abstract. It is about sentient life.</p>
      `,
-     date: "2025-04-26",
-     category: "research",
-     tags: ["plants", "sentience", "biology", "pain-receptors"],
-     relatedArticles: ["7", "29"]
-   },
-   {
-     id: "29",
-     title: "Isn’t the capacity to feel pain a spectrum? If some animals feel less pain, can we use them?",
-     excerpt: "Pain varies, but rights are not scaled by suffering. Sentience is the threshold, not the degree of pain.",
-     content: `
+    date: "2026-01-26",
+    category: "research",
+    tags: ["plants", "sentience", "biology", "pain-receptors"],
+    relatedArticles: ["7", "29"]
+  },
+  {
+    id: "29",
+    title: "Isn’t the capacity to feel pain a spectrum? If some animals feel less pain, can we use them?",
+    excerpt: "Pain varies, but rights are not scaled by suffering. Sentience is the threshold, not the degree of pain.",
+    content: `
        <p>Yes, pain and suffering are very likely spectra. But this does not weaken the case for animal rights.
        It makes the logic clearer.</p>
        <p>Pain varies widely even within the same species. Humans differ in pain tolerance. None of this changes whether an act of
@@ -540,16 +540,16 @@ export const articles: ArticleType[] = [
        <p>The ethical question should not be how much a being suffers. The ethical question must be whether
        the being has the potential to be victimised.</p>
      `,
-     date: "2025-04-26",
-     category: "ethics",
-     tags: ["pain-spectrum", "sentience", "moral-threshold", "rights"],
-     relatedArticles: ["7", "28"]
-   },
-   {
-     id: "30",
-     title: "What about intelligence? Aren’t animals less intelligent than humans?",
-     excerpt: "Intelligence is not a valid criterion for moral worth. Rights protect the vulnerable, not just the clever.",
-     content: `
+    date: "2026-01-26",
+    category: "ethics",
+    tags: ["pain-spectrum", "sentience", "moral-threshold", "rights"],
+    relatedArticles: ["7", "28"]
+  },
+  {
+    id: "30",
+    title: "What about intelligence? Aren’t animals less intelligent than humans?",
+    excerpt: "Intelligence is not a valid criterion for moral worth. Rights protect the vulnerable, not just the clever.",
+    content: `
        <p>No. Using intelligence as a criterion for moral worth is both logically incoherent and ethically
        dangerous.</p>
        <p>First, intelligence is not a single, objective property. But even if it could be measured precisely, it would still fail as a moral criterion.
@@ -558,9 +558,9 @@ export const articles: ArticleType[] = [
        Moral status does not come from being smart enough. It comes from sentience.</p>
        <p>A being does not need to solve equations to be wronged. They need only to be capable of experiencing the wrong.</p>
      `,
-     date: "2025-04-26",
-     category: "myths",
-     tags: ["intelligence", "ableism", "moral-worth", "cognition"],
-     relatedArticles: ["6", "7"]
-   }
+    date: "2026-01-26",
+    category: "myths",
+    tags: ["intelligence", "ableism", "moral-worth", "cognition"],
+    relatedArticles: ["6", "7"]
+  }
 ];

@@ -1,4 +1,4 @@
-import { HiEnvelope, HiHeart, HiMapPin, HiPhone } from "react-icons/hi2";
+import { HiEnvelope, HiHeart, HiMapPin } from "react-icons/hi2";
 import { SiFacebook, SiInstagram, SiX, SiYoutube } from "react-icons/si";
 import { Link } from "react-router-dom";
 
@@ -98,7 +98,7 @@ const Footer = () => {
                 <HiMapPin className="mr-2 h-5 w-5 mt-0.5 flex-shrink-0" />
                 <span>Animal Liberation Now!, Chennai</span>
               </div>
-              <div className="flex items-center mb-4">
+              {/* <div className="flex items-center mb-4">
                 <HiPhone className="mr-2 h-5 w-5 flex-shrink-0" />
                 <a
                   href="tel:+123456789"
@@ -106,7 +106,7 @@ const Footer = () => {
                 >
                   +91 8870450636
                 </a>
-              </div>
+              </div> */}
               <div className="flex items-center">
                 <HiEnvelope className="mr-2 h-5 w-5 flex-shrink-0" />
                 <a

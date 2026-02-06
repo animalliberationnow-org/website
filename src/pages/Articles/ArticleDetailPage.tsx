@@ -1,6 +1,6 @@
 import { format, parseISO } from 'date-fns';
 import { useEffect } from 'react';
-import { HiChevronLeft, HiClock, HiShare, HiTag } from 'react-icons/hi2';
+import { HiChevronLeft, HiClipboardDocument, HiClock, HiTag } from 'react-icons/hi2';
 import { Link, useParams } from 'react-router-dom';
 import Section from '../../components/UI/Section';
 import { articles } from '../../data/articlesData';
@@ -31,12 +31,9 @@ const ArticleDetailPage = () => {
     ? articles.filter(a => relatedArticles.includes(a.id))
     : [];
 
-  const shareArticle = () => {
-    if (navigator.share) {
-      navigator.share({ title, text: `Check out: ${title}`, url: window.location.href });
-    } else {
-      alert('Link copied to clipboard!');
-    }
+  const copyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    alert('Link copied to clipboard!');
   };
 
   return (
@@ -83,21 +80,20 @@ const ArticleDetailPage = () => {
       </div>
 
       {/* Article Content */}
-      <Section dark={true}>
+      <Section dark={false}>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-8">
-            <article className="prose prose-lg max-w-none prose-invert prose-p:text-white prose-li:text-white prose-headings:text-white prose-a:text-accent">
-              <div dangerouslySetInnerHTML={{ __html: content }} />
+            <article className="prose prose-2xl max-w-none prose-invert prose-p:text-white prose-li:text-white prose-headings:text-white prose-a:text-accent">
+              <div className="text-xl leading-relaxed" dangerouslySetInnerHTML={{ __html: content }} />
             </article>
 
-            {/* Share Footer */}
             <div className="mt-12 pt-6 border-t border-gray-800">
               <button
-                onClick={shareArticle}
-                className="flex items-center text-white hover:text-accent transition-colors font-bold text-lg"
+                onClick={copyLink}
+                className="flex items-center text-black hover:text-accent transition-colors font-bold text-lg"
               >
-                <HiShare className="h-6 w-6 mr-2" />
-                <span>Share Article</span>
+                <HiClipboardDocument className="h-6 w-6 mr-2" />
+                <span>Copy Link</span>
               </button>
             </div>
           </div>
@@ -106,7 +102,7 @@ const ArticleDetailPage = () => {
           <div className="lg:col-span-4">
             <div className="sticky top-24 space-y-10">
               <div>
-                <h3 className="text-xl font-bold mb-4 text-white">Tags</h3>
+                <h3 className="text-xl font-bold mb-4 text-black">Tags</h3>
                 <div className="flex flex-wrap gap-2">
                   {tags.map(tag => (
                     <div key={tag} className="flex items-center text-sm bg-gray-800 text-white font-medium px-3 py-1 rounded-full border border-gray-700">
@@ -117,7 +113,7 @@ const ArticleDetailPage = () => {
                 </div>
               </div>
 
-              <div className="bg-gray-900 p-6 rounded-xl border border-gray-800">
+              {/* <div className="bg-gray-900 p-6 rounded-xl border border-gray-800">
                 <h3 className="text-xl font-bold mb-2 text-white">Subscribe</h3>
                 <p className="mb-4 text-gray-400">Stay updated with our latest news.</p>
                 <form className="space-y-3">
@@ -129,7 +125,7 @@ const ArticleDetailPage = () => {
                   />
                   <button type="submit" className="btn btn-primary w-full">Subscribe</button>
                 </form>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

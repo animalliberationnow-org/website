@@ -11,6 +11,9 @@ dist/
 dist-ssr/
 build/
 
+#temp files
+temp/
+
 # Local env files
 .env
 .env.local

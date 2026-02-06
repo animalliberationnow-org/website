@@ -85,7 +85,7 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
             />
           </div>
           <div className="flex flex-col justify-center">
-            <h3 className="text-2xl font-bold mb-4">Our Core Beliefs</h3>
+            <h3 className="text-2xl font-bold mb-4 text-white">Our Core Beliefs</h3>
             <ul className="space-y-4">
               <li
                 className={`flex items-start transition-all duration-500 ${isVisible
@@ -96,8 +96,8 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
               >
                 <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold mb-1">Animal Sentience</h4>
-                  <p>
+                  <h4 className="font-bold mb-1 text-white">Animal Sentience</h4>
+                  <p className="text-white">
                     Animals are sentient beings capable of experiencing pain,
                     pleasure, and a range of emotions.
                   </p>
@@ -112,8 +112,8 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
               >
                 <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold mb-1">Inherent Value</h4>
-                  <p>
+                  <h4 className="font-bold mb-1 text-white">Inherent Value</h4>
+                  <p className="text-white">
                     Each animal has inherent value that is independent of their
                     usefulness to humans.
                   </p>
@@ -128,8 +128,8 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
               >
                 <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold mb-1">Equal Consideration</h4>
-                  <p>
+                  <h4 className="font-bold mb-1 text-white">Equal Consideration</h4>
+                  <p className="text-white">
                     The interests of animals deserve equal consideration to
                     comparable interests of humans.
                   </p>
@@ -144,8 +144,8 @@ Join us, stand on the side of justice, and be the voice for those who are silenc
               >
                 <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold mb-1">Right to Liberation</h4>
-                  <p>
+                  <h4 className="font-bold mb-1 text-white">Right to Liberation</h4>
+                  <p className="text-white">
                     Animals have a right to be free from human exploitation and
                     to live according to their nature.
                   </p>

@@ -38,7 +38,7 @@ const Footer = () => {
                 <SiX size={20} />
               </a>
               <a
-                href="https://www.instagram.com/alnchennai?igsh=Zmp0cDE2Mzlqdmt2"
+                href="https://www.instagram.com/animalliberationnow"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"

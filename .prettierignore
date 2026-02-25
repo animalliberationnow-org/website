@@ -1,0 +1,28 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+build
+.vite
+
+# Config files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Logs
+*.log
+
+# Cache
+.cache
+.eslintcache
+
+# Git
+.git
+
+# Documentation that shouldn't be reformatted
+CHANGELOG.md
+
+# Generated files
+public/sitemap.xml

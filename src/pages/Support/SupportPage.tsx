@@ -13,24 +13,24 @@ const SupportPage = () => {
       />
 
       {/* Volunteer Form */}
-<Section className="bg-gray-300">
-  <div className="max-w-4xl mx-auto">
-    <h2 className="text-3xl font-bold mb-8 text-center text-black">
-      Volunteer Application
-    </h2>
-    <div className="w-full h-[1400px] bg-white rounded-xl shadow-lg overflow-hidden">
-      <iframe
-        src="https://docs.google.com/forms/d/1H8E2YbSypgE06IaA4JPFzEDN8hc_F4pMG7WOlHKyDCM/viewform?embedded=true"
-        width="100%"
-        height="1800" 
-        className="border-0 w-full h-full"
-        title="Volunteer Application Form"
-      >
-        Loading form...
-      </iframe>
-    </div>
-  </div>
-</Section>
+      <Section className="bg-gray-300">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center text-black">
+            Volunteer Application
+          </h2>
+          <div className="w-full h-[1400px] bg-white rounded-xl shadow-lg overflow-hidden">
+            <iframe
+              src="https://docs.google.com/forms/d/1H8E2YbSypgE06IaA4JPFzEDN8hc_F4pMG7WOlHKyDCM/viewform?embedded=true"
+              width="100%"
+              height="1800"
+              className="border-0 w-full h-full"
+              title="Volunteer Application Form"
+            >
+              Loading form...
+            </iframe>
+          </div>
+        </div>
+      </Section>
 
       {/* Other Ways to Support */}
       {/* <Section
@@ -96,7 +96,7 @@ const SupportPage = () => {
               <SiX size={20} />
             </a>
             <a
-              href="https://www.instagram.com/alnchennai?igsh=Zmp0cDE2Mzlqdmt2"
+              href="https://www.instagram.com/animalliberationnow/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"

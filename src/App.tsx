@@ -1,6 +1,7 @@
-import { lazy, Suspense, JSX } from 'react';
+import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
+import QRPage from './pages/QR/QRPage';
 
 // Lazy load all route components for code splitting
 const HomePage = lazy(() => import('./pages/Home/HomePage'));
@@ -10,7 +11,8 @@ const ArticlesPage = lazy(() => import('./pages/Articles/ArticlesPage'));
 const ArticleDetailPage = lazy(() => import('./pages/Articles/ArticleDetailPage'));
 const SupportPage = lazy(() => import('./pages/Support/SupportPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFound/NotFoundPage'));
-  
+const DocumentariesPage = lazy(() => import('./pages/Documentaries/DocumentariesPage'));
+
 // Loading fallback component
 const PageLoader = () => (
   <div className="flex items-center justify-center min-h-[60vh]">
@@ -32,6 +34,8 @@ function App() {
           <Route path="/faqs" element={<ArticlesPage />} />
           <Route path="/faqs/:id" element={<ArticleDetailPage />} />
           <Route path="/support" element={<SupportPage />} />
+          <Route path="/documentaries" element={<DocumentariesPage />} />
+          <Route path="/qr/:slug" element={<QRPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

@@ -23,28 +23,33 @@ const staticRoutes = [
   {
     path: '/',
     priority: '1.0',
-    changefreq: 'weekly'
+    changefreq: 'weekly',
   },
   {
     path: '/about',
     priority: '0.8',
-    changefreq: 'monthly'
+    changefreq: 'monthly',
   },
   {
     path: '/calendar',
     priority: '0.9',
-    changefreq: 'weekly'
+    changefreq: 'weekly',
   },
   {
     path: '/articles',
     priority: '0.9',
-    changefreq: 'weekly'
+    changefreq: 'weekly',
   },
   {
     path: '/support',
     priority: '0.7',
-    changefreq: 'monthly'
-  }
+    changefreq: 'monthly',
+  },
+  {
+    path: '/documentaries',
+    priority: '0.7',
+    changefreq: 'monthly',
+  },
 ];
 
 // Read articles data to generate dynamic routes
@@ -61,7 +66,7 @@ function getArticleRoutes() {
     return articleIds.map(id => ({
       path: `/articles/${id}`,
       priority: '0.8',
-      changefreq: 'monthly'
+      changefreq: 'monthly',
     }));
   } catch (error) {
     console.warn('Warning: Could not read articles data. Skipping article routes.');
@@ -123,7 +128,9 @@ function generateSitemapFile() {
 
     console.log('💡 Next steps:');
     console.log('   1. Run "npm run build" to include sitemap in your deployment');
-    console.log('   2. Submit sitemap to Google Search Console: https://search.google.com/search-console');
+    console.log(
+      '   2. Submit sitemap to Google Search Console: https://search.google.com/search-console'
+    );
     console.log('   3. Add to robots.txt: Sitemap: https://animalliberationnow.org/sitemap.xml\n');
   } catch (error) {
     console.error('❌ Error writing sitemap file:', error.message);

@@ -1,129 +1,93 @@
-import { HiEnvelope, HiHeart, HiMapPin } from "react-icons/hi2";
-import { SiFacebook, SiInstagram, SiX, SiYoutube } from "react-icons/si";
 import { Link } from "react-router-dom";
+import { HiEnvelope, HiMapPin, HiPhone } from "react-icons/hi2";
+import { SiInstagram, SiX, SiFacebook, SiYoutube } from "react-icons/si";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary text-secondary">
-      <div className="container-custom py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <HiHeart className="h-8 w-8 text-accent" />
-              <span className="text-xl font-bold">ALN!</span>
+    <footer className="bg-[#0a0a0a] text-white relative overflow-hidden pt-20 border-t border-white/10">
+      {/* Soft Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-32 bg-accent/10 blur-[100px] rounded-full"></div>
+
+      <div className="container-custom relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Brand Col */}
+          <div className="lg:col-span-1">
+            <Link to="/" className="flex items-center mb-6 group inline-flex">
+              <div className="relative">
+                <div className="absolute inset-0 bg-accent rounded-full blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+                <img src="/aln-icon.svg" alt="ALN Logo" className="h-12 relative z-10" />
+              </div>
             </Link>
-            <p className="mb-6">
-              Animal Liberation Now! is dedicated to ending animal exploitation
-              through activism, education, and direct action.
+            <p className="text-white/70 mb-8 font-medium">
+              We work to end Human Supremacy and Animal Exploitation through awareness, action, and advocacy.
             </p>
             <div className="flex space-x-4">
-              <a
-                href="https://www.facebook.com/animalliberationnowofficial/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="text-secondary hover:text-accent transition-colors"
-              >
-                <SiFacebook size={20} />
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-accent hover:text-white hover:shadow-neon transition-all duration-300">
+                <SiInstagram className="w-5 h-5" />
               </a>
-              <a
-                href="https://x.com/alnofficial"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X (formerly Twitter)"
-                className="text-secondary hover:text-accent transition-colors"
-              >
-                <SiX size={20} />
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-accent hover:text-white hover:shadow-neon transition-all duration-300">
+                <SiX className="w-5 h-5" />
               </a>
-              <a
-                href="https://www.instagram.com/animalliberationnow"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="text-secondary hover:text-accent transition-colors"
-              >
-                <SiInstagram size={20} />
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-accent hover:text-white hover:shadow-neon transition-all duration-300">
+                <SiFacebook className="w-5 h-5" />
               </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="text-secondary hover:text-accent transition-colors"
-              >
-                <SiYoutube size={20} />
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:bg-accent hover:text-white hover:shadow-neon transition-all duration-300">
+                <SiYoutube className="w-5 h-5" />
               </a>
             </div>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Quick Links</h3>
-            <ul className="space-y-4">
-              <li>
-                <Link to="/" className="hover:text-accent transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/faqs"
-                  className="hover:text-accent transition-colors"
-                >
-                  FAQs
-                </Link>
-              </li>
+            <h4 className="text-lg font-black uppercase tracking-widest text-white mb-6">Database</h4>
+            <ul className="space-y-3 font-medium">
+              <li><Link to="/about" className="text-white/70 hover:text-accent transition-colors">About Us</Link></li>
+              <li><Link to="/campaigns/farmed-animals" className="text-white/70 hover:text-accent transition-colors">Campaigns</Link></li>
+              <li><Link to="/resources/go-vegan" className="text-white/70 hover:text-accent transition-colors">Resources</Link></li>
+              <li><Link to="/faqs" className="text-white/70 hover:text-accent transition-colors">FAQs</Link></li>
             </ul>
           </div>
 
+          {/* Support */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Get Involved</h3>
-            <ul className="space-y-4">
-              <li>
-                <Link
-                  to="/support"
-                  className="hover:text-accent transition-colors"
-                >
-                  Join us!
-                </Link>
-              </li>
+            <h4 className="text-lg font-black uppercase tracking-widest text-white mb-6">Action</h4>
+            <ul className="space-y-3 font-medium">
+              <li><Link to="/support" className="text-white/70 hover:text-accent transition-colors">Join the Movement</Link></li>
+              <li><Link to="/support" className="text-white/70 hover:text-accent transition-colors">Donate</Link></li>
+              <li><Link to="/support" className="text-white/70 hover:text-accent transition-colors">Volunteer</Link></li>
+              <li><Link to="/support" className="text-white/70 hover:text-accent transition-colors">Host an Event</Link></li>
             </ul>
           </div>
 
+          {/* Contact */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Contact Us</h3>
-            <address className="not-italic">
-              <div className="flex items-start mb-4">
-                <HiMapPin className="mr-2 h-5 w-5 mt-0.5 flex-shrink-0" />
-                <span>Animal Liberation Now!, Chennai</span>
-              </div>
-              {/* <div className="flex items-center mb-4">
-                <HiPhone className="mr-2 h-5 w-5 flex-shrink-0" />
-                <a
-                  href="tel:+123456789"
-                  className="hover:text-accent transition-colors"
-                >
-                  +91 8870450636
-                </a>
-              </div> */}
-              <div className="flex items-center">
-                <HiEnvelope className="mr-2 h-5 w-5 flex-shrink-0" />
-                <a
-                  href="mailto:info@animalliberationnow.org"
-                  className="hover:text-accent transition-colors"
-                >
-                  contact@animalliberationnow.org
-                </a>
-              </div>
-            </address>
+            <h4 className="text-lg font-black uppercase tracking-widest text-white mb-6">Comms</h4>
+            <ul className="space-y-4 font-medium">
+              <li className="flex items-start">
+                <HiMapPin className="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" />
+                <span className="text-white/70">Global Network<br />Operating across India</span>
+              </li>
+              <li className="flex items-center">
+                <HiEnvelope className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                <a href="mailto:contact@animalliberationnow.org" className="text-white/70 hover:text-accent transition-colors truncate">contact@animalliberationnow.org</a>
+              </li>
+              <li className="flex items-center">
+                <HiPhone className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                <a href="tel:+919876543210" className="text-white/70 hover:text-accent transition-colors">+91 98765 43210</a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row md:justify-end items-center text-center md:text-right w-full">
-          <p>
-            &copy; {currentYear} Animal Liberation Now!. All rights reserved.
-          </p>
+        {/* Bottom */}
+        <div className="border-t border-white/10 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/70 font-medium">
+          <p>&copy; {currentYear} Animal Liberation Now! All rights reserved.</p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>

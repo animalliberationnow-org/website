@@ -54,7 +54,7 @@ const AboutPage = () => {
         dark={true}
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 mt-12">
-          <div className="bg-primary-light p-8 rounded-lg">
+          <div className="glass-panel p-8">
             <HiHeart className="h-12 w-12 text-accent mb-4" />
             <h3 className="text-2xl font-bold mb-3">Mission</h3>
             <p>
@@ -65,7 +65,7 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="bg-primary-light p-8 rounded-lg">
+          <div className="glass-panel p-8">
             <HiUsers className="h-12 w-12 text-accent mb-4" />
             <h3 className="text-2xl font-bold mb-3">Vision</h3>
             <p>
@@ -76,7 +76,7 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="bg-primary-light p-8 rounded-lg">
+          <div className="glass-panel p-8">
             <HiTrophy className="h-12 w-12 text-accent mb-4" />
             <h3 className="text-2xl font-bold mb-3">Values</h3>
             <ul className="space-y-2">
@@ -103,7 +103,7 @@ const AboutPage = () => {
             </ul>
           </div>
 
-          <div className="bg-primary-light p-8 rounded-lg">
+          <div className="glass-panel p-8">
             <HiGlobeAlt className="h-12 w-12 text-accent mb-4" />
             <h3 className="text-2xl font-bold mb-3">Approach</h3>
             <ul className="space-y-2">
@@ -251,7 +251,7 @@ const AboutPage = () => {
         dark={true}
       >
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-primary-light p-8 rounded-lg text-center">
+          <div className="glass-panel p-8 text-center">
             <div className="text-6xl font-bold text-accent mb-4">25+</div>
             <h3 className="text-xl font-bold mb-2">Campaigns</h3>
             <p>
@@ -260,7 +260,7 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="bg-primary-light p-8 rounded-lg text-center">
+          <div className="glass-panel p-8 text-center">
             <div className="text-6xl font-bold text-accent mb-4">10k+</div>
             <h3 className="text-xl font-bold mb-2">Animals Saved</h3>
             <p>
@@ -269,7 +269,7 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="bg-primary-light p-8 rounded-lg text-center">
+          <div className="glass-panel p-8 text-center">
             <div className="text-6xl font-bold text-accent mb-4">0</div>
             <h3 className="text-xl font-bold mb-2">Policy Wins</h3>
             <p>
@@ -346,38 +346,44 @@ const AboutPage = () => {
       {/* Call to Action */}
       <Section>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-primary text-secondary p-8 rounded-lg text-center">
-            <HiCalendar className="h-12 w-12 mx-auto mb-4 text-accent" />
-            <h3 className="text-xl font-bold mb-4">Join an Event</h3>
+          <div className="glass-panel p-8 text-center group hover:-translate-y-2 transition-all duration-500">
+            <div className="bg-text-main/5 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-accent/20 transition-colors">
+              <HiCalendar className="h-8 w-8 text-accent" />
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-text-main">Join an Event</h3>
             <p className="mb-6">
               Attend protests, workshops, and educational events to connect with
               our community.
             </p>
-            <a href="/calendar" className="btn btn-primary">
+            <a href="/calendar" className="btn btn-outline text-xs w-full">
               View Calendar
             </a>
           </div>
 
-          <div className="bg-primary text-secondary p-8 rounded-lg text-center">
-            <HiHeart className="h-12 w-12 mx-auto mb-4 text-accent" />
-            <h3 className="text-xl font-bold mb-4">Support Our Work</h3>
+          <div className="glass-panel p-8 text-center group hover:-translate-y-2 transition-all duration-500">
+            <div className="bg-text-main/5 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-accent/20 transition-colors">
+              <HiHeart className="h-8 w-8 text-accent" />
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-text-main">Support Our Work</h3>
             <p className="mb-6">
               Donations provide the resources needed to continue our help to
               bluecross and outreaches.
             </p>
-            <a href="/support" className="btn btn-primary">
+            <a href="/support" className="btn btn-primary text-xs w-full border-none">
               Donate Now
             </a>
           </div>
 
-          <div className="bg-primary text-secondary p-8 rounded-lg text-center">
-            <HiBookOpen className="h-12 w-12 mx-auto mb-4 text-accent" />
-            <h3 className="text-xl font-bold mb-4">Learn More</h3>
+          <div className="glass-panel p-8 text-center group hover:-translate-y-2 transition-all duration-500">
+            <div className="bg-text-main/5 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-accent/20 transition-colors">
+              <HiBookOpen className="h-8 w-8 text-accent" />
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-text-main">Learn More</h3>
             <p className="mb-6">
               Explore our articles and resources to deepen your understanding of
               animal rights.
             </p>
-            <a href="/articles" className="btn btn-primary">
+            <a href="/articles" className="btn btn-outline text-xs w-full">
               Read Articles
             </a>
           </div>

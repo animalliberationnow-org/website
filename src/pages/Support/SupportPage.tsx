@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { SiFacebook, SiInstagram, SiX, SiYoutube } from "react-icons/si";
 import Hero from "../../components/UI/Hero";
 import Section from "../../components/UI/Section";
 
 const SupportPage = () => {
+  const [formLoaded, setFormLoaded] = useState(false);
 
   return (
     <>
@@ -13,18 +15,27 @@ const SupportPage = () => {
       />
 
       {/* Volunteer Form */}
-      <Section className="bg-gray-300">
+      <Section>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center text-black">
+          <h2 className="text-3xl font-bold mb-8 text-center text-text-main">
             Volunteer Application
           </h2>
-          <div className="w-full h-[1400px] bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="w-full h-[1400px] bg-primary-light rounded-3xl shadow-glow-white overflow-hidden border border-glass-border relative">
+            {/* Loading skeleton */}
+            {!formLoaded && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center z-10 bg-primary-light">
+                <div className="w-12 h-12 border-4 border-accent border-t-transparent rounded-full animate-spin mb-4"></div>
+                <p className="text-text-muted font-bold uppercase tracking-widest text-sm">Loading Form...</p>
+              </div>
+            )}
             <iframe
               src="https://docs.google.com/forms/d/1H8E2YbSypgE06IaA4JPFzEDN8hc_F4pMG7WOlHKyDCM/viewform?embedded=true"
               width="100%"
               height="1800"
-              className="border-0 w-full h-full"
+              className={`border-0 w-full h-full transition-opacity duration-500 ${formLoaded ? 'opacity-100' : 'opacity-0'}`}
               title="Volunteer Application Form"
+              loading="eager"
+              onLoad={() => setFormLoaded(true)}
             >
               Loading form...
             </iframe>
@@ -76,13 +87,13 @@ const SupportPage = () => {
             your network.
           </p>
 
-          <div className="flex justify-center space-x-4 mb-12">
+          <div className="flex justify-center space-x-6 mb-12">
             <a
               href="https://www.facebook.com/animalliberationnowofficial/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="text-black hover:text-red-600 transition-colors"
+              className="w-12 h-12 rounded-full bg-text-main/5 flex items-center justify-center text-text-muted hover:bg-accent hover:text-white hover:shadow-neon transition-all duration-300"
             >
               <SiFacebook size={20} />
             </a>
@@ -91,7 +102,7 @@ const SupportPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X (formerly Twitter)"
-              className="text-black hover:text-red-600 transition-colors"
+              className="w-12 h-12 rounded-full bg-text-main/5 flex items-center justify-center text-text-muted hover:bg-accent hover:text-white hover:shadow-neon transition-all duration-300"
             >
               <SiX size={20} />
             </a>
@@ -100,7 +111,7 @@ const SupportPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="text-black hover:text-red-600 transition-colors"
+              className="w-12 h-12 rounded-full bg-text-main/5 flex items-center justify-center text-text-muted hover:bg-accent hover:text-white hover:shadow-neon transition-all duration-300"
             >
               <SiInstagram size={20} />
             </a>
@@ -109,7 +120,7 @@ const SupportPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
-              className="text-black hover:text-red-600 transition-colors"
+              className="w-12 h-12 rounded-full bg-text-main/5 flex items-center justify-center text-text-muted hover:bg-accent hover:text-white hover:shadow-neon transition-all duration-300"
             >
               <SiYoutube size={20} />
             </a>

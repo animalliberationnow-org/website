@@ -64,14 +64,14 @@ const ArticlesPage = () => {
           {/* Search */}
           <div className="relative w-full md:w-auto">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <HiMagnifyingGlass className="h-5 w-5 text-gray-400" />
+              <HiMagnifyingGlass className="h-5 w-5 text-text-muted" />
             </div>
             <input
               type="text"
               placeholder="Search FAQs..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 pr-4 py-2 w-full md:w-64 border border-gray-300 rounded-md focus:outline-none focus:ring-accent focus:border-accent"
+              className="pl-10 pr-4 py-3 w-full md:w-64 bg-text-main/5 border border-text-main/10 rounded-full text-text-main placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all backdrop-blur-md"
             />
           </div>
 
@@ -79,11 +79,11 @@ const ArticlesPage = () => {
             {/* Category Filter */}
             <div className="relative inline-block w-full md:w-auto">
               <div className="flex items-center">
-                <HiFunnel className="h-5 w-5 mr-2 text-black" />
+                <HiFunnel className="h-5 w-5 mr-2 text-text-muted" />
                 <select
                   value={category}
                   onChange={(e) => setCategory(e.target.value as ArticleCategory)}
-                  className="py-2 pl-3 pr-10 w-full border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent text-black font-medium"
+                  className="py-3 pl-4 pr-10 w-full border border-text-main/10 bg-primary rounded-full text-text-main font-medium focus:outline-none focus:ring-2 focus:ring-accent appearance-none transition-all cursor-pointer"
                 >
                   <option value="all">All Categories</option>
                   <option value="ethics">Ethics</option>
@@ -97,11 +97,11 @@ const ArticlesPage = () => {
             {/* Tag Filter */}
             <div className="relative inline-block w-full md:w-auto">
               <div className="flex items-center">
-                <HiTag className="h-5 w-5 mr-2 text-black" />
+                <HiTag className="h-5 w-5 mr-2 text-text-muted" />
                 <select
                   value={selectedTag}
                   onChange={(e) => setSelectedTag(e.target.value)}
-                  className="py-2 pl-3 pr-10 w-full border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent text-black font-medium"
+                  className="py-3 pl-4 pr-10 w-full border border-text-main/10 bg-primary rounded-full text-text-main font-medium focus:outline-none focus:ring-2 focus:ring-accent appearance-none transition-all cursor-pointer"
                 >
                   <option value="all">All Tags</option>
                   {allTags.map(tag => (
@@ -128,7 +128,7 @@ const ArticlesPage = () => {
               <div className="mt-12 flex justify-end">
                 <button
                   onClick={() => setShowAll(true)}
-                  className="group flex items-center gap-2 text-black font-bold text-lg hover:text-accent transition-colors"
+                  className="group flex items-center gap-2 text-text-main font-bold text-lg hover:text-accent transition-colors uppercase tracking-widest"
                 >
                   Show More FAQs
                   <HiArrowLongRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
@@ -137,11 +137,11 @@ const ArticlesPage = () => {
             )}
           </>
         ) : (
-          <div className="text-center py-12">
-            <HiMagnifyingGlass className="h-16 w-16 mx-auto text-gray-400 mb-4" />
-            <h3 className="text-xl font-bold mb-2 text-black">No Articles Found</h3>
-            <p className="text-gray-600 mb-6">
-              We couldn't find any articles matching your search criteria.
+          <div className="text-center py-12 glass-panel p-8 rounded-3xl max-w-2xl mx-auto">
+            <HiMagnifyingGlass className="h-16 w-16 mx-auto text-text-muted mb-4" />
+            <h3 className="text-xl font-bold mb-2 text-text-main uppercase tracking-widest">No Database Entries Found</h3>
+            <p className="text-text-muted mb-8 font-medium">
+              We couldn't find any records matching your search query.
             </p>
             <button
               onClick={() => {

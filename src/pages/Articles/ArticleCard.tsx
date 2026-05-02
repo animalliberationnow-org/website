@@ -13,28 +13,28 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
   const formattedDate = format(parseISO(date), "MMMM d, yyyy");
 
   return (
-    <div className="group relative flex flex-col h-full bg-gray-200 border border-black rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:translate-y-[-8px]">
+    <div className="card flex flex-col h-full group p-8">
       
-      {/* Top Accent Bar*/}
-      <div className="h-1.5 w-full bg-accent opacity-90" />
+      {/* Top Accent Orb */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-accent/20 rounded-full blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-      <div className="p-8 flex flex-col flex-grow">
+      <div className="flex flex-col flex-grow relative z-10">
         {/* Category Badge */}
         <div className="mb-5">
-          <span className="bg-accent/10 text-accent border border-accent/20 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">
+          <span className="bg-text-main/5 text-accent border border-text-main/10 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest backdrop-blur-md">
             {category}
           </span>
         </div>
 
         {/* Title */}
         <Link to={`/faqs/${id}`}>
-          <h3 className="text-2xl font-bold mb-3 text-black transition-colors leading-tight">
+          <h3 className="text-2xl font-black mb-3 text-text-main group-hover:text-accent transition-colors leading-tight drop-shadow-glow-white">
             {title}
           </h3>
         </Link>
 
         {/* Meta Info */}
-        <div className="flex items-center mb-6 text-sm text-gray-600 font-medium">
+        <div className="flex items-center mb-6 text-sm text-text-muted font-medium">
           <div className="flex items-center">
             <HiClock className="h-4 w-4 mr-1.5 text-accent" />
             <span>{formattedDate}</span>
@@ -42,7 +42,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
         </div>
 
         {/* Excerpt */}
-        <p className="mb-8 text-gray-700 leading-relaxed flex-grow">
+        <p className="mb-8 text-text-muted leading-relaxed flex-grow font-medium">
           {excerpt}
         </p>
 
@@ -52,9 +52,9 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
             {tags.slice(0, 3).map((tag) => (
               <div
                 key={tag}
-                className="flex items-center text-[11px] font-bold bg-white text-gray-700 border border-gray-200 px-2.5 py-1 rounded-md"
+                className="flex items-center text-[10px] font-bold bg-text-main/5 text-text-muted border border-text-main/10 px-3 py-1.5 rounded-full tracking-widest"
               >
-                <HiTag className="h-3 w-3 mr-1 text-accent/70" />
+                <HiTag className="h-3 w-3 mr-1.5 text-accent/70" />
                 {tag.toUpperCase()}
               </div>
             ))}
@@ -63,10 +63,10 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
           {/* Read More Link */}
           <Link
             to={`/faqs/${id}`}
-            className="inline-flex items-center text-sm font-bold text-black transition-all"
+            className="inline-flex items-center text-sm font-bold text-accent uppercase tracking-widest hover:text-text-main transition-colors"
           >
-            READ MORE 
-            <HiArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+            Access Database 
+            <HiArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-2 transition-transform" />
           </Link>
         </div>
       </div>

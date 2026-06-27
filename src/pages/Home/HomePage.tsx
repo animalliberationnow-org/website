@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HiBookOpen, HiHeart, HiArrowRight, HiPlay, HiOutlineExclamationTriangle } from "react-icons/hi2";
+import { HiArrowRight, HiPlay, HiOutlineExclamationTriangle } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import Hero from "../../components/UI/Hero";
 import Section from "../../components/UI/Section";
@@ -28,23 +28,76 @@ const HomePage = () => {
     },
     {
       title: "Hundreds Reached at Marina Beach Cube",
-      summary: "Our latest outreach effort on Marina Beach saw tremendous engagement. Passersby engaged in deep conversations about the realities of the dairy and meat industries.",
-      image: "/events/Chennai%20Inauguration,%20workshops%20and%20outreach%20/Copy%20of%20DSC02001.JPG",
+      summary: "Our latest Circle of Justice video outreach effort on Marina Beach saw tremendous engagement. Passersby engaged in deep conversations about the realities of the dairy and meat industries.",
+      image: "/events/Chennai%20Inauguration,%20workshops%20and%20outreach%20/Copy%20of%20DSC02344.JPG",
       link: "/actions/4"
     }
   ];
 
   return (
     <div className="bg-primary min-h-screen">
+
+
+      {/* Hero Section */}
       <Hero
         title="We hold people accountable for being animal abusers through everyday choices"
         buttonText="Join the Movement"
         buttonLink="/support"
-        backgroundImage="/website-section/section1.jpg"
+        backgroundImage="/website-section/hero.jpg"
         centered={true}
       />
 
-      {/* What is ALN / Mission */}
+      {/* Who Are We Section */}
+      <Section dark={true} className="overflow-hidden">
+        {/* Soft Organic Orbs */}
+        <div className="absolute top-0 left-0 w-full md:w-1/2 h-full bg-accent/5 blur-[150px] -z-10 rounded-full animate-float"></div>
+        
+        <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
+          <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase">Who Are We</h2>
+          <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase leading-tight tracking-tighter drop-shadow-glow-white">
+            A Decentralized Animal Rights Movement
+          </h3>
+          <p className="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto">
+            Animal Liberation Now! (ALN!) is a grassroots movement dedicated to dismantling animal exploitation. We are not a political lobby group or a reformist charity; we are a network of uncompromising activists who stand as representatives of the non-human victims of human supremacy.
+          </p>
+          <p className="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto">
+            Operating under a flat, decentralized structure, we coordinate street campaigns, investigations, educational outreach, and public advocacy to challenge speciesism directly at its roots. We stand for abolition, not regulation. We fight for complete liberation.
+          </p>
+        </div>
+      </Section>
+
+      {/* Action Logs (Now above System Overview) */}
+      <Section dark={false} className="relative z-20">
+        <div className="text-center mb-16">
+          <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase mb-4">Action Logs</h2>
+          <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase tracking-tighter drop-shadow-glow-white">We Take The Truth To The Streets</h3>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {latestActions.map((action, index) => (
+            <Link 
+              key={index} 
+              to={action.link} 
+              className="glass-panel overflow-hidden group flex flex-col hover:border-accent/30 transition-all duration-500 shadow-glow-white hover:shadow-neon cursor-pointer"
+            >
+              <div className="h-72 overflow-hidden relative border-b border-glass-border">
+                <div className="absolute inset-0 bg-transparent dark:bg-accent/20 dark:mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500"></div>
+                <img src={action.image} alt={action.title} className="w-full h-full object-cover group-hover:scale-110 grayscale-0 dark:grayscale-[50%] group-hover:grayscale-0 transition-all duration-700" />
+              </div>
+              <div className="p-8 flex flex-col flex-grow bg-primary">
+                <h3 className="text-xl font-bold mb-4 text-text-main uppercase tracking-tight group-hover:text-accent transition-colors">{action.title}</h3>
+                <p className="text-text-muted flex-grow text-sm leading-relaxed">{action.summary}</p>
+                <div className="mt-6 flex items-center font-bold text-accent group-hover:text-text-main transition-colors uppercase tracking-widest text-xs">
+                  <span>View Details</span>
+                  <HiArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      {/* System Overview (Now below Action Logs) */}
       <Section dark={true} className="overflow-hidden">
         {/* Soft Organic Orbs */}
         <div className="absolute top-0 right-0 w-full md:w-1/2 h-full bg-accent/10 blur-[150px] -z-10 rounded-full animate-float"></div>
@@ -52,7 +105,7 @@ const HomePage = () => {
 
         <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
           <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase">System Overview</h2>
-          <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-text-main uppercase leading-tight tracking-tighter drop-shadow-glow-white">
+          <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase leading-tight tracking-tighter drop-shadow-glow-white">
             To Liberate Animals from Human Supremacy
           </h3>
           <p className="text-xl text-text-muted font-medium">
@@ -60,28 +113,20 @@ const HomePage = () => {
           </p>
           
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-3xl mx-auto mt-12">
-            <li className="glass-panel p-6 flex items-center space-x-4 group">
-              <div className="bg-text-main/5 p-3 rounded-2xl group-hover:bg-accent/20 transition-colors shadow-glow-white">
-                <HiHeart className="text-accent h-8 w-8" />
-              </div>
+            <li className="glass-panel p-6 flex items-center space-x-5 group">
+              <div className="w-3.5 h-3.5 bg-accent rounded-full group-hover:scale-125 transition-transform shadow-glow shrink-0"></div>
               <span className="font-bold text-text-main tracking-wide uppercase text-sm">Public Outreaches</span>
             </li>
-            <li className="glass-panel p-6 flex items-center space-x-4 group">
-              <div className="bg-text-main/5 p-3 rounded-2xl group-hover:bg-accent/20 transition-colors shadow-glow-white">
-                <HiHeart className="text-accent h-8 w-8" />
-              </div>
+            <li className="glass-panel p-6 flex items-center space-x-5 group">
+              <div className="w-3.5 h-3.5 bg-accent rounded-full group-hover:scale-125 transition-transform shadow-glow shrink-0"></div>
               <span className="font-bold text-text-main tracking-wide uppercase text-sm">Capacity Building</span>
             </li>
-            <li className="glass-panel p-6 flex items-center space-x-4 group">
-              <div className="bg-text-main/5 p-3 rounded-2xl group-hover:bg-accent/20 transition-colors shadow-glow-white">
-                <HiHeart className="text-accent h-8 w-8" />
-              </div>
+            <li className="glass-panel p-6 flex items-center space-x-5 group">
+              <div className="w-3.5 h-3.5 bg-accent rounded-full group-hover:scale-125 transition-transform shadow-glow shrink-0"></div>
               <span className="font-bold text-text-main tracking-wide uppercase text-sm">Institutional Lectures</span>
             </li>
-            <li className="glass-panel p-6 flex items-center space-x-4 group">
-              <div className="bg-text-main/5 p-3 rounded-2xl group-hover:bg-accent/20 transition-colors shadow-glow-white">
-                <HiHeart className="text-accent h-8 w-8" />
-              </div>
+            <li className="glass-panel p-6 flex items-center space-x-5 group">
+              <div className="w-3.5 h-3.5 bg-accent rounded-full group-hover:scale-125 transition-transform shadow-glow shrink-0"></div>
               <span className="font-bold text-text-main tracking-wide uppercase text-sm">Investigations</span>
             </li>
           </ul>
@@ -99,32 +144,6 @@ const HomePage = () => {
         </div>
       </Section>
 
-      {/* Latest Actions */}
-      <Section dark={false} className="relative z-20">
-        <div className="text-center mb-16">
-          <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase mb-4">Action Logs</h2>
-          <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase tracking-tighter drop-shadow-glow-white">We Take The Truth To The Streets</h3>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {latestActions.map((action, index) => (
-            <div key={index} className="glass-panel overflow-hidden group flex flex-col hover:border-accent/30 transition-all duration-500 shadow-glow-white hover:shadow-neon">
-              <div className="h-72 overflow-hidden relative border-b border-glass-border">
-                <div className="absolute inset-0 bg-accent/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500"></div>
-                <img src={action.image} alt={action.title} className="w-full h-full object-cover group-hover:scale-110 grayscale-[50%] group-hover:grayscale-0 transition-all duration-700" />
-              </div>
-              <div className="p-8 flex flex-col flex-grow bg-primary">
-                <h3 className="text-xl font-bold mb-4 text-text-main uppercase tracking-tight">{action.title}</h3>
-                <p className="text-text-muted mb-8 flex-grow text-sm leading-relaxed">{action.summary}</p>
-                <Link to={action.link} className="inline-flex items-center font-bold text-accent hover:text-text-main transition-colors uppercase tracking-widest text-xs bg-text-main/5 px-6 py-3 rounded-full w-fit">
-                  Access Details <HiArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
-
       {/* See The Truth Section */}
       <Section dark={true} className="overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-20 items-center px-4">
@@ -132,16 +151,12 @@ const HomePage = () => {
             <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase mb-4">Reality Matrix</h2>
             <h3 className="text-5xl md:text-6xl font-black uppercase mb-8 leading-[1.1] tracking-tighter text-text-main drop-shadow-glow-white">See the Truth</h3>
             <p className="text-lg mb-10 text-text-muted leading-relaxed">
-              Animal liberation is not a side issue. Trillions of sentient beings are killed every year globally. We expose the hidden violence behind everyday choices. 
+              The systemic violence animals endure every single day is beyond comprehension. Witness the effects of everyday choices you make.
             </p>
             <div className="space-y-8">
               <div className="glass-panel p-6 border-l-4 border-l-accent border-y-0 border-r-0 rounded-r-3xl rounded-l-none">
                 <h4 className="text-4xl font-black mb-2 text-text-main tracking-tighter">92 BILLION</h4>
-                <p className="text-text-muted text-sm uppercase tracking-widest font-bold">Land animals slaughtered annually.</p>
-              </div>
-              <div className="glass-panel p-6 border-l-4 border-l-accent border-y-0 border-r-0 rounded-r-3xl rounded-l-none">
-                <h4 className="text-4xl font-black mb-2 text-text-main tracking-tighter">PLANETARY CRISIS</h4>
-                <p className="text-text-muted text-sm uppercase tracking-widest font-bold">Leading cause of deforestation & pollution.</p>
+                <p className="text-text-muted text-sm uppercase tracking-widest font-bold">Land animals slaughtered annually: murdered</p>
               </div>
             </div>
           </div>
@@ -173,48 +188,48 @@ const HomePage = () => {
         </div>
       </Section>
 
-      {/* Get Involved Ladder */}
+      {/* Engagement Protocols - Streamlined to 3 cards */}
       <Section dark={false}>
         <div className="text-center mb-16">
           <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase mb-4">Engagement Protocols</h2>
           <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase tracking-tighter drop-shadow-glow-white">Take Action For Animals</h3>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {/* Card 1 */}
           <div className="glass-panel p-8 flex flex-col hover:-translate-y-2 group transition-all duration-500">
             <div className="bg-text-main/5 w-20 h-20 rounded-full border border-glass-border flex items-center justify-center mb-8 mx-auto group-hover:shadow-neon transition-all">
               <span className="text-2xl font-black text-accent drop-shadow-neon">01</span>
             </div>
-            <h3 className="text-xl font-black mb-3 text-center uppercase tracking-wide text-text-main">Start Here</h3>
-            <p className="text-text-muted mb-8 flex-grow text-center text-sm leading-relaxed">Join our secure comms network and attend orientation.</p>
-            <Link to="/support" className="btn btn-outline text-xs w-full">Initialize</Link>
+            <h3 className="text-xl font-black mb-3 text-center uppercase tracking-wide text-text-main">Boycott</h3>
+            <p className="text-text-muted mb-8 flex-grow text-center text-sm leading-relaxed">
+              Boycott animal products and services. Refuse to fund systems of oppression and exploitation.
+            </p>
+            <Link to="/support" className="btn btn-outline text-xs w-full">Learn More</Link>
           </div>
 
+          {/* Card 2 */}
           <div className="glass-panel p-8 flex flex-col hover:-translate-y-2 group transition-all duration-500">
             <div className="bg-text-main/5 w-20 h-20 rounded-full border border-glass-border flex items-center justify-center mb-8 mx-auto group-hover:shadow-neon transition-all">
               <span className="text-2xl font-black text-accent drop-shadow-neon">02</span>
             </div>
-            <h3 className="text-xl font-black mb-3 text-center uppercase tracking-wide text-text-main">On the Streets</h3>
-            <p className="text-text-muted mb-8 flex-grow text-center text-sm leading-relaxed">Stand on the frontlines. Join our cubes and direct actions.</p>
-            <Link to="/support" className="btn btn-outline text-xs w-full">Deploy</Link>
+            <h3 className="text-xl font-black mb-3 text-center uppercase tracking-wide text-text-main">Vote</h3>
+            <p className="text-text-muted mb-8 flex-grow text-center text-sm leading-relaxed">
+              Vote for candidates and parties aligned with pro-animal rights ideology to push structural change.
+            </p>
+            <Link to="/support" className="btn btn-outline text-xs w-full">Learn More</Link>
           </div>
 
-          <div className="glass-panel p-8 flex flex-col hover:-translate-y-2 group transition-all duration-500">
+          {/* Card 3 */}
+          <div className="glass-panel p-8 flex flex-col hover:-translate-y-2 group transition-all duration-500 border-accent/20">
             <div className="bg-text-main/5 w-20 h-20 rounded-full border border-glass-border flex items-center justify-center mb-8 mx-auto group-hover:shadow-neon transition-all">
               <span className="text-2xl font-black text-accent drop-shadow-neon">03</span>
             </div>
-            <h3 className="text-xl font-black mb-3 text-center uppercase tracking-wide text-text-main">Create Content</h3>
-            <p className="text-text-muted mb-8 flex-grow text-center text-sm leading-relaxed">Amplify the signal. Edit video, design, and hack the algorithm.</p>
-            <Link to="/support" className="btn btn-outline text-xs w-full">Amplify</Link>
-          </div>
-
-          <div className="glass-panel p-8 flex flex-col hover:-translate-y-2 group transition-all duration-500 border-accent/20">
-            <div className="bg-text-main/5 w-20 h-20 rounded-full border border-glass-border flex items-center justify-center mb-8 mx-auto group-hover:shadow-neon transition-all">
-              <span className="text-2xl font-black text-accent drop-shadow-neon">04</span>
-            </div>
-            <h3 className="text-xl font-black mb-3 text-center uppercase tracking-wide text-text-main">Support Base</h3>
-            <p className="text-text-muted mb-8 flex-grow text-center text-sm leading-relaxed">Fuel the movement. Sponsor materials and operations.</p>
-            <Link to="/support" className="btn btn-primary text-xs w-full border-none">Fund</Link>
+            <h3 className="text-xl font-black mb-3 text-center uppercase tracking-wide text-text-main">Represent</h3>
+            <p className="text-text-muted mb-8 flex-grow text-center text-sm leading-relaxed">
+              Become a representative of the victims and speak up for their emancipation.
+            </p>
+            <Link to="/support" className="btn btn-primary text-xs w-full border-none">Deploy</Link>
           </div>
         </div>
       </Section>
@@ -245,7 +260,6 @@ const HomePage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Removed the HiChatBubbleLeftRight icon that was overlapping the text */}
             <div className="glass-panel p-10 relative text-center">
               <p className="text-lg mb-8 text-text-main font-medium leading-relaxed italic relative z-10">"I went vegan immediately after watching footage at a circle of truth. Now, I help organize them every weekend. The truth is impossible to ignore once you see it."</p>
               <footer className="font-black text-accent uppercase tracking-widest text-sm relative z-10">— Rahul, Volunteer Node</footer>

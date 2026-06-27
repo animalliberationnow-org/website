@@ -16,8 +16,8 @@
     --color-accent-glow: rgba(255, 42, 42, 0.15);
     --color-accent-glow-strong: rgba(255, 42, 42, 0.3);
     
-    --color-text-main: 15 23 42; /* #0F172A */
-    --color-text-muted: #64748B;
+    --color-text-main: 0 0 0; /* #000000 */
+    --color-text-muted: #000000; /* #000000 */
     --color-text-inverse: 255 255 255; /* #FFFFFF */
     
     --glass-bg: rgba(255, 255, 255, 0.7);
@@ -144,4 +144,159 @@
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+/* --- LOGO INTRO ANIMATIONS --- */
+@keyframes letterFall {
+  0% {
+    transform: translateY(-400px) scale(2.5) rotate(-15deg);
+    opacity: 0;
+    filter: blur(8px);
+  }
+  60% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  75% {
+    transform: translateY(-20px) scale(1.05);
+  }
+  90% {
+    transform: translateY(0) scale(0.98);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shakeScreen {
+  0%, 100% { transform: translate(0, 0); }
+  10%, 30%, 50%, 70%, 90% { transform: translate(-3px, 2px); }
+  20%, 40%, 60%, 80% { transform: translate(3px, -2px); }
+}
+
+@keyframes drawStroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fillAnim {
+  0% {
+    fill-opacity: 0;
+  }
+  100% {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes lineDraw {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes boomGlow {
+  0% {
+    box-shadow: 0 0 0px transparent;
+    transform: scale(0.95);
+  }
+  50% {
+    box-shadow: 0 0 50px var(--color-accent-glow-strong);
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 0 15px var(--color-accent-glow);
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseDrip {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(255, 42, 42, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 42, 42, 0.8)) drop-shadow(0 0 25px rgba(255, 42, 42, 0.4));
+  }
+}
+
+.animate-fall-boom {
+  opacity: 0;
+  animation: letterFall 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-shake {
+  animation: shakeScreen 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.animate-draw {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: drawStroke 1.8s ease-in-out forwards;
+}
+
+.animate-fill {
+  fill-opacity: 0;
+  animation: fillAnim 0.8s ease-out 1.2s forwards;
+}
+
+.animate-underline {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: drawStroke 1.5s ease-in-out 1.2s forwards;
+}
+
+.animate-spray {
+  animation: pulseDrip 3s infinite alternate;
+}
+
+/* --- CUSTOM FORM CLASSES --- */
+.form-input {
+  @apply w-full bg-text-main/5 border border-glass-border px-6 py-4 text-text-main placeholder-text-muted focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50 rounded-2xl transition-all duration-300 font-bold uppercase tracking-wider text-sm;
+}
+
+.form-label {
+  @apply block text-xs font-black uppercase tracking-[0.2em] text-text-muted mb-2;
+}
+
+.form-checkbox-label {
+  @apply flex items-center space-x-3 p-4 rounded-2xl bg-text-main/5 border border-glass-border hover:bg-text-main/10 hover:border-accent/30 transition-all duration-200 cursor-pointer select-none text-sm font-bold uppercase tracking-wider text-text-main;
+}
+
+.form-checkbox-checked {
+  @apply border-accent bg-accent/10 hover:bg-accent/10 hover:border-accent;
+}
+
+/* --- LIGHT MODE PRESENTATION TWEAKS --- */
+html:not(.dark) body {
+  font-weight: 600;
+}
+
+html:not(.dark) p {
+  font-weight: 700;
+}
+
+html:not(.dark) img:not([src*=".svg"]):not([src*="aln-icon"]) {
+  filter: contrast(1.02) brightness(0.98) saturate(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+html:not(.dark) .glass-panel {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+html:not(.dark) .card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+html:not(.dark) .card:hover,
+html:not(.dark) .glass-panel:hover {
+  box-shadow: 0 15px 40px rgba(255, 42, 42, 0.08), 0 0 15px rgba(255, 42, 42, 0.04);
+  border-color: rgba(255, 42, 42, 0.2);
 }

@@ -53,6 +53,14 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           >
             FAQs
           </NavLink>
+          <NavLink
+            to="/documentaries"
+            className={({ isActive }) =>
+              `font-medium ${isActive ? "text-accent" : "text-white"}`
+            }
+          >
+            Documentaries
+          </NavLink>
           <NavLink to="/support" className="btn btn-primary">
             Join Us!
           </NavLink>

@@ -18,7 +18,7 @@ const Hero: React.FC<HeroProps> = ({
   centered = false,
 }) => {
   return (
-    <section className="relative flex items-center min-h-[50vh] lg:min-h-[70vh] bg-primary text-white overflow-hidden">
+    <section className="relative flex items-center min-h-[30vh] lg:min-h-[40vh] bg-primary text-white overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 z-0 opacity-40"

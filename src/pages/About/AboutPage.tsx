@@ -8,7 +8,7 @@ const AboutPage = () => {
       <Hero
         title="About Animal Liberation Now!"
         subtitle="Learn about our mission, values, and the dedicated team working to end animal exploitation."
-        backgroundImage="/website-section/section2.jpg"
+        backgroundImage="/website-section/NS2.png"
       />
 
       {/* Our Story */}
@@ -39,7 +39,7 @@ const AboutPage = () => {
           </div>
           <div className="rounded-lg overflow-hidden shadow-xl">
             <img
-              src="/website-section/section4.jpg"
+              src="/website-section/NS4.png"
               alt="ALN activists at protest"
               className="w-full h-full object-cover"
             />

@@ -4,22 +4,28 @@ interface SectionProps {
   children: React.ReactNode;
   className?: string;
   dark?: boolean;
+  id?: string;
 }
 
-const Section: React.FC<SectionProps> = ({ 
-  title, 
-  subtitle, 
-  children, 
+const Section: React.FC<SectionProps> = ({
+  title,
+  subtitle,
+  children,
   className = '',
-  dark = false
+  dark = true,
+  id
 }) => {
+  // Use dark = true as default for pitch black, dark = false for slightly elevated primary-light
+  const hasBgClass = className.includes('bg-');
+  const bgClass = hasBgClass ? '' : (dark ? 'bg-primary' : 'bg-primary-light');
+
   return (
-    <section className={`section ${dark ? 'bg-primary text-secondary' : 'bg-secondary text-primary'} ${className}`}>
-      <div className="container-custom">
+    <section id={id} className={`section ${bgClass} text-text-main relative ${className}`}>
+      <div className="container-custom relative z-10">
         {(title || subtitle) && (
           <div className="section-title max-w-3xl mx-auto">
-            {title && <h2 className="mb-4">{title}</h2>}
-            {subtitle && <p className="text-lg md:text-xl opacity-80">{subtitle}</p>}
+            {title && <h2 className="mb-4 text-text-main drop-shadow-[0_0_15px_var(--glow-white)]">{title}</h2>}
+            {subtitle && <p className="text-lg md:text-xl text-text-muted font-medium">{subtitle}</p>}
           </div>
         )}
         {children}

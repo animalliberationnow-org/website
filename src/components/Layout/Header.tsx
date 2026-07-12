@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
         <Link to="/" onClick={closeMenu} className="group flex items-center">
           <div className="relative">
             <div className="absolute inset-0 bg-accent rounded-full blur-md opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-            <img src="/aln-icon.svg" alt="Logo" className="h-10 md:h-12 relative z-10 transition-transform duration-500 group-hover:scale-105" />
+            <img src="/logos/aln-icon.svg" alt="Logo" className="h-10 md:h-12 relative z-10 transition-transform duration-500 group-hover:scale-105" />
           </div>
         </Link>
 
@@ -36,32 +36,43 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           </NavLink>
 
           <NavLink
-            to="/faqs"
+            to="/activism"
             className={({ isActive }) =>
               `font-bold uppercase tracking-widest text-xs px-4 py-2 rounded-full transition-all duration-300 ${isActive ? "bg-white/10 text-white shadow-glow-white" : "text-white/70 hover:text-white hover:bg-white/5"}`
             }
           >
-            FAQs
-          </NavLink>
-
-
-          <NavLink
-            to="/chapters"
-            className={({ isActive }) =>
-              `font-bold uppercase tracking-widest text-xs px-4 py-2 rounded-full transition-all duration-300 ${isActive ? "bg-white/10 text-white shadow-glow-white" : "text-white/70 hover:text-white hover:bg-white/5"}`
-            }
-          >
-            Chapters
+            Activism
           </NavLink>
 
           <NavLink
-            to="/documentaries"
+            to="/resources"
             className={({ isActive }) =>
               `font-bold uppercase tracking-widest text-xs px-4 py-2 rounded-full transition-all duration-300 ${isActive ? "bg-white/10 text-white shadow-glow-white" : "text-white/70 hover:text-white hover:bg-white/5"}`
             }
           >
-            Documentaries
+            Resources
           </NavLink>
+
+          <NavLink
+            to="/who-are-we"
+            className={({ isActive }) =>
+              `font-bold uppercase tracking-widest text-xs px-4 py-2 rounded-full transition-all duration-300 ${isActive ? "bg-white/10 text-white shadow-glow-white" : "text-white/70 hover:text-white hover:bg-white/5"}`
+            }
+          >
+            Who Are We?
+          </NavLink>
+
+          <button
+            onClick={() => {
+              window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+              });
+            }}
+            className="font-bold uppercase tracking-widest text-xs px-4 py-2 rounded-full transition-all duration-300 text-white/70 hover:text-white hover:bg-white/5"
+          >
+            Contact Us
+          </button>
 
           <div className="pl-4 flex items-center space-x-2">
             <button
@@ -111,34 +122,47 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
               <HiHome size={20} />
             </NavLink>
             <NavLink
-              to="/chapters"
+              to="/activism"
               className={({ isActive }) =>
                 `font-bold uppercase tracking-widest text-sm py-3 px-4 rounded-2xl transition-colors ${isActive ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"}`
               }
               onClick={closeMenu}
             >
-              Chapters
+              Activism
             </NavLink>
 
             <NavLink
-              to="/faqs"
+              to="/resources"
               className={({ isActive }) =>
                 `font-bold uppercase tracking-widest text-sm py-3 px-4 rounded-2xl transition-colors ${isActive ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"}`
               }
               onClick={closeMenu}
             >
-              FAQs
+              Resources
             </NavLink>
 
             <NavLink
-              to="/documentaries"
+              to="/who-are-we"
               className={({ isActive }) =>
                 `font-bold uppercase tracking-widest text-sm py-3 px-4 rounded-2xl transition-colors ${isActive ? "bg-white/10 text-white" : "text-white/70 hover:text-white hover:bg-white/5"}`
               }
               onClick={closeMenu}
             >
-              Documentaries
+              Who Are We?
             </NavLink>
+
+            <button
+              onClick={() => {
+                window.scrollTo({
+                  top: document.body.scrollHeight,
+                  behavior: 'smooth'
+                });
+                closeMenu();
+              }}
+              className="font-bold uppercase tracking-widest text-sm py-3 px-4 rounded-2xl transition-colors text-white/70 hover:text-white hover:bg-white/5"
+            >
+              Contact Us
+            </button>
 
             <NavLink
               to="/support"

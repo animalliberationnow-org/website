@@ -1,7 +1,7 @@
-import { format, parseISO } from 'date-fns';
 import { useEffect } from 'react';
-import { HiChevronLeft, HiClipboardDocument, HiClock, HiTag } from 'react-icons/hi2';
+import { HiArrowLeft, HiClipboardDocument, HiTag } from 'react-icons/hi2';
 import { Link, useParams } from 'react-router-dom';
+import Hero from '../../components/UI/Hero';
 import Section from '../../components/UI/Section';
 import { articles } from '../../data/articlesData';
 
@@ -24,8 +24,7 @@ const ArticleDetailPage = () => {
     );
   }
 
-  const { title, content, date, category, tags, relatedArticles } = article;
-  const formattedDate = format(parseISO(date), 'MMMM d, yyyy');
+  const { title, content, category, tags, relatedArticles } = article;
 
   const relatedArticlesList = relatedArticles
     ? articles.filter(a => relatedArticles.includes(a.id))
@@ -38,59 +37,33 @@ const ArticleDetailPage = () => {
 
   return (
     <>
-      {/* Header Section */}
-      <div className="relative bg-white text-black border-b border-gray-100 pt-16 md:pt-20">
-        <div className="container-custom relative z-20 py-10 md:py-12">
-          <Link to="/faqs" className="inline-flex items-center text-black font-bold hover:text-accent transition-colors mb-6 relative z-30">
-            <HiChevronLeft className="mr-1 h-5 w-5 stroke-2" />
+      <Hero
+        title={title}
+        subtitle={`Category: ${category.charAt(0).toUpperCase() + category.slice(1)}`}
+        backgroundImage="/misc/NS4.webp"
+      />
+
+      <Section dark={false}>
+        {/* Back to FAQs Link */}
+        <div className="mb-8">
+          <Link
+            to="/faqs"
+            className="group inline-flex items-center gap-2 text-text-main hover:text-accent transition-colors font-bold"
+          >
+            <HiArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
             Back to FAQs
           </Link>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-8">
-              <div className="mb-4">
-                <span className="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
-                </span>
-              </div>
-              <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">{title}</h1>
-              <div className="flex items-center text-black mb-6 font-bold">
-                <HiClock className="h-5 w-5 mr-2 text-accent" />
-                <span>{formattedDate}</span>
-              </div>
-            </div>
-
-            {/* Right Side: Related Topics */}
-            {relatedArticlesList.length > 0 && (
-              <div className="lg:col-span-4 bg-gray-300 p-6 rounded-2xl border border-gray-200">
-                <h3 className="text-sm font-black uppercase tracking-widest text-gray-500 mb-4 pb-2 border-b border-gray-200">Related Topics</h3>
-                <ul className="space-y-3">
-                  {relatedArticlesList.map((related) => (
-                    <li key={related.id}>
-                      <Link to={`/faqs/${related.id}`} className="block p-3 bg-white rounded-lg border border-gray-200 hover:border-accent transition-all group">
-                        <span className="block font-bold text-sm text-black group-hover:text-accent">{related.title}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
         </div>
-      </div>
-
-      {/* Article Content */}
-      <Section dark={false}>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-8">
             <article className="prose prose-2xl max-w-none prose-invert prose-p:text-white prose-li:text-white prose-headings:text-white prose-a:text-accent">
               <div className="text-xl leading-relaxed" dangerouslySetInnerHTML={{ __html: content }} />
             </article>
 
-            <div className="mt-12 pt-6 border-t border-gray-800">
+            <div className="mt-12 pt-6 border-t border-glass-border">
               <button
                 onClick={copyLink}
-                className="flex items-center text-black hover:text-accent transition-colors font-bold text-lg"
+                className="flex items-center text-text-main hover:text-accent transition-colors font-bold text-lg"
               >
                 <HiClipboardDocument className="h-6 w-6 mr-2" />
                 <span>Copy Link</span>
@@ -98,45 +71,39 @@ const ArticleDetailPage = () => {
             </div>
           </div>
 
-          {/* Sidebar: Tags & Subscribe */}
+          {/* Sidebar: Tags & Related Topics */}
           <div className="lg:col-span-4">
-            <div className="sticky top-24 space-y-10">
-              <div>
-                <h3 className="text-xl font-bold mb-4 text-black">Tags</h3>
+            <div className="sticky top-24 space-y-8">
+              {/* Tags */}
+              <div className="glass-panel p-6">
+                <h3 className="text-xl font-bold mb-4 text-text-main">Tags</h3>
                 <div className="flex flex-wrap gap-2">
                   {tags.map(tag => (
-                    <div key={tag} className="flex items-center text-sm bg-gray-800 text-white font-medium px-3 py-1 rounded-full border border-gray-700">
-                      <HiTag className="h-4 w-4 mr-1 text-accent" />
+                    <div key={tag} className="flex items-center text-sm bg-accent/10 text-accent font-medium px-3 py-1 rounded-full border border-accent/20">
+                      <HiTag className="h-4 w-4 mr-1" />
                       {tag}
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* <div className="bg-gray-900 p-6 rounded-xl border border-gray-800">
-                <h3 className="text-xl font-bold mb-2 text-white">Subscribe</h3>
-                <p className="mb-4 text-gray-400">Stay updated with our latest news.</p>
-                <form className="space-y-3">
-                  <input
-                    type="email"
-                    placeholder="Email address"
-                    className="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-700 text-white focus:ring-1 focus:ring-accent outline-none"
-                    required
-                  />
-                  <button type="submit" className="btn btn-primary w-full">Subscribe</button>
-                </form>
-              </div> */}
+              {/* Related Topics */}
+              {relatedArticlesList.length > 0 && (
+                <div className="glass-panel p-6">
+                  <h3 className="text-xl font-bold mb-4 text-text-main">Related Topics</h3>
+                  <ul className="space-y-3">
+                    {relatedArticlesList.map((related) => (
+                      <li key={related.id}>
+                        <Link to={`/faqs/${related.id}`} className="block p-3 bg-primary-light dark:bg-primary-lighter rounded-lg border border-glass-border hover:border-accent/30 transition-all group">
+                          <span className="block font-bold text-sm text-text-main group-hover:text-accent">{related.title}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
-        </div>
-      </Section>
-
-      {/* CTA Section */}
-      <Section className="bg-white py-16">
-        <div className="bg-black text-white rounded-3xl p-8 md:p-12 text-center max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Take Action?</h2>
-          <p className="text-gray-400 mb-8">Join the movement for animal liberation.</p>
-          <Link to="/support" className="btn btn-primary px-8">Support Our Work</Link>
         </div>
       </Section>
     </>

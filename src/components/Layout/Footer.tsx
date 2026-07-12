@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="flex flex-col">
             <div className="mb-6">
-              <img src="/animal-liberation-now-coloured-logo-dark.svg" alt="ALN" className="h-16 md:h-20 w-auto object-contain" />
+              <img src="/logos/animal-liberation-now-coloured-logo-dark.svg" alt="ALN" className="h-16 md:h-20 w-auto object-contain" />
             </div>
             <div className="flex space-x-4 mt-auto">
               <a

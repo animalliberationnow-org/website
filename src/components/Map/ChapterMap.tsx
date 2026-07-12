@@ -6,11 +6,15 @@ interface ChapterMapProps {
 
 const ChapterMap: React.FC<ChapterMapProps> = ({ className = '' }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
+  const mapInstanceRef = useRef<any>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Only run on client side
     if (typeof window === 'undefined' || !mapContainerRef.current) return;
+
+    // Check if map is already initialized
+    if (mapInstanceRef.current) return;
 
     // Load Leaflet CSS
     const link = document.createElement('link');
@@ -29,7 +33,7 @@ const ChapterMap: React.FC<ChapterMapProps> = ({ className = '' }) => {
         // @ts-ignore - Leaflet is loaded dynamically
         const L = window.L;
 
-        if (!L || !mapContainerRef.current) return;
+        if (!L || !mapContainerRef.current || mapInstanceRef.current) return;
 
         // Fix Leaflet's default icon path issue
         delete L.Icon.Default.prototype._getIconUrl;
@@ -41,6 +45,7 @@ const ChapterMap: React.FC<ChapterMapProps> = ({ className = '' }) => {
 
         // Initialize the map
         const map = L.map(mapContainerRef.current).setView([20, 0], 3);
+        mapInstanceRef.current = map;
 
         // Load OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -48,20 +53,17 @@ const ChapterMap: React.FC<ChapterMapProps> = ({ className = '' }) => {
           attribution: '© OpenStreetMap',
           referrerPolicy: 'strict-origin-when-cross-origin'
         }).addTo(map);
-
         // Define locations
         const locations = [
-          { lat: 12.9716, lng: 77.5946, url: '/chapters/bengaluru' },
-          { lat: 13.0827, lng: 80.2707, url: '/chapters/chennai' },
+          { lat: 12.9716, lng: 77.5946 },
+          { lat: 13.0827, lng: 80.2707 },
+          { lat: 49.2827, lng: -123.1207 },
+          { lat: 7.7310, lng: 81.6747 },
         ];
 
-        // Add markers with click events
+        // Add markers
         locations.forEach(place => {
-          const marker = L.marker([place.lat, place.lng]).addTo(map);
-
-          marker.on('click', function () {
-            window.location.href = place.url;
-          });
+          L.marker([place.lat, place.lng]).addTo(map);
         });
 
         // Detect user's location and pan map
@@ -83,7 +85,7 @@ const ChapterMap: React.FC<ChapterMapProps> = ({ className = '' }) => {
             // ipapi.co returns latitude and longitude as 'latitude' and 'longitude'
             if (data.latitude && data.longitude) {
               map.setView([data.latitude, data.longitude], 4);
-              console.log(`Detected Country: ${data.country_name}`);
+              // console.log(`Detected Country: ${data.country_name}`);
             }
           })
           .catch(error => {
@@ -96,8 +98,9 @@ const ChapterMap: React.FC<ChapterMapProps> = ({ className = '' }) => {
 
     // Cleanup
     return () => {
-      if (mapContainerRef.current) {
-        mapContainerRef.current.innerHTML = '';
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.remove();
+        mapInstanceRef.current = null;
       }
     };
   }, []);

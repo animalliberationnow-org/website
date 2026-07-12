@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
-import { HiArrowLongRight, HiFunnel, HiMagnifyingGlass, HiTag } from 'react-icons/hi2';
+import { HiArrowLongRight, HiArrowLeft, HiFunnel, HiMagnifyingGlass, HiTag } from 'react-icons/hi2';
+import { Link } from 'react-router-dom';
 import Hero from '../../components/UI/Hero';
 import Section from '../../components/UI/Section';
 import { articles } from '../../data/articlesData';
@@ -56,10 +57,21 @@ const ArticlesPage = () => {
       <Hero
         title="FAQs"
         subtitle="Frequently asked questions about ethics and animal rights."
-        backgroundImage="/website-section/NS4.png"
+        backgroundImage="/misc/NS4.webp"
       />
 
       <Section>
+        {/* Back to Resources Link */}
+        <div className="mb-8">
+          <Link
+            to="/resources"
+            className="group inline-flex items-center gap-2 text-text-main hover:text-accent transition-colors font-bold"
+          >
+            <HiArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
+            Back to Resources
+          </Link>
+        </div>
+
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
           {/* Search */}
           <div className="relative w-full md:w-auto">

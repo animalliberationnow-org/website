@@ -14,29 +14,57 @@ const HomePage = () => {
 
       {/* Hero Section */}
       <Hero
-        title="Animal Liberation is a Social Justice Movement for the Emancipation of non-human animals from Human Supremacy"
-        subtitle="In this planet dominated by humans, billions of sentient beings are exploited annually for human food, fashion, transport, science and entertainment, and millions more who are subjected to violence simply because they are not human. We envision a world where respecting animal rights is the norm, where abusing animals is unacceptable."
+        title="Dismantle Human Supremacy"
+        subtitle="Boycott Animal Products and Services"
         buttonText="Find your local chapter"
         buttonLink="#chapters"
-        backgroundImage="/website-section/NS1.png"
+        backgroundImage="/misc/NS1.webp"
         centered={true}
       />
 
-      {/* Who Are We Section */}
+      {/* What is Animal Liberation Section */}
       <Section dark={true} className="overflow-hidden">
         {/* Soft Organic Orbs */}
         <div className="absolute top-0 left-0 w-full md:w-1/2 h-full bg-accent/5 blur-[150px] -z-10 rounded-full animate-float"></div>
 
         <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
-          <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase">Who Are We</h2>
+          <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase">The Liberation</h2>
           <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase leading-tight tracking-tighter drop-shadow-glow-white">
-            Animal Liberation Now!
-
+            What is Animal Liberation?
           </h3>
           <p className="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto">
-            A non-profit working towards ending speciesism- the discrimination or prejudice solely based on one’s species. We are an unapologetic and abolitionist group organised to make respecting animal rights the norm.
-            Originally started as a local group of activists in the Indian city of Chennai, we are on our way to becoming a global network of animal rights activists working in unison for animal liberation.
+            Animal Liberation is a Social Justice Movement for the Emancipation of non-human animals from Human Supremacy.
           </p>
+
+          <div className="relative aspect-video flex items-center justify-center p-2 glass-panel rounded-[2rem]">
+            <div className="w-full h-full relative z-10 bg-black rounded-2xl overflow-hidden shadow-inner">
+              {!showVideo ? (
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-0 md:p-0 text-center bg-[#050505]/90 z-10 backdrop-blur-sm">
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/20 to-transparent"></div>
+                  <HiOutlineExclamationTriangle className="h-16 w-16 md:h-20 md:w-20 text-accent mb-4 md:mb-6 animate-pulse-glow" />
+                  <h5 className="text-2xl md:text-3xl font-black mb-3 md:mb-4 uppercase tracking-wider md:tracking-widest text-white drop-shadow-glow-white px-2">Warning: Graphic</h5>
+                  <p className="mb-6 md:mb-8 text-white/60 max-w-md text-xs md:text-sm leading-relaxed px-4">The following is raw footage of systemic violence. Viewer discretion is advised.</p>
+                  <button
+                    onClick={() => setShowVideo(true)}
+                    className="btn btn-outline border-white/20 text-white bg-white/5 hover:bg-white/10 hover:border-white/40 text-sm md:text-base"
+                  >
+                    <HiPlay className="mr-2 md:mr-3 h-5 w-5 md:h-6 md:w-6" /> Play
+                  </button>
+                </div>
+              ) : (
+                <iframe
+                  src="https://player.vimeo.com/video/1182206552?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  className="absolute inset-0 w-full h-full border-none"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                  allowFullScreen
+                ></iframe>
+              )}
+            </div>
+          </div>
+          <p className="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto">
+            In this planet dominated by humans, billions of sentient beings are exploited annually for human food, fashion, transport, science and entertainment, and millions more who are subjected to violence simply because they are not human. We envision a world where respecting animal rights is the norm, where abusing animals is unacceptable.
+          </p>
+
         </div>
       </Section>
 
@@ -138,159 +166,6 @@ const HomePage = () => {
           </div>
         </div>
       </Section>
-
-      {/* See The Truth Section */}
-      <Section dark={true} className="overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-20 items-center px-4">
-          <div>
-            <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase mb-4">Reality Matrix</h2>
-            <h3 className="text-5xl md:text-6xl font-black uppercase mb-8 leading-[1.1] tracking-tighter text-text-main drop-shadow-glow-white">See the Truth</h3>
-            <p className="text-lg mb-10 text-text-muted leading-relaxed">
-              The systemic violence animals endure every single day is beyond comprehension. Witness the effects of everyday choices you make.
-            </p>
-            <div className="space-y-8">
-              <div className="glass-panel p-6 border-l-4 border-l-accent border-y-0 border-r-0 rounded-r-3xl rounded-l-none">
-                <h4 className="text-4xl font-black mb-2 text-text-main tracking-tighter">92 BILLION</h4>
-                <p className="text-text-muted text-sm uppercase tracking-widest font-bold">Land animals slaughtered annually: murdered</p>
-              </div>
-            </div>
-          </div>
-          <div className="relative aspect-video flex items-center justify-center p-2 glass-panel rounded-[2rem]">
-            <div className="w-full h-full relative z-10 bg-black rounded-2xl overflow-hidden shadow-inner">
-              {!showVideo ? (
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-0 md:p-0 text-center bg-[#050505]/90 z-10 backdrop-blur-sm">
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/20 to-transparent"></div>
-                  <HiOutlineExclamationTriangle className="h-16 w-16 md:h-20 md:w-20 text-accent mb-4 md:mb-6 animate-pulse-glow" />
-                  <h5 className="text-2xl md:text-3xl font-black mb-3 md:mb-4 uppercase tracking-wider md:tracking-widest text-white drop-shadow-glow-white px-2">Warning: Graphic</h5>
-                  <p className="mb-6 md:mb-8 text-white/60 max-w-md text-xs md:text-sm leading-relaxed px-4">The following is raw footage of systemic violence. Viewer discretion is advised.</p>
-                  <button
-                    onClick={() => setShowVideo(true)}
-                    className="btn btn-outline border-white/20 text-white bg-white/5 hover:bg-white/10 hover:border-white/40 text-sm md:text-base"
-                  >
-                    <HiPlay className="mr-2 md:mr-3 h-5 w-5 md:h-6 md:w-6" /> Play
-                  </button>
-                </div>
-              ) : (
-                <iframe
-                  src="https://player.vimeo.com/video/1182206552?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                  className="absolute inset-0 w-full h-full border-none"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                  allowFullScreen
-                ></iframe>
-              )}
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* Engagement Protocols - Streamlined to 3 cards
-      <Section dark={false}>
-        <div className="text-center mb-16">
-          <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase mb-4">Engagement Protocols</h2>
-          <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase tracking-tighter drop-shadow-glow-white">Take Action For Animals</h3>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {/* Card 1 */}
-      {/* <div className="glass-panel p-8 flex flex-col hover:-translate-y-2 group transition-all duration-500">
-            <div className="bg-text-main/5 w-20 h-20 rounded-full border border-glass-border flex items-center justify-center mb-8 mx-auto group-hover:shadow-neon transition-all">
-              <span className="text-2xl font-black text-accent drop-shadow-neon">01</span>
-            </div>
-            <h3 className="text-xl font-black mb-3 text-center uppercase tracking-wide text-text-main">Boycott</h3>
-            <p className="text-text-muted mb-8 flex-grow text-center text-sm leading-relaxed">
-              Boycott animal products and services. Refuse to fund systems of oppression and exploitation.
-            </p>
-            <Link to="/support" className="btn btn-outline text-xs w-full">Learn More</Link>
-          </div>
-
-          {/* Card 2 */}
-      {/* <div className="glass-panel p-8 flex flex-col hover:-translate-y-2 group transition-all duration-500">
-            <div className="bg-text-main/5 w-20 h-20 rounded-full border border-glass-border flex items-center justify-center mb-8 mx-auto group-hover:shadow-neon transition-all">
-              <span className="text-2xl font-black text-accent drop-shadow-neon">02</span>
-            </div>
-            <h3 className="text-xl font-black mb-3 text-center uppercase tracking-wide text-text-main">Vote</h3>
-            <p className="text-text-muted mb-8 flex-grow text-center text-sm leading-relaxed">
-              Vote for candidates and parties aligned with pro-animal rights ideology to push structural change.
-            </p>
-            <Link to="/support" className="btn btn-outline text-xs w-full">Learn More</Link>
-          </div> */}
-
-      {/* Card 3 */}
-      {/* <div className="glass-panel p-8 flex flex-col hover:-translate-y-2 group transition-all duration-500 border-accent/20">
-            <div className="bg-text-main/5 w-20 h-20 rounded-full border border-glass-border flex items-center justify-center mb-8 mx-auto group-hover:shadow-neon transition-all">
-              <span className="text-2xl font-black text-accent drop-shadow-neon">03</span>
-            </div>
-            <h3 className="text-xl font-black mb-3 text-center uppercase tracking-wide text-text-main">Represent</h3>
-            <p className="text-text-muted mb-8 flex-grow text-center text-sm leading-relaxed">
-              Become a representative of the victims and speak up for their emancipation.
-            </p>
-            <Link to="/support" className="btn btn-primary text-xs w-full border-none">Deploy</Link>
-          </div>
-        </div> */}
-      {/*  </Section>  */}
-
-      {/* Impact & Social Proof */}
-      {/* <Section dark={true} className="overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent"></div>
-
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-black uppercase mb-4 text-text-main tracking-tighter drop-shadow-glow-white">System Impact</h2>
-            <p className="text-xl text-accent font-bold tracking-widest uppercase drop-shadow-neon">Momentum is building.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-24">
-            <div className="glass-panel p-10 group rounded-[3rem]">
-              <div className="text-6xl font-black mb-4 text-text-main group-hover:text-accent transition-colors drop-shadow-neon">150+</div>
-              <div className="text-sm font-bold text-text-muted uppercase tracking-[0.2em]">Events Held</div>
-            </div>
-            <div className="glass-panel p-10 group rounded-[3rem]">
-              <div className="text-6xl font-black mb-4 text-text-main group-hover:text-accent transition-colors drop-shadow-neon">50K+</div>
-              <div className="text-sm font-bold text-text-muted uppercase tracking-[0.2em]">People Reached</div>
-            </div>
-            <div className="glass-panel p-10 group rounded-[3rem]">
-              <div className="text-6xl font-black mb-4 text-text-main group-hover:text-accent transition-colors drop-shadow-neon">500+</div>
-              <div className="text-sm font-bold text-text-muted uppercase tracking-[0.2em]">Activists Trained</div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="glass-panel p-10 relative text-center">
-              <p className="text-lg mb-8 text-text-main font-medium leading-relaxed italic relative z-10">"I went vegan immediately after watching footage at a circle of truth. Now, I help organize them every weekend. The truth is impossible to ignore once you see it."</p>
-              <footer className="font-black text-accent uppercase tracking-widest text-sm relative z-10">— Rahul, Volunteer Node</footer>
-            </div>
-            <div className="glass-panel p-10 relative text-center">
-              <p className="text-lg mb-8 text-text-main font-medium leading-relaxed italic relative z-10">"This conversation changed how I see animals completely. I always thought I loved animals, but I realized my plate didn't reflect my values."</p>
-              <footer className="font-black text-accent uppercase tracking-widest text-sm relative z-10">— Priya, Impacted Passerby</footer>
-            </div>
-          </div>
-        </div>
-      </Section> */}
-
-      {/* Always On CTA */}
-      {/* <Section dark={false} className="pb-40 pt-32">
-        <div className="glass-panel p-2 max-w-5xl mx-auto relative group rounded-[3rem] shadow-neon">
-          <div className="bg-primary-light p-12 md:p-24 text-center rounded-[2.5rem] relative z-10 overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-accent/10 blur-[100px] rounded-full"></div>
-            <h2 className="text-4xl md:text-6xl font-black mb-6 text-text-main uppercase tracking-tighter drop-shadow-glow-white relative z-10">
-              Don't look away.
-            </h2>
-            <p className="text-xl mb-12 max-w-2xl mx-auto text-text-muted relative z-10 font-medium">
-              Get ALN! action updates directly in your secure inbox. Receive alerts for local actions and urgent campaigns.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-2xl mx-auto relative z-10">
-              <input
-                type="email"
-                placeholder="ENTER SECURE EMAIL"
-                className="px-8 py-5 bg-text-main/5 border border-glass-border text-text-main font-bold uppercase tracking-widest focus:outline-none focus:border-accent w-full sm:w-2/3 transition-colors placeholder-text-muted rounded-full"
-              />
-              <button className="btn btn-primary text-base px-10 py-5 w-full sm:w-auto">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
-      </Section> */}
     </div>
   );
 };

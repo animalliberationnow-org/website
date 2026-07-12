@@ -42,7 +42,7 @@ const EventsPage = () => {
       <Hero
         title="Events & Activism"
         subtitle="Join us at our events to support animal liberation and connect with like-minded advocates."
-        backgroundImage="/outreach/outreach-main.png"
+        backgroundImage="/outreach/outreach-main.webp"
         centered={true}
       />
 
@@ -63,40 +63,9 @@ const EventsPage = () => {
           </div>
         </div>
 
-        {/* Recent Events Section */}
-        {recentEvents.length > 0 && (
-          <div className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase mb-4">Recent Activism</h2>
-              <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase tracking-tighter drop-shadow-glow-white">
-                We Take The Truth To The Streets
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {displayedRecentEvents.map(event => (
-                <EventCard key={event.id} event={event} />
-              ))}
-            </div>
-
-            {/* Show More Button for Recent */}
-            {!showAllRecent && recentEvents.length > 4 && (
-              <div className="mt-12 flex justify-center">
-                <button
-                  onClick={() => setShowAllRecent(true)}
-                  className="group flex items-center gap-2 text-text-main font-bold text-lg hover:text-accent transition-colors uppercase tracking-wide"
-                >
-                  Show More Recent Events
-                  <HiArrowLongRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
-                </button>
-              </div>
-            )}
-          </div>
-        )}
-
         {/* Upcoming Events Section */}
         {upcomingEvents.length > 0 && (
-          <div>
+          <div className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase mb-4">Upcoming Events</h2>
               <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase tracking-tighter drop-shadow-glow-white">
@@ -118,6 +87,37 @@ const EventsPage = () => {
                   className="group flex items-center gap-2 text-text-main font-bold text-lg hover:text-accent transition-colors uppercase tracking-wide"
                 >
                   Show More Upcoming Events
+                  <HiArrowLongRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Recent Events Section */}
+        {recentEvents.length > 0 && (
+          <div>
+            <div className="text-center mb-12">
+              <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase mb-4">Recent Activism</h2>
+              <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase tracking-tighter drop-shadow-glow-white">
+                We Take The Truth To The Streets
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {displayedRecentEvents.map(event => (
+                <EventCard key={event.id} event={event} />
+              ))}
+            </div>
+
+            {/* Show More Button for Recent */}
+            {!showAllRecent && recentEvents.length > 4 && (
+              <div className="mt-12 flex justify-center">
+                <button
+                  onClick={() => setShowAllRecent(true)}
+                  className="group flex items-center gap-2 text-text-main font-bold text-lg hover:text-accent transition-colors uppercase tracking-wide"
+                >
+                  Show More Recent Events
                   <HiArrowLongRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
                 </button>
               </div>

@@ -8,7 +8,7 @@ const AboutPage = () => {
       <Hero
         title="About Animal Liberation Now!"
         subtitle="Learn about our mission, values, and the dedicated team working to end animal exploitation."
-        backgroundImage="/website-section/NS2.png"
+        backgroundImage="/misc/NS2.webp"
       />
 
       {/* Our Story */}
@@ -39,7 +39,7 @@ const AboutPage = () => {
           </div>
           <div className="rounded-lg overflow-hidden shadow-xl">
             <img
-              src="/website-section/NS4.png"
+              src="/misc/NS4.webp"
               alt="ALN activists at protest"
               className="w-full h-full object-cover"
             />
@@ -137,7 +137,7 @@ const AboutPage = () => {
           {/* Team Member 1 */}
           <div className="card hover:translate-y-[-5px]">
             <img
-              src="/team-members/samaran.jpeg"
+              src="/team/samaran.webp"
               alt="Samaran"
               className="w-full h-64 object-cover object-center"
             />
@@ -155,7 +155,7 @@ const AboutPage = () => {
           {/* Team Member 2 */}
           <div className="card hover:translate-y-[-5px]">
             <img
-              src="/team-members/samaran.jpeg"
+              src="/team/samaran.webp"
               alt="Samaran"
               className="w-full h-64 object-cover object-center"
             />
@@ -173,7 +173,7 @@ const AboutPage = () => {
           {/* Team Member 3 */}
           <div className="card hover:translate-y-[-5px]">
             <img
-              src="/team-members/samaran.jpeg"
+              src="/team/samaran.webp"
               alt="Samaran"
               className="w-full h-64 object-cover object-center"
             />
@@ -191,7 +191,7 @@ const AboutPage = () => {
           {/* Team Member 4 */}
           <div className="card hover:translate-y-[-5px]">
             <img
-              src="/team-members/samaran.jpeg"
+              src="/team/samaran.webp"
               alt="Samaran"
               className="w-full h-64 object-cover object-center"
             />
@@ -209,7 +209,7 @@ const AboutPage = () => {
           {/* Team Member 5 */}
           <div className="card hover:translate-y-[-5px]">
             <img
-              src="/team-members/samaran.jpeg"
+              src="/team/samaran.webp"
               alt="Samaran"
               className="w-full h-64 object-cover object-center"
             />
@@ -227,7 +227,7 @@ const AboutPage = () => {
           {/* Team Member 6 */}
           <div className="card hover:translate-y-[-5px]">
             <img
-              src="/team-members/samaran.jpeg"
+              src="/team/samaran.webp"
               alt="Samaran"
               className="w-full h-64 object-cover object-center"
             />
@@ -335,7 +335,7 @@ const AboutPage = () => {
           </div>
           <div className="rounded-lg overflow-hidden shadow-xl">
             <img
-              src="/outreach/outreach-main.png"
+              src="/outreach/outreach-main.webp"
               alt="ALN members in action"
               className="w-full h-full object-cover"
             />

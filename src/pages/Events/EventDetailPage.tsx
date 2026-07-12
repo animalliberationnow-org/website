@@ -18,7 +18,7 @@ const EventDetailPage = () => {
       <Section dark={true}>
         <div className="text-center py-12">
           <h2 className="text-2xl font-bold mb-4 text-text-main">Event Not Found</h2>
-          <Link to="/events" className="btn btn-primary">Back to Events</Link>
+          <Link to="/activism" className="btn btn-primary">Back to Activism</Link>
         </div>
       </Section>
     );
@@ -32,11 +32,11 @@ const EventDetailPage = () => {
       <div className="relative bg-primary text-text-main border-b border-glass-border pt-16 md:pt-20">
         <div className="container-custom relative z-20 py-10 md:py-12">
           <Link
-            to="/events"
+            to="/activism"
             className="inline-flex items-center text-text-main font-bold hover:text-accent transition-colors mb-6 relative z-30"
           >
             <HiChevronLeft className="mr-1 h-5 w-5 stroke-2" />
-            Back to Events
+            Back to Activism
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

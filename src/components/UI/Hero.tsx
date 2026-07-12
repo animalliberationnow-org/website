@@ -14,7 +14,7 @@ const Hero: React.FC<HeroProps> = ({
   subtitle,
   buttonText,
   buttonLink = "/support",
-  backgroundImage = "/website-section/NS3.png",
+  backgroundImage = "/misc/NS3.webp",
   centered = false,
 }) => {
   return (

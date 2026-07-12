@@ -9,7 +9,7 @@ const SupportPage = () => {
       <Hero
         title="Join the activism!"
         subtitle="Whether you want to volunteer, support, or simply learn more about animal liberation, we have a place for you in our movement."
-        backgroundImage="/images/heroes/support-articles-hero.jpg"
+        backgroundImage="/heroes/support-articles-hero.webp"
       />
 
       {/* Volunteer Form */}
@@ -68,50 +68,53 @@ const SupportPage = () => {
 
 
       {/* Social Sharing */}
-      <Section>
+      <Section dark={false}>
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6">Spread the Word</h2>
-          <p className="text-lg mb-8">
+          <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase mb-4">Connect With Us</h2>
+          <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase tracking-tighter drop-shadow-glow-white mb-6">
+            Spread the Word
+          </h3>
+          <p className="text-lg mb-12 text-text-muted">
             Help amplify our message by sharing our content and mission with
             your network.
           </p>
 
-          <div className="flex justify-center space-x-4 mb-12">
+          <div className="flex justify-center gap-6">
             <a
               href="https://www.facebook.com/animalliberationnowofficial/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="text-black hover:text-red-600 transition-colors"
+              className="glass-panel p-6 text-text-main hover:text-accent hover:shadow-neon transition-all duration-300 rounded-2xl"
             >
-              <SiFacebook size={20} />
+              <SiFacebook size={32} />
             </a>
             <a
               href="https://x.com/alnofficial"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X (formerly Twitter)"
-              className="text-black hover:text-red-600 transition-colors"
+              className="glass-panel p-6 text-text-main hover:text-accent hover:shadow-neon transition-all duration-300 rounded-2xl"
             >
-              <SiX size={20} />
+              <SiX size={32} />
             </a>
             <a
               href="https://www.instagram.com/animalliberationnow/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="text-black hover:text-red-600 transition-colors"
+              className="glass-panel p-6 text-text-main hover:text-accent hover:shadow-neon transition-all duration-300 rounded-2xl"
             >
-              <SiInstagram size={20} />
+              <SiInstagram size={32} />
             </a>
             <a
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
-              className="text-black hover:text-red-600 transition-colors"
+              className="glass-panel p-6 text-text-main hover:text-accent hover:shadow-neon transition-all duration-300 rounded-2xl"
             >
-              <SiYoutube size={20} />
+              <SiYoutube size={32} />
             </a>
           </div>
 

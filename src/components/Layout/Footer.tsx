@@ -63,10 +63,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/faqs"
+                  to="/resources"
                   className="text-white/70 hover:text-white hover:bg-accent hover:shadow-neon-hover transition-all duration-300 px-3 py-1.5 rounded-full inline-block"
                 >
-                  FAQs
+                  Resources
                 </Link>
               </li>
             </ul>
@@ -75,6 +75,14 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-6 text-white">Get Involved</h3>
             <ul className="space-y-4">
+              <li>
+                <Link
+                  to="/activism"
+                  className="text-white/70 hover:text-white hover:bg-accent hover:shadow-neon-hover transition-all duration-300 px-3 py-1.5 rounded-full inline-block"
+                >
+                  Activism
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/support"

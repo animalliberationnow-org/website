@@ -159,7 +159,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
                 });
                 closeMenu();
               }}
-              className="font-bold uppercase tracking-widest text-sm py-3 px-4 rounded-2xl transition-colors text-white/70 hover:text-white hover:bg-white/5"
+              className="font-bold uppercase tracking-widest text-sm py-3 px-4 rounded-2xl transition-colors text-white/70 hover:text-white hover:bg-white/5 text-left"
             >
               Contact Us
             </button>

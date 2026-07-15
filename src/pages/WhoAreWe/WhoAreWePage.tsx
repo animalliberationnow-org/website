@@ -7,7 +7,7 @@ const WhoAreWePage = () => {
       <Hero
         title="Who Are We?"
         subtitle="Animal Liberation Now! is a non-profit working towards ending Human Supremacy."
-        backgroundImage="/misc/NS2.webp"
+        backgroundImage="/misc/ns2.webp"
         centered={true}
       />
 
@@ -42,7 +42,7 @@ const WhoAreWePage = () => {
             {/* Samaran Thamarai */}
             <div className="glass-panel overflow-hidden">
               <img
-                src="/team/samaran.webp"
+                src="/team/sam.webp"
                 alt="Samaran Thamarai"
                 className="w-full h-80 object-cover object-center"
               />
@@ -55,7 +55,7 @@ const WhoAreWePage = () => {
             {/* Mahesh Udupa */}
             <div className="glass-panel overflow-hidden">
               <img
-                src="/team/samaran.webp"
+                src="/team/mahesh.webp"
                 alt="Mahesh Udupa"
                 className="w-full h-80 object-cover object-center"
               />

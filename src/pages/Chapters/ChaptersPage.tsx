@@ -11,7 +11,7 @@ const ChaptersPage = () => {
       <Hero
         title="Our Global Network"
         subtitle="Animal Liberation Now! operates as a decentralized network of activists worldwide. Find your local chapter and join the movement for animal liberation."
-        backgroundImage="/outreach/outreach-main.webp"
+        backgroundImage="/misc/outreach-main.webp"
         centered={true}
       />
 

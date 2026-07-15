@@ -34,7 +34,7 @@ export const chapters: ChapterType[] = [
       instagram: "https://www.instagram.com/aln.bengaluru",
       facebook: "https://www.facebook.com/alnbengaluru"
     },
-    image: "/outreach/outreach10.webp",
+    image: "/misc/outreach-main.webp",
     activities: [
       "Weekly street outreach programs",
       "Circle of Justice events",
@@ -58,7 +58,7 @@ export const chapters: ChapterType[] = [
       instagram: "https://www.instagram.com/animalliberationnow",
       facebook: "https://www.facebook.com/animalliberationnowofficial"
     },
-    image: "/outreach/outreach3.webp",
+    image: "/misc/outreach-main.webp",
     activities: [
       "Regular public outreach campaigns",
       "Demonstrations and protests",
@@ -78,7 +78,7 @@ export const chapters: ChapterType[] = [
     },
     description: "ALN! Vancouver chapter working towards animal liberation.",
     contactEmail: "contact@animalliberationnow.org",
-    image: "/outreach/outreach-main.webp",
+    image: "/misc/outreach-main.webp",
     activities: []
   },
   {
@@ -92,7 +92,7 @@ export const chapters: ChapterType[] = [
     },
     description: "ALN! Batticaloa chapter working towards animal liberation.",
     contactEmail: "contact@animalliberationnow.org",
-    image: "/outreach/outreach-main.webp",
+    image: "/misc/outreach-main.webp",
     activities: []
   }
 ];

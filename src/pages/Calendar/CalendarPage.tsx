@@ -57,7 +57,7 @@ const CalendarPage = () => {
       <Hero
         title="Events Calendar"
         subtitle="Join us at our upcoming events, protests, workshops, and fundraisers."
-        backgroundImage="'/outreach/outreach9.webp'"
+        backgroundImage="/misc/outreach-main.webp"
       />
 
       <Section>

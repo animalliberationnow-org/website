@@ -18,7 +18,7 @@ const HomePage = () => {
         subtitle="Boycott Animal Products and Services"
         buttonText="Find your local chapter"
         buttonLink="#chapters"
-        backgroundImage="/misc/NS1.webp"
+        backgroundImage="/misc/ns1.webp"
         centered={true}
       />
 

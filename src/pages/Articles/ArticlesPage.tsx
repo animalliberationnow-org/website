@@ -57,7 +57,7 @@ const ArticlesPage = () => {
       <Hero
         title="FAQs"
         subtitle="Frequently asked questions about ethics and animal rights."
-        backgroundImage="/misc/NS4.webp"
+        backgroundImage="/misc/ns4.webp"
       />
 
       <Section>

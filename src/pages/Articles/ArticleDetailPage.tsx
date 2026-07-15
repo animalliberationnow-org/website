@@ -40,7 +40,7 @@ const ArticleDetailPage = () => {
       <Hero
         title={title}
         subtitle={`Category: ${category.charAt(0).toUpperCase() + category.slice(1)}`}
-        backgroundImage="/misc/NS4.webp"
+        backgroundImage="/misc/ns4.webp"
       />
 
       <Section dark={false}>

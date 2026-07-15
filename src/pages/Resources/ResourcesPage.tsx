@@ -12,7 +12,7 @@ const ResourcesPage = () => {
       <Hero
         title="Resources"
         subtitle="Everything you need to become an effective advocate for animal liberation."
-        backgroundImage="/outreach/outreach-main.webp"
+        backgroundImage="/misc/outreach-main.webp"
         centered={true}
       />
 

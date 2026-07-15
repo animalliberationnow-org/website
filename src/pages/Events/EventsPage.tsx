@@ -42,7 +42,7 @@ const EventsPage = () => {
       <Hero
         title="Events & Activism"
         subtitle="Join us at our events to support animal liberation and connect with like-minded advocates."
-        backgroundImage="/outreach/outreach-main.webp"
+        backgroundImage="/misc/outreach-main.webp"
         centered={true}
       />
 

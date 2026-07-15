@@ -11,90 +11,90 @@ export interface EventType {
 }
 
 export const events: EventType[] = [
-  // Recent Events
+  // Recent Events (sorted by date, newest first)
   {
     id: "1",
-    title: "Activists Protest against Animal Captivity - Vandalur Zoo, Chennai",
-    summary: "Animal Rights Activists in Chennai gathered in front of the (in)famous Vandalur Zoo to express opposition to animal captivity for human entertainment. We stood strong despite the Police trying to remove us from the area.",
-    date: "2024-11-15",
-    place: "Vandalur Zoo, Chennai",
-    image: "/events/vadalur-zoo/DSC_0012.webp",
+    title: "Lalbagh Outreach - Animal Rights Advocacy",
+    summary: "Activists in Bengaluru gathered at Lalbagh West Gate for an outreach session. Through meaningful conversations with passersby, they spoke about the oppression and gross injustices inflicted upon non-human animals. The engagement inspired someone to immediately recognize the gravity of the issue and join the movement instantly!",
+    date: "2026-07-11",
+    place: "Lalbagh West Gate, Bengaluru",
+    image: "/events/20260711-bangalore/bangalore-01.webp",
     link: "/activism/1",
     status: "recent",
     gallery: [
-      "/events/vadalur-zoo/DSC_0012.webp",
-      "/events/vadalur-zoo/DSC_0012.webp",
-      "/events/vadalur-zoo/DSC_0012.webp",
-      "/events/vadalur-zoo/DSC_0012.webp"
+      "/events/20260711-bangalore/bangalore-01.webp",
+      "/events/20260711-bangalore/bangalore-03.webp",
+      "/events/20260711-bangalore/bangalore-05.webp",
+      "/events/20260711-bangalore/bangalore-07.webp",
+      "/events/20260711-bangalore/bangalore-09.webp",
+      "/events/20260711-bangalore/bangalore-11.webp"
     ]
   },
   {
     id: "2",
-    title: "Protest against animals in captivity in front of Bannerghatta Zoo, Bangalore",
-    summary: "We joined hands to protest the use of animals for human entertainment at Bannerghatta Zoo, Bengaluru. It was a day long protest, with activists actively speaking to visitors about the ethics of zoos.",
-    date: "2024-10-22",
-    place: "Bannerghatta Zoo, Bengaluru",
-    image: "/events/bannerghatta-zoo-bengaluru/Copy%20of%20Copy%20of%20DSC_0432.webp",
+    title: "Fish Oppression Demonstration - Street Play",
+    summary: "Animal Liberation Now! Bengaluru took to the streets with an eye-catching demonstration highlighting the oppression humans inflict on fishes. Activists painted their faces and lay on the ground under nets, reminding onlookers of the immense suffering we subject marine life to. The demonstration concluded with a powerful street play.",
+    date: "2026-07-05",
+    place: "Rajarajeshwari Nagar, Bengaluru",
+    image: "/events/20260705-bangalore-fishnet-rajarajeswarinagar/bangalore-fishnet-rajarajeswarinagar-01.webp",
     link: "/activism/2",
     status: "recent",
     gallery: [
-      "/events/bannerghatta-zoo-bengaluru/Copy%20of%20Copy%20of%20DSC_0432.webp",
-      "/events/bannerghatta-zoo-bengaluru/Copy%20of%20Copy%20of%20DSC_0432.webp",
-      "/events/bannerghatta-zoo-bengaluru/Copy%20of%20Copy%20of%20DSC_0432.webp",
-      "/events/bannerghatta-zoo-bengaluru/Copy%20of%20Copy%20of%20DSC_0432.webp"
+      "/events/20260705-bangalore-fishnet-rajarajeswarinagar/bangalore-fishnet-rajarajeswarinagar-01.webp",
+      "/events/20260705-bangalore-fishnet-rajarajeswarinagar/bangalore-fishnet-rajarajeswarinagar-03.webp",
+      "/events/20260705-bangalore-fishnet-rajarajeswarinagar/bangalore-fishnet-rajarajeswarinagar-05.webp",
+      "/events/20260705-bangalore-fishnet-rajarajeswarinagar/bangalore-fishnet-rajarajeswarinagar-07.webp",
+      "/events/20260705-bangalore-fishnet-rajarajeswarinagar/bangalore-fishnet-rajarajeswarinagar-09.webp",
+      "/events/20260705-bangalore-fishnet-rajarajeswarinagar/bangalore-fishnet-rajarajeswarinagar-11.webp",
+      "/events/20260705-bangalore-fishnet-rajarajeswarinagar/bangalore-fishnet-rajarajeswarinagar-13.webp",
+      "/events/20260705-bangalore-fishnet-rajarajeswarinagar/bangalore-fishnet-rajarajeswarinagar-15.webp"
     ]
   },
   {
     id: "3",
-    title: "Circle of Justice - Pondy Bazaar, Chennai",
-    summary: "Activists stood shoulder to shoulder, holding display devices exposing the brutality of animal agriculture. Thousands watched in horror as they realized how cruel their daily choices were.",
-    date: "2024-09-08",
+    title: "Cage Demonstration - Pondy Bazaar",
+    summary: "Animal Liberation Now! Chennai carried out a powerful cage demonstration in the bustling street of Pondy Bazaar. Activists engaged dozens of people, holding them accountable for their participation in animal oppression and encouraging reflection on their choices.",
+    date: "2026-07-05",
     place: "Pondy Bazaar, Chennai",
-    image: "/events/pondy-bazar/Copy%20of%20DSC01742.webp",
+    image: "/events/20260705-chennai-pondybazaar/chennai-pondybazaar-01.webp",
     link: "/activism/3",
     status: "recent",
     gallery: [
-      "/events/pondy-bazar/Copy%20of%20DSC01742.webp",
-      "/events/pondy-bazar/Copy%20of%20DSC01742.webp",
-      "/events/pondy-bazar/Copy%20of%20DSC01742.webp",
-      "/events/pondy-bazar/Copy%20of%20DSC01742.webp"
+      "/events/20260705-chennai-pondybazaar/chennai-pondybazaar-01.webp",
+      "/events/20260705-chennai-pondybazaar/chennai-pondybazaar-03.webp",
+      "/events/20260705-chennai-pondybazaar/chennai-pondybazaar-05.webp",
+      "/events/20260705-chennai-pondybazaar/chennai-pondybazaar-07.webp",
+      "/events/20260705-chennai-pondybazaar/chennai-pondybazaar-09.webp",
+      "/events/20260705-chennai-pondybazaar/chennai-pondybazaar-11.webp",
+      "/events/20260705-chennai-pondybazaar/chennai-pondybazaar-13.webp"
     ]
   },
   {
     id: "4",
-    title: "Hundreds Reached at Marina Beach Cube",
-    summary: "Our latest Circle of Justice video outreach effort on Marina Beach saw tremendous engagement. Passersby engaged in deep conversations about the realities of the dairy and meat industries.",
-    date: "2024-08-17",
-    place: "Marina Beach, Chennai",
-    image: "/events/chennai-inauguration/Copy%20of%20DSC02344.webp",
+    title: "National Animal Rights Day 2026 (NARD)",
+    summary: "Activists organized the 16th edition of National Animal Rights Day at Swami Sivananda Salai, Triplicane, Chennai. They paid tribute to the often forgotten non-human victims and signed the Declaration of Animal Rights. The event featured powerful speeches, poems, and songs about the struggle for animal liberation.",
+    date: "2026-06-07",
+    place: "Swami Sivananda Salai, Triplicane, Chennai",
+    image: "/events/20260607-chennai-nard2026/chennai-nard2026-01.webp",
     link: "/activism/4",
     status: "recent",
     gallery: [
-      "/events/chennai-inauguration/Copy%20of%20DSC02344.webp",
-      "/events/chennai-inauguration/Copy%20of%20DSC02344.webp",
-      "/events/chennai-inauguration/Copy%20of%20DSC02344.webp",
-      "/events/chennai-inauguration/Copy%20of%20DSC02344.webp"
+      "/events/20260607-chennai-nard2026/chennai-nard2026-01.webp",
+      "/events/20260607-chennai-nard2026/chennai-nard2026-03.webp",
+      "/events/20260607-chennai-nard2026/chennai-nard2026-05.webp",
+      "/events/20260607-chennai-nard2026/chennai-nard2026-07.webp",
+      "/events/20260607-chennai-nard2026/chennai-nard2026-09.webp"
     ]
   },
   // Upcoming Events
   {
     id: "5",
-    title: "Chennai Outreach - Anna Tower Park",
-    summary: "Join us as we stand against the cruelty inflicted on animals. Together, we'll raise awareness about the harsh realities of animal exploitation and advocate for true animal rights.",
-    date: "2025-08-15",
-    place: "Anna Tower Park, Chennai",
-    image: "/outreach/outreach10.webp",
+    title: "Coimbatore Chapter Inauguration - Activism Workshop & Outreach",
+    summary: "We're hosting an activism workshop followed by a street outreach to inaugurate our Coimbatore Chapter. This session will empower activists to unlock their full potential and become an unstoppable force for animal rights.",
+    date: "2026-07-19",
+    place: "Shakthi Dental Hospital, Ganapathy, Coimbatore",
+    image: "/events/20260719-coimbatore-innaugration/coimbatore-innaugration-01.webp",
     link: "/activism/5",
-    status: "upcoming"
-  },
-  {
-    id: "6",
-    title: "Weekend Activism - Public Outreach",
-    summary: "Be part of our weekly outreach program. Engage with the public, share the truth about animal exploitation, and help create awareness in your community.",
-    date: "2025-08-22",
-    place: "Anna Tower Park, Chennai",
-    image: "/outreach/outreach3.webp",
-    link: "/activism/6",
     status: "upcoming"
   }
 ];

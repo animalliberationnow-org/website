@@ -232,10 +232,7 @@ website/
 │   │   ├── ramaiah-college/
 │   │   ├── srm/
 │   │   └── vadalur-zoo/
-│   ├── outreach/                # Outreach photos (WebP, 1200x800, ~100KB)
 │   ├── team/                    # Team member photos (WebP, 600x600, ~50KB)
-│   ├── articles/                # Article images (WebP)
-│   ├── avatars/                 # User avatars (WebP)
 │   ├── originals/               # Backup of original images (not deployed)
 │   ├── robots.txt               # Search engine instructions
 │   └── sitemap.xml              # Generated sitemap
@@ -255,8 +252,6 @@ website/
 │   ├── pages/                   # Page components (routes)
 │   │   ├── Home/
 │   │   │   └── HomePage.tsx     # Landing page
-│   │   ├── About/
-│   │   │   └── AboutPage.tsx    # About page (commented out in routes)
 │   │   ├── Events/
 │   │   │   ├── EventsPage.tsx   # Events listing (Activism)
 │   │   │   ├── EventDetailPage.tsx
@@ -298,7 +293,6 @@ website/
 │   └── vite-env.d.ts            # Vite type definitions
 │
 ├── dist/                        # Production build (generated)
-├── .github/                     # GitHub Actions workflows
 ├── .claude/                     # Claude Code settings
 │
 ├── index.html                   # HTML entry point
@@ -320,6 +314,8 @@ website/
 ## 🖼️ Image Optimization
 
 All images are optimized to **WebP format** for maximum performance (96% size reduction).
+`optimize-images.sh` also standardizes filenames (removes "Copy of " prefixes, spaces,
+mixed casing) before optimizing.
 
 ### Running Image Optimization
 
@@ -327,18 +323,27 @@ All images are optimized to **WebP format** for maximum performance (96% size re
 # Make script executable (first time only)
 chmod +x optimize-images.sh
 
-# Run optimization
+# Dry run: preview filename renames only. Nothing is touched and
+# optimization does NOT run.
 ./optimize-images.sh
+
+# Rename files AND optimize them (WebP + JPG fallback) in one pass.
+./optimize-images.sh --apply
 ```
 
 ### What It Does
 
-- ✅ Converts all JPG/PNG images to WebP
+- ✅ Renames files to kebab-case, category-specific naming conventions
+- ✅ Sequentially numbers event gallery images (`thumb.webp`, `event-01.webp`, ...)
+- ✅ Converts all JPG/PNG/HEIC images to WebP
 - ✅ Resizes to appropriate dimensions
 - ✅ Compresses to optimal quality
 - ✅ Creates JPG fallbacks for old browsers
 - ✅ Backs up originals to `public/originals/`
 - ✅ Shows detailed statistics
+
+Requires `pillow-heif` for HEIC support: `pip3 install --user pillow-heif`
+(apt's `heif-convert` fails on many modern iPhone HEIC files).
 
 ### Ideal Image Sizes
 
@@ -350,9 +355,6 @@ The script automatically optimizes images to these specifications:
 | **Events Full** | 1600x1200px | 80% | 150-250KB | Event galleries |
 | **Events Thumb** | 800x600px | 75-80% | 50-100KB | Event cards |
 | **Team Photos** | 600x600px | 80% | 30-60KB | Team member profiles |
-| **Outreach** | 1200x800px | 78% | 80-150KB | Outreach photos |
-| **Articles** | 1200x800px | 78% | 80-150KB | Article images |
-| **Avatars** | 400x400px | 80% | 20-40KB | User avatars |
 
 ### Performance Impact
 
@@ -484,7 +486,6 @@ Use these Tailwind classes for automatic theme support:
 ### Disabled Routes (Commented Out in App.tsx)
 
 ```
-/about                 → AboutPage
 /calendar              → CalendarPage
 /chapters              → ChaptersPage
   /chapters/:id        → ChapterDetailPage

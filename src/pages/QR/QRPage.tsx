@@ -7,7 +7,7 @@ const QRPage = () => {
 
   useEffect(() => {
     const redirectMap: Record<string, string> = {
-      link1: "/documentaries",
+      link1: "/resources",
       link2: "/faqs",
       link3: "/support",
     };

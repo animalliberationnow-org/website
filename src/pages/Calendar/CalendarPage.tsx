@@ -8,13 +8,13 @@ import {
   startOfMonth,
   subMonths,
 } from "date-fns";
+import { useEffect, useState } from "react";
 import {
   HiCalendar as CalendarIcon,
   HiChevronLeft,
   HiChevronRight,
   HiFunnel,
 } from "react-icons/hi2";
-import { useEffect, useState } from "react";
 import Hero from "../../components/UI/Hero";
 import Section from "../../components/UI/Section";
 import { events, EventType } from "../../data/eventsData";
@@ -57,7 +57,7 @@ const CalendarPage = () => {
       <Hero
         title="Events Calendar"
         subtitle="Join us at our upcoming events, protests, workshops, and fundraisers."
-        backgroundImage="'/outreach/outreach9.jpeg'"
+        backgroundImage="/misc/outreach-main.webp"
       />
 
       <Section>

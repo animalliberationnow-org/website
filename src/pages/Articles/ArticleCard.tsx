@@ -1,5 +1,4 @@
-import { format, parseISO } from "date-fns";
-import { HiClock, HiTag, HiUser, HiArrowRight } from "react-icons/hi2";
+import { HiTag, HiArrowRight } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { ArticleType } from "../../data/articlesData";
 
@@ -8,13 +7,11 @@ interface ArticleCardProps {
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
-  const { id, title, excerpt, date, category, tags } = article;
-
-  const formattedDate = format(parseISO(date), "MMMM d, yyyy");
+  const { id, title, excerpt, category, tags } = article;
 
   return (
-    <div className="group relative flex flex-col h-full bg-gray-200 border border-black rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:translate-y-[-8px]">
-      
+    <div className="group relative flex flex-col h-full glass-panel transition-all duration-500 hover:shadow-neon hover:translate-y-[-8px] hover:border-accent/30">
+
       {/* Top Accent Bar*/}
       <div className="h-1.5 w-full bg-accent opacity-90" />
 
@@ -28,21 +25,13 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
 
         {/* Title */}
         <Link to={`/faqs/${id}`}>
-          <h3 className="text-2xl font-bold mb-3 text-black transition-colors leading-tight">
+          <h3 className="text-2xl font-bold mb-6 text-text-main transition-colors leading-tight">
             {title}
           </h3>
         </Link>
 
-        {/* Meta Info */}
-        <div className="flex items-center mb-6 text-sm text-gray-600 font-medium">
-          <div className="flex items-center">
-            <HiClock className="h-4 w-4 mr-1.5 text-accent" />
-            <span>{formattedDate}</span>
-          </div>
-        </div>
-
         {/* Excerpt */}
-        <p className="mb-8 text-gray-700 leading-relaxed flex-grow">
+        <p className="mb-8 text-text-muted leading-relaxed flex-grow">
           {excerpt}
         </p>
 
@@ -52,7 +41,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
             {tags.slice(0, 3).map((tag) => (
               <div
                 key={tag}
-                className="flex items-center text-[11px] font-bold bg-white text-gray-700 border border-gray-200 px-2.5 py-1 rounded-md"
+                className="flex items-center text-[11px] font-bold bg-primary border border-glass-border text-text-muted px-2.5 py-1 rounded-md"
               >
                 <HiTag className="h-3 w-3 mr-1 text-accent/70" />
                 {tag.toUpperCase()}
@@ -63,9 +52,9 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
           {/* Read More Link */}
           <Link
             to={`/faqs/${id}`}
-            className="inline-flex items-center text-sm font-bold text-black transition-all"
+            className="inline-flex items-center text-sm font-bold text-text-main transition-all"
           >
-            READ MORE 
+            READ MORE
             <HiArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

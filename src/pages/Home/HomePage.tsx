@@ -1,223 +1,172 @@
 import { useState } from "react";
-import { HiBookOpen, HiHeart } from "react-icons/hi2";
+import { HiArrowRight, HiOutlineExclamationTriangle, HiPlay } from "react-icons/hi2";
 import { Link } from "react-router-dom";
+import ChapterMap from "../../components/Map/ChapterMap";
 import Hero from "../../components/UI/Hero";
 import Section from "../../components/UI/Section";
-import { articles } from "../../data/articlesData";
 import { events } from "../../data/eventsData";
-import ArticleCard from "../Articles/ArticleCard";
 
 const HomePage = () => {
-  // Get upcoming events (first 3)
-  const upcomingEvents = events.slice(0, 3);
-
-  // Get latest articles (first 3)
-  const latestArticles = articles.slice(0, 3);
-
-  // For the mission statement animation
-  const [isVisible, setIsVisible] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
 
   return (
-    <>
+    <div className="bg-primary min-h-screen">
+
+      {/* Hero Section */}
       <Hero
-        title="Animal Liberation Now!"
-        subtitle="We envision a world where every animal lives free from cages, cruelty, and commodification. No creature should suffer for food, fashion, entertainment, or experiments.
-Our fight is not for reform — it’s for revolution.
-Join us, stand on the side of justice, and be the voice for those who are silenced."
-        // buttonText="Join Our Movement"
-        backgroundImage="/website-section/section1.jpg"
+        title="Dismantle Human Supremacy"
+        subtitle="Boycott Animal Products and Services"
+        buttonText="Find your local chapter"
+        buttonLink="#chapters"
+        backgroundImage="/misc/ns1.webp"
         centered={true}
       />
 
-      {/* What is ALN */}
-      <Section
-      // title="What is Animal Liberation Now! ?"
-      // subtitle="ALN! is dedicated to ending animal exploitation through activism, education, and direct action."
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
-          <div className="flex flex-col justify-center">
-            <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-            <p className="mb-6">
-              Animal Liberation Now! (ALN!) works to end the exploitation of
-              animals through direct action, public education, and legislative
-              advocacy. We believe that animals exist for their own purposes and
-              should not be used as resources for human ends.
-            </p>
-            <p className="mb-6">
-              ALN! has grown into a powerful voice for animals, with a lot of
-              dedicated supporters and volunteers across the country. Our
-              campaigns have led to significant awareness about animal
-              exploitation.
-            </p>
-            {/* <Link
-              to="/about"
-              className="flex items-center font-medium text-accent hover:underline"
-            >
-              Learn more about our work
-              <HiChevronRight className="ml-1 h-4 w-4" />
-            </Link> */}
-          </div>
-          <div className="relative rounded-lg overflow-hidden shadow-xl h-[400px]">
-            <img
-              src="/outreach/outreach-main.png"
-              alt="ALN volunteers at protest"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-      </Section>
+      {/* What is Animal Liberation Section */}
+      <Section dark={true} className="overflow-hidden">
+        {/* Soft Organic Orbs */}
+        <div className="absolute top-0 left-0 w-full md:w-1/2 h-full bg-accent/5 blur-[150px] -z-10 rounded-full animate-float"></div>
 
-      {/* Why ALN */}
-      <Section
-        title="Why Animal Liberation?"
-        subtitle="We believe that all sentient beings deserve to live free from exploitation and suffering."
-        dark={true}
-      >
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12"
-          onMouseEnter={() => setIsVisible(true)}
-        >
-          <div className="relative rounded-lg overflow-hidden shadow-xl h-[400px]">
-            <img
-              src="/website-section/section3.jpg"
-              alt="Wild animals living freely"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="flex flex-col justify-center">
-            <h3 className="text-2xl font-bold mb-4 text-white">Our Core Beliefs</h3>
-            <ul className="space-y-4">
-              <li
-                className={`flex items-start transition-all duration-500 ${isVisible
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 translate-x-10"
-                  }`}
-                style={{ transitionDelay: "0.1s" }}
-              >
-                <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-bold mb-1 text-white">Animal Sentience</h4>
-                  <p className="text-white">
-                    Animals are sentient beings capable of experiencing pain,
-                    pleasure, and a range of emotions.
-                  </p>
-                </div>
-              </li>
-              <li
-                className={`flex items-start transition-all duration-500 ${isVisible
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 translate-x-10"
-                  }`}
-                style={{ transitionDelay: "0.2s" }}
-              >
-                <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-bold mb-1 text-white">Inherent Value</h4>
-                  <p className="text-white">
-                    Each animal has inherent value that is independent of their
-                    usefulness to humans.
-                  </p>
-                </div>
-              </li>
-              <li
-                className={`flex items-start transition-all duration-500 ${isVisible
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 translate-x-10"
-                  }`}
-                style={{ transitionDelay: "0.3s" }}
-              >
-                <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-bold mb-1 text-white">Equal Consideration</h4>
-                  <p className="text-white">
-                    The interests of animals deserve equal consideration to
-                    comparable interests of humans.
-                  </p>
-                </div>
-              </li>
-              <li
-                className={`flex items-start transition-all duration-500 ${isVisible
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 translate-x-10"
-                  }`}
-                style={{ transitionDelay: "0.4s" }}
-              >
-                <HiHeart className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-bold mb-1 text-white">Right to Liberation</h4>
-                  <p className="text-white">
-                    Animals have a right to be free from human exploitation and
-                    to live according to their nature.
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </Section>
-
-      {/* Upcoming Events */}
-      {/* <Section
-        title="Upcoming Events"
-        subtitle="Join us at our upcoming events to support animal liberation and connect with like-minded advocates."
-      >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          {upcomingEvents.map((event) => (
-            <EventCard key={event.id} event={event} />
-          ))}
-        </div>
-        <div className="mt-10 text-center">
-          <Link to="/calendar" className="btn btn-primary">
-            <HiCalendar className="mr-2 h-5 w-5" />
-            View All Events
-          </Link>
-        </div>
-      </Section> */}
-
-      {/* FAQs Section*/}
-      <Section
-        title="FAQs"
-        subtitle="Frequently asked questions about ethics and animal rights."
-        className="bg-gray-300 text-black" 
-      >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          {latestArticles.map((article) => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
-        </div>
-        <div className="mt-10 text-center">
-          <Link to="/faqs" className="btn btn-primary">
-            <HiBookOpen className="mr-2 h-5 w-5" />
-            Read All FAQs
-          </Link>
-        </div>
-      </Section>
-
-      {/* Call to Action */}
-      <Section>
-        <div className="bg-primary text-secondary rounded-lg p-8 md:p-12 text-center max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Join the activism!
-          </h2>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            Whether you want to volunteer, support, or simply learn more about animal liberation, we have a place for you in our movement.
+        <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
+          <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase">The Liberation</h2>
+          <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase leading-tight tracking-tighter drop-shadow-glow-white">
+            What is Animal Liberation?
+          </h3>
+          <p className="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto">
+            Animal Liberation is a Social Justice Movement for the Emancipation of non-human animals from Human Supremacy.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/support" className="btn btn-primary">
-              <HiHeart className="mr-2 h-5 w-5" />
-              Join us!
-            </Link>
-            {/* <Link
-              to="/about"
-              className="btn btn-outline border-white text-white hover:bg-white hover:text-primary"
-            >
-              <HiUsers className="mr-2 h-5 w-5" />
-              Learn More
-            </Link> */}
+
+          <div className="relative aspect-video flex items-center justify-center p-2 glass-panel rounded-[2rem]">
+            <div className="w-full h-full relative z-10 bg-black rounded-2xl overflow-hidden shadow-inner">
+              {!showVideo ? (
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-0 md:p-0 text-center bg-[#050505]/90 z-10 backdrop-blur-sm">
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/20 to-transparent"></div>
+                  <HiOutlineExclamationTriangle className="h-16 w-16 md:h-20 md:w-20 text-accent mb-4 md:mb-6 animate-pulse-glow" />
+                  <h5 className="text-2xl md:text-3xl font-black mb-3 md:mb-4 uppercase tracking-wider md:tracking-widest text-white drop-shadow-glow-white px-2">Warning: Graphic</h5>
+                  <p className="mb-6 md:mb-8 text-white/60 max-w-md text-xs md:text-sm leading-relaxed px-4">The following is raw footage of systemic violence. Viewer discretion is advised.</p>
+                  <button
+                    onClick={() => setShowVideo(true)}
+                    className="btn btn-outline border-white/20 text-white bg-white/5 hover:bg-white/10 hover:border-white/40 text-sm md:text-base"
+                  >
+                    <HiPlay className="mr-2 md:mr-3 h-5 w-5 md:h-6 md:w-6" /> Play
+                  </button>
+                </div>
+              ) : (
+                <iframe
+                  src="https://player.vimeo.com/video/1182206552?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  className="absolute inset-0 w-full h-full border-none"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                  allowFullScreen
+                ></iframe>
+              )}
+            </div>
+          </div>
+          <p className="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto">
+            In this planet dominated by humans, billions of sentient beings are exploited annually for human food, fashion, transport, science and entertainment, and millions more who are subjected to violence simply because they are not human. We envision a world where respecting animal rights is the norm, where abusing animals is unacceptable.
+          </p>
+
+        </div>
+      </Section>
+
+      {/* Find Your Chapter - OpenStreetMap Section */}
+      <Section dark={false} className="overflow-hidden" id="chapters">
+        <div className="max-w-6xl mx-auto text-center space-y-8 relative z-10">
+          <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase">Global Network</h2>
+          <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase leading-tight tracking-tighter drop-shadow-glow-white">
+            Find Your Local Chapter
+          </h3>
+          <p className="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto mb-8">
+            Animal Liberation Now! operates as a decentralized global network. Click on a marker to connect with activists in your region.
+          </p>
+
+          <div className="glass-panel p-2 rounded-[2rem] overflow-hidden shadow-glow-white">
+            <ChapterMap className="w-full h-[500px] rounded-2xl" />
           </div>
         </div>
       </Section>
-    </>
+
+      {/* Action Logs (Now above System Overview) */}
+      <Section dark={false} className="relative z-20">
+        <div className="text-center mb-16">
+          <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase mb-4">Recent Activisim</h2>
+          <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase tracking-tighter drop-shadow-glow-white">We Take The Truth To The Streets</h3>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {events.map((event, index) => (
+            <Link
+              key={index}
+              to={event.link}
+              className="glass-panel overflow-hidden group flex flex-col hover:border-accent/30 transition-all duration-500 shadow-glow-white hover:shadow-neon cursor-pointer"
+            >
+              <div className="h-72 overflow-hidden relative border-b border-glass-border">
+                <div className="absolute inset-0 bg-transparent dark:bg-accent/20 dark:mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500"></div>
+                <img src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-110 grayscale-0 dark:grayscale-[50%] group-hover:grayscale-0 transition-all duration-700" />
+              </div>
+              <div className="p-8 flex flex-col flex-grow bg-primary">
+                <h3 className="text-xl font-bold mb-4 text-text-main uppercase tracking-tight group-hover:text-accent transition-colors">{event.title}</h3>
+                <p className="text-text-muted flex-grow text-sm leading-relaxed">{event.summary}</p>
+                <div className="mt-6 flex items-center font-bold text-accent group-hover:text-text-main transition-colors uppercase tracking-widest text-xs">
+                  <span>View Details</span>
+                  <HiArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      {/* System Overview (Now below Action Logs) */}
+      <Section dark={true} className="overflow-hidden">
+        {/* Soft Organic Orbs */}
+        <div className="absolute top-0 right-0 w-full md:w-1/2 h-full bg-accent/10 blur-[150px] -z-10 rounded-full animate-float"></div>
+        <div className="absolute bottom-0 left-0 w-full md:w-1/2 h-1/2 bg-blue-500/10 blur-[150px] -z-10 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
+
+        <div className="max-w-4xl mx-auto text-center space-y- relative z-10">
+          <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase">What do we do?</h2>
+          <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase leading-tight tracking-tighter drop-shadow-glow-white">
+            <b>Animal Liberation Now!</b> Strives to strengthen the animal liberation movement
+          </h3>
+          <p className="text-xl text-text-muted font-medium">
+            By providing activists all over the globe with guidance, support and resources to optimise their potential while maintaining accuracy and consistency in representing the movement.
+          </p>
+
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-3xl mx-auto mt-12">
+            <li className="glass-panel p-6 flex items-center space-x-5 group">
+              <div className="w-3.5 h-3.5 bg-accent rounded-full group-hover:scale-125 transition-transform shadow-glow shrink-0"></div>
+              <span className="font-bold text-text-main tracking-wide uppercase text-sm">Street Outreaches</span>
+            </li>
+            <li className="glass-panel p-6 flex items-center space-x-5 group">
+              <div className="w-3.5 h-3.5 bg-accent rounded-full group-hover:scale-125 transition-transform shadow-glow shrink-0"></div>
+              <span className="font-bold text-text-main tracking-wide uppercase text-sm">Institutional Lectures</span>
+            </li>
+            <li className="glass-panel p-6 flex items-center space-x-5 group">
+              <div className="w-3.5 h-3.5 bg-accent rounded-full group-hover:scale-125 transition-transform shadow-glow shrink-0"></div>
+              <span className="font-bold text-text-main tracking-wide uppercase text-sm">Protests</span>
+            </li>
+            <li className="glass-panel p-6 flex items-center space-x-5 group">
+              <div className="w-3.5 h-3.5 bg-accent rounded-full group-hover:scale-125 transition-transform shadow-glow shrink-0"></div>
+              <span className="font-bold text-text-main tracking-wide uppercase text-sm">Demonstrations</span>
+            </li>
+            <li className="glass-panel p-6 flex items-center space-x-5 group">
+              <div className="w-3.5 h-3.5 bg-accent rounded-full group-hover:scale-125 transition-transform shadow-glow shrink-0"></div>
+              <span className="font-bold text-text-main tracking-wide uppercase text-sm">Activist Workshops</span>
+            </li>
+          </ul>
+
+          <div className="pt-12">
+            <p className="text-lg text-text-muted mb-10 max-w-3xl mx-auto">
+              We believe lasting change begins with informed communities and consistent action. By encouraging dialogue, promoting ethical choices, and holding systems accountable, we strive to build a more compassionate world for all beings.
+            </p>
+            <div className="inline-block glass-panel px-10 py-6 rounded-full border-t border-accent/30 shadow-neon">
+              <p className="font-black text-text-main uppercase tracking-widest text-sm">
+                Animal Liberation Now! is <span className="text-accent">abolitionist</span>, unapologetic, and consistently anti-oppression.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+    </div>
   );
 };
 

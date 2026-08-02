@@ -17,6 +17,7 @@ A modern, fast, and secure static website for Animal Liberation Now - an organiz
 - [Quick Start](#-quick-start)
 - [Development](#-development)
 - [Building](#-building)
+- [Deployment](#-deployment)
 - [Project Structure](#-project-structure)
 - [Image Optimization](#-image-optimization)
 - [Available Scripts](#-available-scripts)
@@ -209,6 +210,56 @@ Serves the `dist/` folder locally to test production build.
 
 ---
 
+## 🚀 Deployment
+
+The site is hosted in **S3** (`aln-website-v1`, `ap-south-2`) and served through **CloudFront** (`E37F2SI13R2RMO`, aliases `animalliberationnow.org` and `www.animalliberationnow.org`).
+
+Deployment is currently **manual**. Requires AWS credentials with write access to the bucket and invalidation rights on the distribution.
+
+```bash
+# 1. Build
+npm run build
+
+# 2. Upload to S3 (--delete prunes files no longer in the build)
+aws s3 sync dist/ s3://aln-website-v1/ --delete
+
+# 3. Invalidate the CloudFront cache
+aws cloudfront create-invalidation \
+  --distribution-id E37F2SI13R2RMO \
+  --paths "/*"
+```
+
+### ⚠️ Do not skip steps 2 and 3
+
+Committing a change does **not** deploy it. A fix merged in July 2026 (a QR redirect corrected from `/documentaries` to `/resources`) sat undeployed for weeks because only the source was pushed — the live site kept serving the previously built bundle.
+
+**Recommended:** re-apply the no-cache header on `index.html` after every sync.
+
+```bash
+aws s3 cp s3://aln-website-v1/index.html s3://aln-website-v1/index.html \
+  --metadata-directive REPLACE \
+  --cache-control "no-cache,must-revalidate" \
+  --content-type "text/html"
+```
+
+`index.html` names which hashed JS bundles to load. If it gets cached, browsers keep requesting the old bundles regardless of what was uploaded — which is the same stale-content failure by a different route.
+
+### Verifying a Deploy
+
+```bash
+# Which bundle is the live site actually serving?
+curl -s https://animalliberationnow.org/ | grep -o 'assets/index-[^"]*\.js'
+
+# Confirm index.html is not being cached
+curl -sI https://animalliberationnow.org/ | grep -i cache-control
+```
+
+Compare the first result against the filename in your local `dist/assets/`. If they differ, the deploy didn't land.
+
+> **Note:** this process is a candidate for automation via GitHub Actions (build, sync, and invalidate on push to `main`), which would remove the risk of forgetting a step.
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -266,16 +317,11 @@ website/
 │   │   │   └── WhoAreWePage.tsx       # Who Are We page
 │   │   ├── Support/
 │   │   │   └── SupportPage.tsx        # Volunteer form & social sharing
-│   │   ├── Documentaries/
-│   │   │   └── DocumentariesPage.tsx  # Documentaries listing
 │   │   ├── QR/
 │   │   │   └── QRPage.tsx             # QR code redirector
 │   │   ├── Chapters/
 │   │   │   ├── ChaptersPage.tsx       # Chapters listing (commented out)
 │   │   │   └── ChapterDetailPage.tsx
-│   │   ├── Calendar/
-│   │   │   ├── CalendarPage.tsx       # Calendar page (commented out)
-│   │   │   └── EventCard.tsx
 │   │   └── NotFound/
 │   │       └── NotFoundPage.tsx       # 404 page
 │   │
@@ -479,14 +525,12 @@ Use these Tailwind classes for automatic theme support:
 /resources             → ResourcesPage (includes Learn More, FAQs preview, Activism Starter Kit)
 /who-are-we            → WhoAreWePage
 /support               → SupportPage (Join Us button)
-/documentaries         → DocumentariesPage
 /qr/:slug              → QRPage (QR code redirector)
 ```
 
 ### Disabled Routes (Commented Out in App.tsx)
 
 ```
-/calendar              → CalendarPage
 /chapters              → ChaptersPage
   /chapters/:id        → ChapterDetailPage
 ```

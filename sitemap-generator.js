@@ -21,13 +21,11 @@
  *     /faqs/:id               → ArticleDetailPage
  * /who-are-we                 → WhoAreWePage
  * /support                    → SupportPage
- * /documentaries              → DocumentariesPage
  * /qr/:slug                   → QRPage (redirector)
  *
  * Disabled Pages (Commented Out):
  * -------------------------------
  * /about                      → AboutPage (commented)
- * /calendar                   → CalendarPage (commented)
  * /chapters                   → ChaptersPage (commented)
  *   /chapters/:id             → ChapterDetailPage (commented)
  *
@@ -47,7 +45,6 @@
  * │   ├── resources-hero.webp
  * │   ├── who-are-we-hero.webp
  * │   ├── support-hero.webp
- * │   └── documentaries-hero.webp
  * ├── events/                          # Event galleries (kebab-case names)
  * │   ├── bannerghatta-zoo-bengaluru/
  * │   ├── chennai-inauguration/
@@ -103,11 +100,6 @@ const staticRoutes = [
   },
   {
     path: '/support',
-    priority: '0.7',
-    changefreq: 'monthly',
-  },
-  {
-    path: '/documentaries',
     priority: '0.7',
     changefreq: 'monthly',
   },

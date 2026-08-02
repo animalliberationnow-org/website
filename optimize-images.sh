@@ -85,7 +85,11 @@
 #                                    them (WebP + JPG fallback) in one pass.
 #
 # NOTES:
-# - Original images backed up in public/originals/ before optimization.
+# - Original images backed up in originals/ (repo root, gitignored) before
+#   optimization. Deliberately NOT under public/ - Vite copies public/ into
+#   dist/, so backups there would be deployed.
+# - Re-running is safe: event images already matching the naming convention are
+#   left alone, and new ones are appended after the highest number in use.
 # - Review optimized images before deleting backups.
 # - Script handles JPG, JPEG, PNG, HEIC (uppercase and lowercase).
 # - HEIC files are converted to JPG first, then optimized to WebP.
@@ -118,8 +122,14 @@ NC='\033[0m' # No Color
 
 # Base directory
 PUBLIC_DIR="public"
-BACKUP_DIR="$PUBLIC_DIR/originals"
+# Backups live OUTSIDE public/ - anything under public/ is copied into dist/ by
+# Vite and would be deployed to S3.
+BACKUP_DIR="originals"
 DRY_RUN=true
+
+# Category folders handled by their own optimization pass below. The catch-all
+# pass must skip these, or it re-processes their output at lower settings.
+CATEGORY_DIRS=(heroes team misc events)
 
 # Parse arguments
 if [[ "$1" == "--apply" ]]; then
@@ -253,9 +263,13 @@ if [ -d "$PUBLIC_DIR/events" ]; then
         new_dirname=$(sanitize_filename "$dirname")
 
         # If it's a dated event folder, ensure proper format: YYYYMMDD-location-type
+        # Strips special characters too - a "+" or space left in a directory name
+        # ends up in every image URL beneath it and has to be percent-encoded.
         if [[ "$dirname" =~ ^[0-9]{8} ]]; then
-            # Already in good format, just clean it up
-            new_dirname=$(echo "$dirname" | tr '[:upper:]' '[:lower:]' | tr ' _' '-' | sed 's/-\+/-/g')
+            new_dirname=$(echo "$dirname" \
+                | tr '[:upper:]' '[:lower:]' \
+                | tr ' _' '-' \
+                | sed 's/[^a-z0-9-]/-/g; s/-\+/-/g; s/^-\+//; s/-\+$//')
         fi
 
         new_dir="$PUBLIC_DIR/events/$new_dirname"
@@ -296,8 +310,10 @@ for category_dir in "$PUBLIC_DIR"/{heroes,team,misc,events}; do
         # Apply category-specific naming conventions
         case "$category" in
             "heroes")
-                # Ensure it ends with "-hero" if it doesn't already
-                if [[ ! "$new_filename" =~ -hero\. ]]; then
+                # Only suffix raw incoming files. A .webp here is already
+                # optimized output that page code is referencing by name -
+                # renaming it would break those references on every re-run.
+                if [[ "${new_filename##*.}" != "webp" ]] && [[ ! "$new_filename" =~ -hero\. ]]; then
                     extension="${new_filename##*.}"
                     basename="${new_filename%.*}"
                     new_filename="${basename}-hero.${extension}"
@@ -326,28 +342,57 @@ if [ -d "$PUBLIC_DIR/events" ]; then
 
         echo -e "${YELLOW}Event: $event_name${NC}"
 
-        # Get all images in this event directory, sorted
-        counter=1
+        # Event slug: strip the YYYYMMDD- prefix, then apply the same character
+        # rules as filenames. Without this, a folder like
+        # "20260719-Coimbatore-Inaugration + Workshop" yields filenames with
+        # spaces and a "+" in them, which then need URL-encoding to load.
+        event_slug=$(echo "$event_name" \
+            | sed 's/^[0-9]\{8\}-\?//' \
+            | tr '[:upper:]' '[:lower:]' \
+            | tr ' _' '-' \
+            | sed 's/[^a-z0-9-]/-/g; s/-\+/-/g; s/^-\+//; s/-\+$//')
+
+        # Files already matching the convention are left untouched, and new
+        # files are appended after the highest number in use. Renumbering from
+        # scratch on every run would silently break any eventsData.ts path
+        # pointing at an existing gallery image.
+        # Any prefix counts, not just the current slug, so a folder rename
+        # continues the existing sequence instead of restarting at 01 and
+        # leaving two numbering schemes side by side.
+        highest=0
+        for existing in "$event_dir"/*-[0-9][0-9].*; do
+            [ -e "$existing" ] || continue
+            n=$(basename "$existing" | sed 's/^.*-\([0-9]\{2\}\)\.[^.]*$/\1/')
+            [[ "$n" =~ ^[0-9]{2}$ ]] || continue
+            n=$((10#$n))
+            [ "$n" -gt "$highest" ] && highest=$n
+        done
+
+        has_thumb=false
+        for existing in "$event_dir"/thumb.*; do
+            [ -e "$existing" ] && has_thumb=true && break
+        done
+
         find "$event_dir" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | sort | while read -r file; do
             filename=$(basename "$file")
             extension="${filename##*.}"
 
-            # Create event slug from directory name (remove date prefix if present)
-            event_slug=$(echo "$event_name" | sed 's/^[0-9]\{8\}-\?//' | sed 's/-\+/-/g')
-
-            # Generate new filename with sequential number
-            if [ $counter -eq 1 ]; then
-                # First image becomes thumb.ext
-                new_filename="thumb.${extension}"
-            else
-                # Subsequent images get numbered
-                new_filename="${event_slug}-$(printf "%02d" $((counter - 1))).${extension}"
+            # Already conforms - skip, so the run stays idempotent. The prefix is
+            # deliberately not required to match the current slug: renaming a
+            # folder must not renumber files that eventsData.ts already points at.
+            if [[ "$filename" == thumb.* ]] || [[ "$filename" =~ ^.+-[0-9]{2}\.[^.]+$ ]]; then
+                continue
             fi
 
-            new_path="$event_dir/$new_filename"
-            rename_file "$file" "$new_path"
+            if [ "$has_thumb" = false ]; then
+                new_filename="thumb.${extension}"
+                has_thumb=true
+            else
+                highest=$((highest + 1))
+                new_filename="${event_slug}-$(printf "%02d" "$highest").${extension}"
+            fi
 
-            counter=$((counter + 1))
+            rename_file "$file" "$event_dir/$new_filename"
         done
     done
 fi
@@ -574,10 +619,18 @@ fi
 echo -e "\n${BLUE}📁 Scanning for remaining unoptimized images...${NC}"
 echo -e "${YELLOW}Target: 1200x800px, Quality: 78%, Format: WebP (default settings)${NC}\n"
 
-# Find all remaining JPG/JPEG/PNG/HEIC files in public/ that haven't been processed yet
-# This catches any new folders or files that weren't in the explicit categories above
-find "$PUBLIC_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.heic" \) \
-    ! -path "$BACKUP_DIR/*" 2>/dev/null | while read -r file; do
+# Catches new folders that aren't one of the explicit categories above. The
+# category folders are pruned: they have already been optimized at their own
+# dimensions, and re-running them here would overwrite that output with smaller,
+# lower-quality 1200x800 versions (a 2560x1440 hero would be downgraded).
+prune_args=()
+for category in "${CATEGORY_DIRS[@]}"; do
+    prune_args+=(-path "$PUBLIC_DIR/$category" -prune -o)
+done
+
+find "$PUBLIC_DIR" "${prune_args[@]}" \
+    -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.heic" \) \
+    -print 2>/dev/null | while read -r file; do
     optimize_image "$file" 1200 800 78 "Other"
 done
 

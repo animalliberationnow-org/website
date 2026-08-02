@@ -52,6 +52,8 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
           {/* Read More Link */}
           <Link
             to={`/faqs/${id}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center text-sm font-bold text-text-main transition-all"
           >
             READ MORE

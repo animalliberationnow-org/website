@@ -88,3 +88,6 @@ vite.config.ts.timestamp-*
 # package-lock.json
 # yarn.lock
 # pnpm-lock.yaml
+
+# Raw pre-optimization image originals (kept out of public/ so they are never deployed)
+originals/

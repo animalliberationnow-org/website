@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { HiArrowRight, HiOutlineExclamationTriangle, HiPlay } from "react-icons/hi2";
-import { Link } from "react-router-dom";
+import { HiOutlineExclamationTriangle, HiPlay } from "react-icons/hi2";
 import ChapterMap from "../../components/Map/ChapterMap";
 import Hero from "../../components/UI/Hero";
 import Section from "../../components/UI/Section";
 import { events } from "../../data/eventsData";
+import EventCard from "../Events/EventCard";
 
 const HomePage = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -16,9 +16,9 @@ const HomePage = () => {
       <Hero
         title="Dismantle Human Supremacy"
         subtitle="Boycott Animal Products and Services"
-        buttonText="Find your local chapter"
+        buttonText="Join the movement"
         buttonLink="#chapters"
-        backgroundImage="/misc/ns1.webp"
+        backgroundImage="/heroes/ns1.webp"
         centered={true}
       />
 
@@ -33,7 +33,7 @@ const HomePage = () => {
             What is Animal Liberation?
           </h3>
           <p className="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto">
-            Animal Liberation is a Social Justice Movement for the Emancipation of non-human animals from Human Supremacy.
+            Animal liberation is a social justice movement to put an end to the human-led systemic oppression of non-human animals.
           </p>
 
           <div className="relative aspect-video flex items-center justify-center p-2 glass-panel rounded-[2rem]">
@@ -89,29 +89,12 @@ const HomePage = () => {
       <Section dark={false} className="relative z-20">
         <div className="text-center mb-16">
           <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase mb-4">Recent Activisim</h2>
-          <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase tracking-tighter drop-shadow-glow-white">We Take The Truth To The Streets</h3>
+          <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase tracking-tighter drop-shadow-glow-white">We Unmask <span className="text-accent">The Truth</span></h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {events.map((event, index) => (
-            <Link
-              key={index}
-              to={event.link}
-              className="glass-panel overflow-hidden group flex flex-col hover:border-accent/30 transition-all duration-500 shadow-glow-white hover:shadow-neon cursor-pointer"
-            >
-              <div className="h-72 overflow-hidden relative border-b border-glass-border">
-                <div className="absolute inset-0 bg-transparent dark:bg-accent/20 dark:mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity duration-500"></div>
-                <img src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-110 grayscale-0 dark:grayscale-[50%] group-hover:grayscale-0 transition-all duration-700" />
-              </div>
-              <div className="p-8 flex flex-col flex-grow bg-primary">
-                <h3 className="text-xl font-bold mb-4 text-text-main uppercase tracking-tight group-hover:text-accent transition-colors">{event.title}</h3>
-                <p className="text-text-muted flex-grow text-sm leading-relaxed">{event.summary}</p>
-                <div className="mt-6 flex items-center font-bold text-accent group-hover:text-text-main transition-colors uppercase tracking-widest text-xs">
-                  <span>View Details</span>
-                  <HiArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </Link>
+          {events.map(event => (
+            <EventCard key={event.id} event={event} />
           ))}
         </div>
       </Section>

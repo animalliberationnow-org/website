@@ -12,7 +12,7 @@ const ResourcesPage = () => {
       <Hero
         title="Resources"
         subtitle="Everything you need to become an effective advocate for animal liberation."
-        backgroundImage="/misc/outreach-main.webp"
+        backgroundImage="/heroes/resources-hero.webp"
         centered={true}
       />
 
@@ -38,9 +38,10 @@ const ResourcesPage = () => {
                 <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-glow-white">
                   <iframe
                     className="w-full h-full"
-                    src="https://www.youtube.com/embed/LQRAfJyEsko"
-                    title="The Truth - Animal Exploitation"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    src="https://player.mediadelivery.net/embed/135301/89232d42-e290-40fc-917d-5669478ee73b?autoplay=false&loop=false&muted=false&preload=false"
+                    title="Dominion documentary player"
+                    frameBorder="0"
+                    allow="autoplay; picture-in-picture"
                     allowFullScreen
                   />
                 </div>
@@ -79,7 +80,7 @@ const ResourcesPage = () => {
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-text-muted leading-relaxed max-w-3xl mx-auto">
-              Get answers to common questions about animal rights, veganism, and activism.
+              Get answers to common questions about animal rights and activism.
             </p>
           </div>
 
@@ -88,13 +89,15 @@ const ResourcesPage = () => {
               <Link
                 key={article.id}
                 to={`/faqs/${article.id}`}
-                className="glass-panel p-6 group hover:border-accent/30 hover:shadow-neon transition-all duration-500 shadow-glow-white"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-panel p-6 flex flex-col h-full group hover:border-accent/30 hover:shadow-neon transition-all duration-500 shadow-glow-white"
               >
                 <h3 className="text-lg font-bold mb-3 text-text-main group-hover:text-accent transition-colors">
                   {article.title}
                 </h3>
-                <p className="text-text-muted text-sm mb-4">{article.excerpt}</p>
-                <div className="text-accent text-sm font-bold uppercase tracking-wider">
+                <p className="text-text-muted text-sm mb-4 flex-grow">{article.excerpt}</p>
+                <div className="mt-auto text-accent text-sm font-bold uppercase tracking-wider">
                   Read More →
                 </div>
               </Link>

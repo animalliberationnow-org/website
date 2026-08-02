@@ -80,7 +80,7 @@ const EventDetailPage = () => {
                     <img
                       src={img}
                       alt={`${event.title} - Gallery ${index + 1}`}
-                      className="w-full h-64 object-cover"
+                      className="w-full h-auto"
                     />
                   </div>
                 ))}
@@ -96,7 +96,11 @@ const EventDetailPage = () => {
                 <img
                   src={event.image}
                   alt={event.title}
-                  className="w-full h-96 object-cover"
+                  className={
+                    event.poster
+                      ? 'w-full max-h-[80vh] object-contain'
+                      : 'w-full h-96 object-cover'
+                  }
                 />
               </div>
             </div>

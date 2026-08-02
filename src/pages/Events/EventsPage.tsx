@@ -42,7 +42,7 @@ const EventsPage = () => {
       <Hero
         title="Events & Activism"
         subtitle="Join us at our events to support animal liberation and connect with like-minded advocates."
-        backgroundImage="/misc/outreach-main.webp"
+        backgroundImage="/heroes/activism-hero.webp"
         centered={true}
       />
 
@@ -100,7 +100,7 @@ const EventsPage = () => {
             <div className="text-center mb-12">
               <h2 className="text-sm font-black tracking-[0.3em] text-accent uppercase mb-4">Recent Activism</h2>
               <h3 className="text-4xl md:text-5xl font-black text-text-main uppercase tracking-tighter drop-shadow-glow-white">
-                We Take The Truth To The Streets
+                We Unmask The Truth
               </h3>
             </div>
 

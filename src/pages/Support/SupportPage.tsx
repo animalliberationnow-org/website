@@ -9,7 +9,7 @@ const SupportPage = () => {
       <Hero
         title="Join the activism!"
         subtitle="Whether you want to volunteer, support, or simply learn more about animal liberation, we have a place for you in our movement."
-        backgroundImage="/heroes/support-articles-hero.webp"
+        backgroundImage="/heroes/support-hero.webp"
       />
 
       {/* Volunteer Form */}
